@@ -1,1 +1,63 @@
+Information gathered (Youth Development Tracking System)
+Present system: https://www.youthventures.asia/
+CEO: Hanif Marzuki Mohd Saupi
+COO: Aniq Amrez
+
+Problem faced:
+1.	Need to develop a digital profile / resume before graduation [for future interview purposes]
+2.	Help student in:
+a.	Entrepreneurship (develop own startup/ business idea)
+b.	Career development
+3.	Students attending lots of activity/event/workshop can’t be tracked.
+4.	Need to build a data system that can be filled by students and approved by admin for collecting student participation and achievement.
+5.	Sometimes students work part time, and they would like to put in resume, but some companies fail to recognize the company that the student works for.
+6.	Students are lazy to create their own career profile and resume.
+7.	To recognize those that are special from others who are active or with high achievement. (Reward system)
+8.	Could not track what the student gains after participating in any workshop/event/activity if they fail to fill in the feedback form + Student is not familiar with their achievement level.
+9.	Only can be edited by student themselves about anything posted on student profile (LinkedIn, Facebook)
+10.	Students fail to create a perfect career profile / resume on their own because they forgot what they have done.
+11.	Students need to keep repeating filling in registration forms (identical data) if they manage to join an activity.
+
+Suggested solution / opinion:
+1.	Automatically create career profiles/resumes for students.
+2.	Allow student to submit:
+a.	Learning online (Programming Language / Foreign Language) – w3school
+b.	Part time job – job 
+c.	Skill – extra skill such as music etc
+d.	Education level – uni, highschool etc
+e.	Event / Activity / Workshop attended.
+f.	Task that assigns by lecturer – assignment 
+3.	Track everything that the student does anywhere (include inside / outside of the university & yv activity or non-yv activity)
+4.	Certified event non-organized by Youth Venture and give rating on those activity. 
+5.	Built a Student Information Management System for collecting data and achievement by students continuously.
+6.	Data can be insert by Admin or Student (Student require approval)
+7.	Information that required students to filled: name, telephone number, institution, course taken, email, skills, interest, achievement, ambition, academic transcript, extracurricular, resume, and satisfying level. (Compulsary)
+8.	Employers need to know why they need to hire you through previous experience and achievement that advertised on profile. (Profile != Resume)
+9.	Including a badge system and providing rewards for those how had achieve something and to discover someone special than others. (Similar concept to Azure badge)
+10.	The feedback submitted needs to be evaluated and rated by admin.
+11.	Everyone within the web or application can approach others profile.
+12.	Before and after an event, the system needs to trace what had been gained by that student through the feedback form or any other forms that are filled in by them. (Entry and Exit survey form)
+13.	The organizer can gain feedback and a satisfying level on the activity that they held.
+14.	Sometimes the students might also be the organizer, so all the activities that they organized will also be recorded.
+15.	Trace each user by providing each user a different ID and they can avoid keeping on filling in the registration form by simply logging in to their account.
+16.	Will auto create and keep updating student career profile & resume after they submit a form.
+17.	For students who work part-time jobs, they need to provide some evidence to prove that they really work and learn something at the company, and YouthVenture needs to evaluate those experiences. They can evaluate through writing comments on the form submitted by the students.
+18.	Club society / activities / competition joined are all recorded after evaluated by YouthVenture and all those things will be auto recorded in resume.
+19.	Potential employers easily know everything about the user by visiting their profile.
+20.	Include different feedback forms for different topic.
+21.	Students need to fill in all the forms of an activity to get their certificate.
+22.	Admins and users can edit that student’s profile. (Students are limited on what they learn / the way they describe is not good enough / too simple, so the admin needs to assist them on elaborating those descriptions).
+23.	Students can access the template of each form for filling use.
+24.	The system should rate each activity (providing stars / point / credibility) and allow students to gain those rewards. 
+25.	The feedback form will reflect your experience. (What activity that had been completed)
+26.	All certificates and work experience will be stored individually.
+27.	Those feedback forms will be read by admin only for evaluating purpose, will not be use in the students resume.
+
+Extra expectations:
+1.	This system should be mobile friendly.
+2.	Create multiple admin for lecturers to access, edit, manage student data and profile.
+3.	The activity to be evaluated should not be limited to YouthVenture event only.
+4.	Dwi-language system
+5.	Leaderboard is also included for score of activity (only events).
+6.	Light / Dark mode
 
