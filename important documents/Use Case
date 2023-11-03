@@ -1,1 +1,36 @@
+Use Case required:
+User : Student, Lecturer (Admin), Admin, Master Admin
 
+Use case : 
+
+Universal use case – 
+1.	Login
+2.	Register
+3.	Logout
+4.	Notification //
+Student -- 
+1.	View profile
+2.	Edit profile (Limited)
+3.	Fill form
+a.	Youthventure activity (Already existing forms)
+b.	Non-youthventure activity (Self add) < include assignment, part time job etc
+4.	Generate resume
+5.	View history (View only!!)
+6.	Search other people profile
+
+Lecturer (Admin) –
+1.	Read & approve feedback form from assignments
+2.	Search student profile
+
+Admin –
+1.	Edit student profile
+2.	Read & approve feedback form from any activity
+3.	Distribute badge / reward
+4.	Search student profile
+5.	Upload activity
+6.	Add skill learned by student
+7.	Delete student data
+8.	View analytics
+
+Master Admin –
+1.	Access database
