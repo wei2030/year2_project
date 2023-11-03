@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouthVenture's Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed" rel="stylesheet" type="text/css" />
+
+  <style>
+
+    body {
+      height: 100%;
+      font-family:'Poppins', sans-serif;
+      color: white;
+      background-image: url("photo/background.png") ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .login-box {
+      background: linear-gradient(#6c293b,#9c485d);
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 250px;
+      border-radius: 5%;
+      box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.235);
+    }
+
+    h2 {
+      text-align: center;
+      font-style: bold;
+      font-weight: 900;
+      color: white;
+      font-size: 20px;
+      padding-bottom: 25px;
+      padding-top: 10px;
+    }
+
+    .user-box {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, 1fr);
+      gap: 10px;
+      position:relative;
+      bottom:5px;
+    }
+
+    label {
+      text-align: left;
+      padding-left: 30px;
+      font-size: 12px;
+      transition: 0.2s ease-in;
+      position:relative;
+      bottom:65px;
+    }
+
+    input {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      border-bottom: 1px solid #ffffff;
+      outline: none;
+      margin: -30px -20px 30px 30px;
+      text-align: left;
+      color: white;
+      width:80%;
+      font-size: 15px;
+      transition: 0.2s ease-in;
+      height:150%;
+    }
+
+
+    input:valid ~ label,
+    input:focus ~ label {
+      font-size:12px;
+      color:#e7b538;
+      transform: translateY(-10px);
+      width:50px;
+    }
+
+    .submit {
+      color:white;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing:3px;
+      margin-left:28px;
+      padding-left:15px;
+      padding-right:15px;
+      padding-bottom:5px;
+      padding-top:5px;
+      border-radius:5px;
+      text-align:center;
+      border:hidden;
+      transition: 0.3s;
+      position:relative;
+      bottom:30px;
+    
+    }
+
+    .submit:hover {
+      background-color:#79243b;
+      box-shadow:0 0 10px whitesmoke;
+    }
+
+    .logo {
+      position: relative;
+      top:80px;
+      width: 215px;
+      height: 90px;
+      margin-left: auto;
+      margin-right:auto;
+      display:block;
+    }
+
+    .test {
+      position: relative;
+      width: 30%;
+      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    .register {
+      position:relative;
+      bottom:12px;
+      font-size:12px;
+      color:white;
+    }
+   
+    .registerbutton {
+      color:#e7b538;
+    }
+
+    .forgotpassword {
+      color:#e7b538;
+      font-size:12px;
+      position: relative;
+      bottom:55px;
+      left:30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <img class="logo" src="https://www.youthventures.asia/content/images/2022/12/06D439C5-6E12-447F-87BB-77750DB927BE.png" >
+  <div class="login-box">
+    <br>
+    <br>
+    <br>
+    <form>
+      <div class="user-box">
+        <input type="text" value="" required="required"/>
+        <label>Username</label>
+      </div>
+      <br>
+      <div class="user-box">
+        <input type="password" value="" required="required" />
+        <label>Password</label>
+      </div>
+      <div>
+      <a class="forgotpassword" href="https://www.youthventures.asia/forgot-password">Forgot Password?</a>
+      </div>
+      <a class="submit" href="#">
+        LOGIN
+      </a>
+      <div class="register">
+      <center>Not a member? <a class="registerbutton" href="https://www.youthventures.asia/register">Sign up</a> now!</center>
+    </div>
+    </form>
+  </div>
+</body>
+
+</html>
