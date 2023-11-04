@@ -22,37 +22,37 @@ Universal use case –
 6.  Light / Dark Mode *
 
 Student —
-1. Manage Profile
+1.  Manage Profile
     a. View student profile
     b. Edit lecturer profile
 2.  Manage Activity (Proposing non-youthventure activities eg part-time jobs)
 3.  Manage Feedback
     a. Submission of feedbacks
     b. View feedback history
-4.	Manage Resume
+4.  Manage Resume
 5.  Manage Reward (View only) ---> (1)
 
 Lecturer (Admin) –
-1.	Manage Feedback
+1.  Manage Feedback
     a. Approving student assignments; typically big uni projects
     b. Commenting on student performance
-2.	Manage Profile
+2.  Manage Profile
     a. View lecturer profile
     b. Edit lecturer profile
-3. Manage Activity (View only)
-4. Manage Dashboard (View only)
+3.  Manage Activity (View only)
+4.  Manage Dashboard (View only)
 
 Admin –
-1.	Manage Profile (ADMIN NO PROFILE)
+1.  Manage Profile (ADMIN NO PROFILE)
     a. Edit student profile (eg adding skills/achievement)
     b. Delete student data (based on admin power)
-2.	Manage Activity (add activities to be accessed by students)
+2.  Manage Activity (add activities to be accessed by students)
 3.  Manage Feedback (approving)
-4.	Manage Rewards
+4.  Manage Rewards
     a. Distributing rewards/badges to students
     b. Create/Search rewards/badges
-5.	Manage Dashboard
+5.  Manage Dashboard
 
 Master Admin –
-1.	Manage Dashboard
-2. Backend Database Control
+1.  Manage Dashboard
+2.  Backend Database Control
