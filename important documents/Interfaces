@@ -1,1 +1,88 @@
-1. Login
+Universal
+
+1. Log In
+2. Register
+3. Forgot Password
+4. Search profile function
+
+Student
+
+1. Main menu
+  - Calendar for activities
+  - Filter function
+  - Add activity button
+  - Leaderboard (view only & switch between different scopes)
+  - Profile button
+  - Feedback History button
+
+2. Event Submission Interface (From main menu)
+  - Event information
+  - Feedback form
+  - Submit Complete pop-up (to be approved)
+
+3. Add activity Interface (From main menu)
+  - Choose from what category
+  - Form to be filled (to be approved)
+
+4. Feedback History Interface (From main menu)
+  - Display list of activities previously accessed
+  - Edit button (if not approved by admin yet)
+
+5. Edit history Interface (From feedback history interface)
+  - Detail of chosen feedback
+
+6. Profile (From main menu) -- similar to linkedin profile w/o posting function
+  - Edit button
+  - Basic informations (name, gender, contact info, address, education level & place)
+  - About (for students to write their description)
+  - Skills (determined by activity joined + admin edit)
+  - Badges, hover for definition (Given by admin)
+  - All joined events & credit score
+  - Comments by admin/lecturer about said person
+  - Generate resume
+
+Lecturer
+
+1. Main menu
+  - Calendar for activities (View only)
+  - Filter function
+  - Leaderboard (view only & switch between different scopes)
+  - Profile button
+  - Dashboard
+  - Activities to be approved button
+
+2. Profile (From main menu)
+  - Edit button
+  - Basic information
+  - About
+  - Students under lecturer *
+
+3. Approve Activity button (From main menu)
+  - List of activities, submitted by who
+  - Comment area
+  - Approve button (show feedback)
+
+Admin
+
+1. Main menu
+  - Manage student profile button
+  - Calendar for activities
+  - Approve activity button
+  - Dashboard
+
+2. Manage student profile (from main menu) (after searching for student)
+  - Edit skills
+  - Edit comment
+  - Add badges
+  - Delete data (depend on admin power)
+
+3. Activity creation (from main menu)
+  - Activity type
+  - Activity detail
+  - Required informations
+  - Create activity
+
+4. Approve activity (from main menu)
+  - List of activities, submitted by who
+  - Comment area
+  - Approve button (show feedback)
