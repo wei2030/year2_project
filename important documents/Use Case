@@ -14,8 +14,8 @@ Main 7 Use cases :
 ---> (x) means included in x use case.
 
 Universal use case – 
-1.	Login & Logout
-2.	Manage Registratrion
+1.  Login & Logout
+2.  Manage Registratrion
 3.  Profile Searching (Student/Lecturer profiles)
 4.  Leaderboards *
 5.  Dwi - Language *
