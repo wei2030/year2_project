@@ -1,36 +1,58 @@
-Use Case required:
-User : Student, Lecturer (Admin), Admin, Master Admin
+User : Student, Lecturer (Admin), Youthventure Admin, Master Admin
 
-Use case : 
+Main 7 Use cases :
+- Profile (student and lecturer) 
+- Reward (view by student, given by admin) 
+- Resume (student) 
+- Activity (student, lecturer, admin) 
+- Feedback (student for submission, lecturer and admin for approval) 
+- Dashboard (lecturer and admin)
+- Registration (all)
+
+!! Notice !! : 
+* means optional functions, not required.
+---> (x) means included in x use case.
 
 Universal use case – 
-1.	Login
-2.	Register
-3.	Logout
-4.	Notification //
-Student -- 
-1.	View profile
-2.	Edit profile (Limited)
-3.	Fill form
-a.	Youthventure activity (Already existing forms)
-b.	Non-youthventure activity (Self add) < include assignment, part time job etc
-4.	Generate resume
-5.	View history (View only!!)
-6.	Search other people profile
+1.	Login & Logout
+2.	Manage Registratrion
+3.  Profile Searching (Student/Lecturer profiles)
+4.  Leaderboards *
+5.  Dwi - Language *
+6.  Light / Dark Mode *
+
+Student —
+1. Manage Profile
+    a. View student profile
+    b. Edit lecturer profile
+2.  Manage Activity (Proposing non-youthventure activities eg part-time jobs)
+3.  Manage Feedback
+    a. Submission of feedbacks
+    b. View feedback history
+4.	Manage Resume
+5.  Manage Reward (View only) ---> (1)
 
 Lecturer (Admin) –
-1.	Read & approve feedback form from assignments
-2.	Search student profile
+1.	Manage Feedback
+    a. Approving student assignments; typically big uni projects
+    b. Commenting on student performance
+2.	Manage Profile
+    a. View lecturer profile
+    b. Edit lecturer profile
+3. Manage Activity (View only)
+4. Manage Dashboard (View only)
 
 Admin –
-1.	Edit student profile
-2.	Read & approve feedback form from any activity
-3.	Distribute badge / reward
-4.	Search student profile
-5.	Upload activity
-6.	Add skill learned by student
-7.	Delete student data
-8.	View analytics
+1.	Manage Profile (ADMIN NO PROFILE)
+    a. Edit student profile (eg adding skills/achievement)
+    b. Delete student data (based on admin power)
+2.	Manage Activity (add activities to be accessed by students)
+3.  Manage Feedback (approving)
+4.	Manage Rewards
+    a. Distributing rewards/badges to students
+    b. Create/Search rewards/badges
+5.	Manage Dashboard
 
 Master Admin –
-1.	Access database
+1.	Manage Dashboard
+2. Backend Database Control
