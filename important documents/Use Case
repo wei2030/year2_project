@@ -1,13 +1,13 @@
 User : Student, Lecturer (Admin), Organiser/Partner (Admin), Youthventure Admin
 
 Main 7 Use cases :
-- Profile (student and lecturer) 
+- Profile (student, lecturer, organiser for creation, admin for editing) 
 - Reward (view by student, given by admin) 
 - Resume (student) 
-- Activity (student, lecturer, admin) 
-- Feedback (student for submission, lecturer and admin for approval) 
-- Dashboard (lecturer and admin)
-- Registration (all)
+- Activity (student, lecturer, partner, admin) 
+- Feedback (student for submission, lecturer, partner and admin for approval) 
+- Dashboard (admin)
+- Registration (student & lecturer)
 
 !! Notice !! : 
 * means optional functions, not required.
