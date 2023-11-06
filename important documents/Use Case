@@ -40,7 +40,14 @@ Lecturer (Admin) –
     a. View lecturer profile
     b. Edit lecturer profile
 3.  Manage Activity (View only)
-4.  Manage Dashboard (View only)
+
+Organiser/Partners (Admin) -
+1.  Manage Feedback
+    a. Approving student involvement in events
+2.  Manage Profile (Company info)
+3.  Manage Activity
+    a. View activity
+    b. Create activity
 
 Admin –
 1.  Manage Profile (ADMIN NO PROFILE)
@@ -53,7 +60,3 @@ Admin –
     b. Create/Search rewards/badges
 5.  Manage Dashboard
 6. Manage Registration (for organiser/partners)
-
-Master Admin –
-1.  Manage Dashboard
-2.  Backend Database Control
