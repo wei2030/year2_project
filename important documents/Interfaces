@@ -48,7 +48,6 @@ Lecturer
   - Filter function
   - Leaderboard (view only & switch between different scopes)
   - Profile button
-  - Dashboard
   - Activities to be approved button
 
 2. Profile (From main menu)
@@ -61,6 +60,30 @@ Lecturer
   - List of activities, submitted by who
   - Comment area
   - Approve button (show feedback)
+
+Organiser/Partner
+
+1. Main menu
+  - Calendar for activities
+  - Filter function
+  - Leaderboard (view only & switch between different scopes)
+  - Profile button
+  - Activities to be approved button
+  - Add activity button
+
+2. Profile (From main menu)
+  - Edit button
+  - Company info
+  - About
+
+3. Approve Activity button (From main menu)
+  - List of activities, submitted by who
+  - Comment area
+  - Approve button (show feedback)
+
+4. Add activity button (From main menu)
+  - Date of event
+  - Detail of new event
 
 Admin
 
@@ -77,7 +100,7 @@ Admin
   - Delete data (depend on admin power)
 
 3. Activity creation (from main menu)
-  - Activity type
+  - Activity date
   - Activity detail
   - Required informations
   - Create activity
