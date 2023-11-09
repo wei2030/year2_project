@@ -15,11 +15,10 @@ Main 7 Use cases :
 
 Universal use case – 
 1.  Login & Logout
-2.  Manage Registratrion
-3.  Profile Searching (Student/Lecturer profiles)
-4.  Leaderboards *
-5.  Dwi - Language *
-6.  Light / Dark Mode *
+2.  Profile Searching (Student/Lecturer profiles)
+3.  Leaderboards *
+4.  Dwi - Language *
+5.  Light / Dark Mode *
 
 Student —
 1.  Manage Profile
@@ -33,6 +32,7 @@ Student —
     c. View feedback history
 4.  Manage Resume
 5.  Manage Reward (View only) ---> (1)
+6.  Manage Registration (to be approved to join event)
 
 Lecturer (Admin) –
 1.  Manage Feedback
