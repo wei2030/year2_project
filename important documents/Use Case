@@ -7,7 +7,7 @@ Main 7 Use cases :
 - Activity (student, lecturer, partner, admin) 
 - Feedback (student for submission, lecturer, partner and admin for approval) 
 - Dashboard (admin)
-- Registration (student & lecturer)
+- Registration (student)
 
 !! Notice !! : 
 * means optional functions, not required.
@@ -28,7 +28,8 @@ Student —
 2.  Manage Activity (Proposing non-youthventure activities eg part-time jobs)
 3.  Manage Feedback
     a. Submission of feedbacks
-    b. View feedback history
+    b. Group form
+    c. View feedback history
 4.  Manage Resume
 5.  Manage Reward (View only) ---> (1)
 
