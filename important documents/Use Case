@@ -6,7 +6,7 @@ Main 7 Use cases :
 - Resume (student) 
 - Activity (student, lecturer, partner, admin) 
 - Feedback (student for submission, lecturer, partner and admin for approval) 
-- Dashboard (admin)
+- Dashboard (lecturer, organizer/partner, YV admin)
 - Registration (student)
 
 !! Notice !! : 
