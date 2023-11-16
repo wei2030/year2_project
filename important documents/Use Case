@@ -34,6 +34,9 @@ Student —
     b. Edit student profile (toggle functions)
     c. View recommended comments
 2.  Manage Activity (Proposing non-youthventure activities eg part-time jobs)
+    a. View activity
+    b. Register activity (activity on calander)
+    c. Upload Unique Activity (assignment, part-time)
 3.  Manage Feedback
     a. Submission of feedbacks
     b. Group form
@@ -43,7 +46,8 @@ Student —
     b. Select information to include
     b. Download softcopy resume
 5.  Manage Reward (View and claim only) ---> (1)
-6.  Manage Registration (to be approved to join event)
+6.  Manage Registration
+    a. Generate registration form
 
 Lecturer (Admin) –
 1.  Manage Feedback
@@ -52,7 +56,8 @@ Lecturer (Admin) –
 2.  Manage Profile
     a. View lecturer profile
     b. Edit lecturer profile
-3.  Manage Activity (View only)
+3.  Manage Activity
+    a. View activity
 4.  Manage dashboard (View only)
 
 Organisers/Partners (Admin) -
@@ -63,7 +68,7 @@ Organisers/Partners (Admin) -
     b. Edit organisers/partners profile
 3.  Manage Activity
     a. View activity
-    b. Create activity
+    b. Create activity (outsider activity)
 4.  Manage dashboard (View only)
 
 Admin –
@@ -71,6 +76,9 @@ Admin –
     a. Edit student profile (eg adding skills/achievement)
     b. Delete student data (based on admin power)
 2.  Manage Activity (add activities to be accessed by students)
+    a. View activity
+    b. Create activity (YV activity)
+    c. Approve unique activity
 3.  Manage Feedback (approving)
 4.  Manage Rewards
     a. Distributing rewards/badges to student
