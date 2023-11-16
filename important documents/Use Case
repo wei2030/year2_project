@@ -9,6 +9,14 @@ Main 7 Use cases :
 - Dashboard (lecturer, organizer/partner, YV admin)
 - Registration (student)
 
+List of Activity:
+- Competition / Scholarship
+- Program / Activities
+- Bootcamp / Workshop
+- Part Time
+- Volunteering
+- Internship
+
 !! Notice !! : 
 * means optional functions, not required.
 ---> (x) means included in x use case.
