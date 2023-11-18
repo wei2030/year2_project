@@ -1,9 +1,69 @@
-<mxfile host="app.diagrams.net" modified="2023-11-18T14:41:57.806Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="oUhoLoLr6UxkaKSn2XQX" version="22.1.3" type="google">
+<mxfile host="app.diagrams.net" modified="2023-11-18T15:08:03.935Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="sKG0oQIhDi10JYiB8Lcx" version="22.1.3" type="github">
   <diagram name="Page-1" id="wwDXL9ZGAKbMqEXQXg8f">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="472" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="vezCgIkYZHL1R31hKO3_-3" value="Lecturer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-4" value="Organizer/&lt;br&gt;Partner" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="80" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-5" value="Admin(Youth&lt;br&gt;Venture)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-8" value="Lecturer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="590" as="sourcePoint" />
+            <mxPoint x="50" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-10" value="Organizer/&lt;br&gt;Partner" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="600" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-11" value="Admin(Youth&lt;br&gt;Venture)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="600" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="139.57999999999998" y="590" as="sourcePoint" />
+            <mxPoint x="140" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-13" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="229.57999999999998" y="590" as="sourcePoint" />
+            <mxPoint x="230" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-19" value="" style="endArrow=none;dashed=1;html=1;rounded=0;strokeWidth=1;dashPattern=8 8;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="319.5" y="590" as="sourcePoint" />
+            <mxPoint x="319.92" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-20" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="290" y="80" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-16" value="" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="vezCgIkYZHL1R31hKO3_-20">
+          <mxGeometry width="60" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-18" value="YouthVenture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vezCgIkYZHL1R31hKO3_-20">
+          <mxGeometry y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-21" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="290" y="600" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-22" value="" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="vezCgIkYZHL1R31hKO3_-21">
+          <mxGeometry width="60" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vezCgIkYZHL1R31hKO3_-23" value="YouthVenture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vezCgIkYZHL1R31hKO3_-21">
+          <mxGeometry y="50" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
