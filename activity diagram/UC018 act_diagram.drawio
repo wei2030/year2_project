@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-21T15:35:56.881Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Au0FBukWyMTtefeJ433O" version="22.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-21T16:08:14.776Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="2fe5oDRPl6vNvs15WHly" version="22.1.3" type="github">
   <diagram name="Page-1" id="NfANKXbEFXDAOwb04DQ3">
     <mxGraphModel dx="1050" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -40,39 +40,57 @@
         <mxCell id="dCUgB3aLUp0EkMlbkihi-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dCUgB3aLUp0EkMlbkihi-13" target="dCUgB3aLUp0EkMlbkihi-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-13" value="Click &quot;Registered Activity List&quot; button" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="dCUgB3aLUp0EkMlbkihi-13" value="Click &quot;Add Activity&quot; button" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="77.5" y="260" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dCUgB3aLUp0EkMlbkihi-14" target="dCUgB3aLUp0EkMlbkihi-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-14" value="Fetch following activity information" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="dCUgB3aLUp0EkMlbkihi-14" value="Show six sections of activity" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="317.5" y="336" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dCUgB3aLUp0EkMlbkihi-15" target="dCUgB3aLUp0EkMlbkihi-16" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-15" value="Retrieve activity information" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="557.5" y="405" width="165" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dCUgB3aLUp0EkMlbkihi-16" edge="1">
+        <mxCell id="dCUgB3aLUp0EkMlbkihi-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dCUgB3aLUp0EkMlbkihi-15" target="W6J9wH0ZtBU-FA1zPUXh-9" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="160" y="570" as="targetPoint" />
+            <mxPoint x="400" y="530" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dCUgB3aLUp0EkMlbkihi-16" value="Show registered activity list" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="317.5" y="475" width="165" height="30" as="geometry" />
+        <mxCell id="dCUgB3aLUp0EkMlbkihi-15" value="Show the form to fill in the activity&#39;s detail" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="317.5" y="460" width="165" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dCUgB3aLUp0EkMlbkihi-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="W6J9wH0ZtBU-FA1zPUXh-9" edge="1" target="CNan1BPdTwJGC_Sgi3b9-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="242.5" y="610" as="targetPoint" />
+            <mxPoint x="482.5" y="600" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="640" y="600" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="dCUgB3aLUp0EkMlbkihi-28" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000;" parent="1" vertex="1">
-          <mxGeometry x="142.5" y="700" width="35" height="30" as="geometry" />
+          <mxGeometry x="142.5" y="740" width="35" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="CNan1BPdTwJGC_Sgi3b9-7" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" parent="1" source="CNan1BPdTwJGC_Sgi3b9-6" edge="1">
+        <mxCell id="CNan1BPdTwJGC_Sgi3b9-7" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="CNan1BPdTwJGC_Sgi3b9-6" edge="1" target="dCUgB3aLUp0EkMlbkihi-28">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="160" y="700" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="CNan1BPdTwJGC_Sgi3b9-6" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;View registered acitvity&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="100" y="570" width="120" height="40" as="geometry" />
+        <mxCell id="CNan1BPdTwJGC_Sgi3b9-6" value="&lt;span style=&quot;font-size: 12px;&quot;&gt;Submit the form&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="100" y="650" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-2" value="Choose the section of activity" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="77.5" y="405" width="165" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="dCUgB3aLUp0EkMlbkihi-14" target="W6J9wH0ZtBU-FA1zPUXh-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="350" as="sourcePoint" />
+            <mxPoint x="510" y="306" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="W6J9wH0ZtBU-FA1zPUXh-2" target="dCUgB3aLUp0EkMlbkihi-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="630" as="sourcePoint" />
+            <mxPoint x="430" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-9" value="Show registered activity list" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="557.5" y="540" width="165" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
