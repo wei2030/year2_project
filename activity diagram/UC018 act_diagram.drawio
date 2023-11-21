@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-21T16:08:14.776Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="2fe5oDRPl6vNvs15WHly" version="22.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-21T16:15:12.107Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Mh0CgyROcK4_UlYb-7pp" version="22.1.3" type="github">
   <diagram name="Page-1" id="NfANKXbEFXDAOwb04DQ3">
     <mxGraphModel dx="1050" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -89,7 +89,7 @@
             <mxPoint x="430" y="390" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-9" value="Show registered activity list" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="W6J9wH0ZtBU-FA1zPUXh-9" value="Update personal activity" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="557.5" y="540" width="165" height="30" as="geometry" />
         </mxCell>
       </root>
