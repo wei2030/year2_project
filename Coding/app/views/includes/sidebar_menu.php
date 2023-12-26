@@ -9,35 +9,15 @@
 
 										<!--begin:Menu item (Dashboard)-->
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu link-->
-											<span class="menu-link">
-												<span class="menu-icon">
-													<i class="ki-duotone ki-element-7 fs-2">
-														<span class="path1"></span>
-														<span class="path2"></span>
-													</i>
-												</span>
-												<span class="menu-title">Posts Options</span>
-												<span class="menu-arrow"></span>
-											</span>
-											<!--end:Menu link-->
-											<!--begin:Menu sub-->
-											<div class="menu-sub menu-sub-accordion">
-												<!--begin:Menu item-->
-												<div class="menu-item">
+											<!--begin:Menu item-->
+											<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/posts">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Manage Posts</span>
+													<a class="menu-link" href="<?php echo URLROOT; ?>/dashboard.php">														
+														<span class="menu-title">Dashboard</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
-												<!--end:Menu item-->																				
-										
-											</div>
-											<!--end:Menu sub-->
+											<!--end:Menu item-->								
 										</div>
 										<!--end:Menu item (Dashboard)-->
 										
