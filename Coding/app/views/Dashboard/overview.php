@@ -1,12 +1,9 @@
 <div class="card shadow-sm">
+
     <div class="card-header">
         <h3 class="card-title">Overview Dashboard</h3>
-        <div class="card-toolbar">
-            <?php if(isLoggedIn()): ?>
-            <a href="<?php echo URLROOT;?>/posts/create" class="btn btn-light-primary">Create</a>
-            <?php endif; ?>
-        </div>
     </div>
+    
     <div class="card-body">
         
         <div class="container">
@@ -25,6 +22,7 @@
                     4 of 4
                 </div>
             </div>
+
         </div>
 
     </div>

@@ -8,11 +8,13 @@
             $this->db = new Database;
         }
 
-        public function manage_dashboard(){
-            $this->db->query();
+        // public function manage_dashboard(){
+        //     $this->db->query();
 
-            $results = $this->db->resultSet();
+        //     $results = $this->db->resultSet();
 
-            return $results;
-        }
+        //     return $results;
+        // }
     }
+
+?>
