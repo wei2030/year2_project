@@ -7,7 +7,7 @@
 
         public function index() {
 
-            $this->view('Dashboards/index');
+            $this->view('dashboards/index');
 
         }
     }

@@ -22,7 +22,7 @@
         <?php
 
                     // rule to access each file
-                    $c_url = URLROOT . "/Dashboards"; 
+                    $c_url = URLROOT . "/dashboards"; 
 
                     //error_reporting(0);
                     if ($url == $c_url) {
