@@ -1,8 +1,4 @@
 <div class="card shadow-sm">
-
-    <div class="card-header">
-        <h3 class="card-title">Overview Dashboard</h3>
-    </div>
     
     <div class="card-body">
 
