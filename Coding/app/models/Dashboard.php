@@ -1,7 +1,7 @@
 <?php
 
 
-    class Dashboard_user {
+    class Dashboard {
         private $db;
 
         public function __construct(){

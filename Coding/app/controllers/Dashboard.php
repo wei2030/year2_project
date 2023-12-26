@@ -2,10 +2,10 @@
 
     class Dashboard_user extends Controller {
         public function __construct() {
-            $this->dashboardModel = $this->model('Dashboard_user');
+            $this->dashboardModel = $this->model('Dashboard');
         }
 
         public function index() {
-            $this->view('Dashboard_user/index');
+            $this->view('Dashboard/index');
         }
     }
