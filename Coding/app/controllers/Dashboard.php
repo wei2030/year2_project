@@ -6,6 +6,14 @@
         }
 
         public function index() {
+            $dashboard = $this->dashboardModel->manage_dashboard();
+
+            $data = [
+
+                'dashboard' => $dashboard
+
+            ]
+
             $this->view('Dashboard/index');
         }
     }
