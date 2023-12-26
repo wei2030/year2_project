@@ -12,7 +12,7 @@
 											<!--begin:Menu item-->
 											<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/Dashboard.php">														
+													<a class="menu-link" href="<?php echo URLROOT; ?>/dashboards">														
 														<span class="menu-title">Dashboard</span>
 													</a>
 													<!--end:Menu link-->

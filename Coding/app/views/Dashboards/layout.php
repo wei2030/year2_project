@@ -22,18 +22,12 @@
         <?php
 
                     // rule to access each file
-                    $c_url = URLROOT . "/posts"; 
-                    $t_url = URLROOT . "/posts/create"; 
-
-                    if (isset($data['post']) && is_object($data['post'])) {
-                    $u_url = URLROOT . "/posts/update/".$data['post']->id; 
-                    }
-
+                    $c_url = URLROOT . "/dashboards"; 
 
                     //error_reporting(0);
                     if ($url == $c_url) {
         
-                        require 'manage.php';
+                        require 'overview.php';
 
                     }
 
