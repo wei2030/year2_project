@@ -80,11 +80,11 @@
 
 
         <script>
-        $(document).ready(function() {
-            var table = $('#kt_datatable_posts').DataTable({
+            $(document).ready(function() {
+                var table = $('#kt_datatable_posts').DataTable({
 
+                });
             });
-        });
         </script>
 
     </div>
