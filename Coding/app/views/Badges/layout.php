@@ -22,12 +22,27 @@
         <?php
 
                     // rule to access each file
-                    $c_url = URLROOT . "/badges"; 
+                    $c_url = URLROOT . "/badges";
+                    $t_url = URLROOT . "/badges/create";
+
+                    if (isset($data['badge']) && is_object($data['badge'])) {
+                        $u_url = URLROOT . "/badges/update/".$data['badge']->badge_id; 
+                    }
 
                     //error_reporting(0);
                     if ($url == $c_url) {
         
                         require 'listBadges.php';
+
+                    } elseif($url == $t_url) {
+
+                        require 'create.php';
+
+                    } elseif($url == $u_url) {
+
+                        require 'update.php';
+
+                    } else {
 
                     }
 
