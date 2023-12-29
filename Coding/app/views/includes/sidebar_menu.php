@@ -24,6 +24,23 @@
 
 
 										
+										<!--begin:Menu item (Reward)-->
+										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+											<!--begin:Menu item-->
+											<div class="menu-item">
+													<!--begin:Menu link-->
+													<a class="menu-link" href="<?php echo URLROOT; ?>/rewards">														
+														<span class="menu-title">Reward</span>
+													</a>
+													<!--end:Menu link-->
+												</div>
+											<!--end:Menu item-->								
+										</div>
+										<!--end:Menu item (Reward)-->
+
+
+										
+
 										<!--begin:Menu item (Post Option)-->
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<!--begin:Menu link-->
