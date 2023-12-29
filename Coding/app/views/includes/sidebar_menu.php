@@ -24,22 +24,22 @@
 
 
 										
-										<!--begin:Menu item (Reward)-->
+										<!--begin:Menu item (Badge)-->
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<!--begin:Menu item-->
 											<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/rewards">														
-														<span class="menu-title">Reward</span>
+													<a class="menu-link" href="<?php echo URLROOT; ?>/badges">														
+														<span class="menu-title">Badge</span>
 													</a>
 													<!--end:Menu link-->
 												</div>
 											<!--end:Menu item-->								
 										</div>
-										<!--end:Menu item (Reward)-->
+										<!--end:Menu item (Badge)-->
 
 
-										
+
 
 										<!--begin:Menu item (Post Option)-->
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
