@@ -22,17 +22,13 @@
         <?php
 
                     // rule to access each file
-                    $c_url = URLROOT . "/rewards"; 
+                    $c_url = URLROOT . "/badges"; 
 
                     //error_reporting(0);
                     if ($url == $c_url) {
         
-                        require 'listreward.php';
+                        require 'listBadges.php';
 
-                    } elseif() {
-
-
-                        
                     }
 
                     ?>
