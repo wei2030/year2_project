@@ -7,7 +7,7 @@
 
         public function index() {
 
-            $this->view('rewardss/index');
+            $this->view('rewards/index');
 
         }
     }
