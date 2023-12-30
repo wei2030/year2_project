@@ -32,7 +32,7 @@
             <div class="mb-10">
                 <label for="image" class="required form-label">Icon</label>
 
-                <?php if(isset($_SESSION['error'])): ?>
+                <?php if(isset($_SESSION['error']) && ($_SESSION['error'] != "")): ?>
                     <p><?php echo $_SESSION['error']; ?></p>
                 <?php endif ?>
                 
