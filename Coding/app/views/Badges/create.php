@@ -14,7 +14,7 @@
 
     <div class="card-body">
 
-        <form action="<?php echo URLROOT; ?>/badges/create" method="POST">
+        <form action="<?php echo URLROOT; ?>/badges/create" method="POST" enctype="multipart/form-data">
 
             <div class="mb-10">
                 <label for="badge_name" class="required form-label">Badge Name</label>
@@ -30,9 +30,12 @@
             </div>
 
             <div class="mb-10">
-                <label for="icon_dir" class="required form-label">Icon</label>
+                <?php if(isset($_GET['error'])): ?>
+                    <p><?php echo $_GET['error']; ?></p>
+                <?php endif ?>
+                <label for="image" class="required form-label">Icon</label>
                 <div class="position-relative">
-                    <input type="file" class="form-control" name="icon_dir">
+                    <input type="file" class="form-control" name="image">
                 </div>
 
                 <!-- <label for="exampleFormControlInput1" class="required form-label">Icon</label>
