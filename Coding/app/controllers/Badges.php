@@ -120,6 +120,8 @@
 
                     if ($this->badgeModel->addBadge($data)) {
 
+                        $_SESSION['error'] = "";
+
                         header("Location: " . URLROOT. "/badges" );
                         
                     } else {
