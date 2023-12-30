@@ -39,7 +39,7 @@
 
             <div class="mb-10">
                 <label for="existing_icon" class="form-label">Existing Icon</label>
-                <input type="text" name="existing_icon" class="form-control form-control-solid" value="<?php echo $data['badge']->icon_dir; ?>" readonly/>
+                <input type="text" name="existing_icon" class="form-control form-control-solid" value="<?php echo $data['badge']->icon_dir; ?>" disabled/>
             </div>
 
             <div class="mb-10">
