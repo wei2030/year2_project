@@ -31,7 +31,7 @@
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Icon</label>
-                <input type="text" name="icon" class="form-control form-control-solid" value="<?php echo $data['badge']->icon ?>" required />
+                <input type="text" name="icon_dir" class="form-control form-control-solid" value="<?php echo $data['badge']->icon_dir ?>" required />
             </div>
 
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>

@@ -28,7 +28,7 @@
                 <tbody>
                     <?php foreach($data['badges'] as $badge): ?>
                     <tr>
-                        <td><?php echo $badge->icon; ?></td>
+                        <td><?php echo $badge->icon_dir; ?></td>
                         <td><?php echo $badge->badge_name; ?></td>
                         <td><?php echo $badge->badge_desc; ?></td>                      
                         <td>

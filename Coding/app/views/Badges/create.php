@@ -31,7 +31,7 @@
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Icon</label>
-                <input type="text" name="icon" class="form-control form-control-solid" placeholder="Icon..." required />
+                <input type="text" name="icon_dir" class="form-control form-control-solid" placeholder="Icon directory..." required />
             </div>
 
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
