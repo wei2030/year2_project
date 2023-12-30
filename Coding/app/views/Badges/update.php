@@ -19,6 +19,10 @@
             <div class="mb-10">
                 <label for="badge_name" class="required form-label">Badge Name</label>
                 <input type="text" name="badge_name" class="form-control form-control-solid" value="<?php echo $data['badge']->badge_name ?>" required />
+
+                <span class="invalidFeedback">
+                    <?php echo $data['badge_name_Error']; ?>
+                </span>
             </div>
 
             <div class="mb-10">
@@ -27,6 +31,10 @@
                     <div class="position-absolute top-0"></div>
                     <textarea name="badge_desc" class="form-control" aria-label="With textarea" required><?php echo $data['badge']->badge_desc;?></textarea>
                 </div>
+
+                <span class="invalidFeedback">
+                    <?php echo $data['badge_desc_Error']; ?>
+                </span>
             </div>
 
             <div class="mb-10">
@@ -35,10 +43,14 @@
             </div>
 
             <div class="mb-10">
-                <label for="icon_dir" class="form-label">New Icon ( * if any )</label>
+                <label for="image" class="form-label">New Icon ( * if any )</label>
                 <div class="position-relative">
-                    <input type="file" name="icon_dir" class="form-control form-control-solid"/>                  
+                    <input type="file" name="image" class="form-control form-control-solid"/>                  
                 </div>
+
+                <span class="invalidFeedback">
+                    <?php echo $data['icon_dir_Error']; ?>
+                </span>
             </div>
 
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
