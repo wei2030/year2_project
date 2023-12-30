@@ -31,11 +31,11 @@
 
             <div class="mb-10">
                 <label for="existing_icon" class="form-label">Existing Icon</label>
-                <input type="text" name="badge_name" class="form-control form-control-solid" value="<?php echo $data['badge']->icon_dir; ?>" readonly/>
+                <input type="text" name="existing_icon" class="form-control form-control-solid" value="<?php echo $data['badge']->icon_dir; ?>" readonly/>
             </div>
 
             <div class="mb-10">
-                <label for="icon_dir" class="required form-label">New Icon ( * if any )</label>
+                <label for="icon_dir" class="form-label">New Icon ( * if any )</label>
                 <div class="position-relative">
                     <input type="file" name="icon_dir" class="form-control form-control-solid"/>                  
                 </div>
