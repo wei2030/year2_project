@@ -23,13 +23,20 @@
 
         <?php
 
-                    $c_url = URLROOT . "/accounts"; 
+                    $c_url = URLROOT . "/accounts";
+                    $e_url = URLROOT . "/accounts/edit_profile"; 
 
                     //error_reporting(0);
                     if ($url == $c_url) {
                         require 'profile.php';
-                    } else {
-
+                    } else if ($url == $e_url){
+                        if ($_SESSION['user_role'] == "Student")
+                        {
+                            require 'edit_profile.php';
+                        }
+                    } else
+                    {
+                        
                     }
 
                     ?>

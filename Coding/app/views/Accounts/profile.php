@@ -1,3 +1,8 @@
+<?php
+foreach ($data['studentProfile'] as $studentProfile) :
+?>
+<?php endforeach; ?>
+
 <div class="row">
     <!--begin::left side-->
     <div class="col-sm-3 col-lg-2">
@@ -5,45 +10,10 @@
         <div class="card shadow-sm">
         <div class="card-body">
         <!--begin::Image input-->
-            <div class="image-input image-input-empty" data-kt-image-input="true">
+        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')">
             <!--begin::Image preview wrapper-->
-                <div class="image-input-wrapper w-125px h-125px"></div>
+            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')"></div>
             <!--end::Image preview wrapper-->
-
-            <!--begin::Edit button-->
-            <label class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
-                data-kt-image-input-action="change"
-                data-bs-toggle="tooltip"
-                data-bs-dismiss="click"
-                title="Change avatar">
-                <i class="ki-duotone ki-pencil fs-6"><span class="path1"></span><span class="path2"></span></i>
-
-                <!--begin::Inputs-->
-                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                <input type="hidden" name="avatar_remove" />
-                <!--end::Inputs-->
-            </label>
-            <!--end::Edit button-->
-
-            <!--begin::Cancel button-->
-            <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
-            data-kt-image-input-action="cancel"
-            data-bs-toggle="tooltip"
-            data-bs-dismiss="click"
-            title="Cancel avatar">
-                <i class="ki-outline ki-cross fs-3"></i>
-            </span>
-            <!--end::Cancel button-->
-
-            <!--begin::Remove button-->
-            <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
-            data-kt-image-input-action="remove"
-            data-bs-toggle="tooltip"
-            data-bs-dismiss="click"
-            title="Remove avatar">
-                <i class="ki-outline ki-cross fs-3"></i>
-            </span>
-            <!--end::Remove button-->
             </div>
         <!--end::Image input-->
         </div>
@@ -51,33 +21,38 @@
     <!--end::Pfp-->
     <!--begin::info-->
     <div class="card shadow-sm card-px-0">
+    <div class="card-header ml-5">
+                <h4 class="card-title" style="margin-left:20px">My Info</h4>
+                    <div class="card-toolbar">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button" style="margin-right:10px">
+                        Edit
+                        </a>
+                    </div>
+            </div>
     <div class="card-body">
     <div class="flex-column">
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-danger me-5"></span> LIM JING YONG (M)
+                <span class="bullet bullet-vertical bg-danger me-5"></span> <?php echo $studentProfile->st_fullname ?> (<?php echo $studentProfile->st_gender; ?>)
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-warning me-5"></span> DEGREE
+                <span class="bullet bullet-vertical bg-warning me-5"></span> <?php echo $studentProfile->st_race; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-success me-5"></span> UNIVERSITY
+                <span class="bullet bullet-vertical bg-success me-5"></span> <?php echo $studentProfile->univ_code; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-primary me-5"></span> ADDRESS
+                <span class="bullet bullet-vertical bg-primary me-5"></span> <?php echo $studentProfile->st_address; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-info me-5"></span> PHONE
-            </li>
-            <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical me-5"></span> EMAIL
+                <span class="bullet bullet-vertical me-5"></span> <?php echo $_SESSION['email']; ?>
             </li>
     </div>
     </div>
     </div>
     <!--end::info-->
     <!--start::activities-->
-    <div class="card shadow-sm">
-    <div class="card-body">
+    <div class="card shadow-sm card-px-0">
+    <div class="card-body" style="margin-left:14px">
         <a href="#" class="btn btn-flex px-2 hover-scale btn-active-primary">
             <i class="ki-duotone ki-graph-3 fs-2x"><span class="path1"></span><span class="path2"></span></i>
         <span class="d-flex flex-column align-items-start ms-2">
@@ -94,11 +69,11 @@
         <!--start::description-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h3 class="card-title">About Me</h3>
+                <h4 class="card-title">About Me</h4>
                     <div class="card-toolbar">
-                        <button type="button" class="btn btn-sm btn-light">
+                        <a href="<?php echo URLROOT . "/accounts/edit_about"?>" class="btn btn-sm btn-light" role="button">
                         Edit
-                        </button>
+                        </a>
                     </div>
             </div>
             <div class="card-body card-scroll h-110px">
@@ -112,7 +87,7 @@
         <!--start::skill-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h3 class="card-title">Skills</h3>
+                <h4 class="card-title">Skills</h4>
             </div>
             <div class="card-body">
             <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 1" data-bs-content="Description of skill 1">
@@ -141,7 +116,7 @@
         <!--start::badges-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h3 class="card-title">Badges</h3>
+                <h4 class="card-title">Badges</h4>
             </div>
             <div class="card-body">
                 <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Github" data-bs-content="Description of Badge">
