@@ -296,6 +296,12 @@
                     $data['badge_desc_Error'] = "At least change the description!";
 
                 }
+
+                if($data['icon_dir'] == $this->badgeModel->findBadgeById($id)->icon_dir) {
+
+                    $data['icon_dir_Error'] = "At least change the icon!";
+
+                }
                 // End of Check changes
 
 
