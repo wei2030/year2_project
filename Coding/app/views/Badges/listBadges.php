@@ -28,7 +28,8 @@
                 <tbody>
                     <?php foreach($data['badges'] as $badge): ?>
                     <tr>
-                        <td><?php echo $badge->icon_dir; ?></td>
+                        <!-- change to img -->
+                        <td><img src="<?php echo URLROOT ?>/public/assets/media/badges/<?php echo $badge->icon_dir; ?>" alt="Badge icon"></td> 
                         <td><?php echo $badge->badge_name; ?></td>
                         <td><?php echo $badge->badge_desc; ?></td>                      
                         <td>
