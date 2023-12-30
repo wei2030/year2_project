@@ -30,8 +30,13 @@
             </div>
 
             <div class="mb-10">
-                <label for="exampleFormControlInput1" class="required form-label">Icon</label>
-                <input type="text" name="icon_dir" class="form-control form-control-solid" placeholder="Icon directory..." required />
+                <label for="icon_dir" class="required form-label">Icon</label>
+                <div class="position-relative">
+                    <input type="file" name="icon_dir">
+                </div>
+
+                <!-- <label for="exampleFormControlInput1" class="required form-label">Icon</label>
+                <input type="text" name="icon_dir" class="form-control form-control-solid" placeholder="icon_dir..." required /> -->
             </div>
 
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
