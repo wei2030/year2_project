@@ -7,7 +7,6 @@
         <div class="card-toolbar">
             <?php if(isLoggedIn()): ?>
                 <a href="<?php echo URLROOT;?>/badges" class="btn btn-light-primary"><i class="fa fa-home"></i></a>
-                <!-- <a href="<?php echo URLROOT;?>/posts" class="btn btn-light-primary">Manage Posts</a> -->
             <?php endif; ?>
         </div>
 
