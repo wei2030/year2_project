@@ -30,10 +30,12 @@
             </div>
 
             <div class="mb-10">
-                <?php if(isset($_GET['error'])): ?>
-                    <p><?php echo $_GET['error']; ?></p>
-                <?php endif ?>
                 <label for="image" class="required form-label">Icon</label>
+
+                <?php if(isset($_SESSION['error'])): ?>
+                    <p><?php echo $_SESSION['error']; ?></p>
+                <?php endif ?>
+                
                 <div class="position-relative">
                     <input type="file" class="form-control" name="image">
                 </div>
