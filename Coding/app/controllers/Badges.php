@@ -243,11 +243,12 @@
 
                     }
 
-                } else {
+                } 
+                // else {
 
-                    $newIconPath = $_POST['existing_icon'];
+                //     $newIconPath = trim($_POST['existing_icon']);
 
-                }
+                // }
 
                 $data = [
 
@@ -278,7 +279,7 @@
 
                 if(empty($data['icon_dir'])) {
 
-                    $data['icon_dir_Error'] = 'The icon directory of a badge cannot be empty';
+                    $data['icon_dir'] = $this->badgeModel->findBadgeById($id)->icon_dir;
 
                 }
                 // End of Check empty
@@ -293,12 +294,6 @@
                 if($data['badge_desc'] == $this->badgeModel->findBadgeById($id)->badge_desc) {
 
                     $data['badge_desc_Error'] = "At least change the description!";
-
-                }
-
-                if($data['icon_dir'] == $this->badgeModel->findBadgeById($id)->icon_dir) {
-
-                    $data['icon_dir_Error'] = "At least change the icon directory!";
 
                 }
                 // End of Check changes
