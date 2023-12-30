@@ -23,11 +23,11 @@
 
         public function addBadge($data) {
 
-            $this->db->query('INSERT INTO badges (badge_name, badge_desc, icon) VALUES (:badge_name, :badge_desc, :icon)');
+            $this->db->query('INSERT INTO badges (badge_name, badge_desc, icon_dir) VALUES (:badge_name, :badge_desc, :icon_dir)');
         
             $this->db->bind(':badge_name', $data['badge_name']);
             $this->db->bind(':badge_desc', $data['badge_desc']);
-            $this->db->bind(':icon', $data['icon']);
+            $this->db->bind(':icon_dir', $data['icon_dir']);
 
             if ($this->db->execute()) {
 
@@ -54,12 +54,12 @@
 
         public function updateBadge($data) {
 
-            $this->db->query('UPDATE badges SET badge_name = :badge_name, badge_desc = :badge_desc, icon = :icon WHERE badge_id = :id');
+            $this->db->query('UPDATE badges SET badge_name = :badge_name, badge_desc = :badge_desc, icon_dir = :icon_dir WHERE badge_id = :id');
 
             $this->db->bind(':id', $data['badge_id']);
             $this->db->bind(':badge_name', $data['badge_name']);
             $this->db->bind(':badge_desc', $data['badge_desc']);
-            $this->db->bind(':icon', $data['icon']);
+            $this->db->bind(':icon_dir', $data['icon_dir']);
 
             if ($this->db->execute()) {
 
