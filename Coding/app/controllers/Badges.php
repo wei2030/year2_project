@@ -33,7 +33,7 @@
 
                 'badge_name' => '',
                 'badge_desc' => '',
-                'icon' => ''
+                'icon_dir' => ''
 
             ];
 
@@ -46,12 +46,12 @@
                     // 'user_id' => $_SESSION['user_id'],
                     'badge_name' => trim($_POST['badge_name']),
                     'badge_desc' => trim($_POST['badge_desc']),
-                    'icon' => trim($_POST['icon'])
+                    'icicon_diron' => trim($_POST['icon_dir'])
 
                 ];
 
 
-                if ($data['badge_name'] && $data['badge_desc'] && $data['icon']) {
+                if ($data['badge_name'] && $data['badge_desc'] && $data['icon_dir']) {
 
                     if ($this->badgeModel->addBadge($data)) {
 
@@ -95,10 +95,10 @@
                 'badge' => $badge,
                 'badge_name' => '',
                 'badge_desc' => '',
-                'icon' => '',
+                'icon_dir' => '',
                 'badge_name_Error' => '',
                 'badge_desc_Error' => '',
-                'icon_Error' => ''
+                'icon_dir_Error' => ''
 
             ];
 
@@ -112,10 +112,10 @@
                     // 'user_id' => $_SESSION['user_id'],
                     'badge_name' => trim($_POST['badge_name']),
                     'badge_desc' => trim($_POST['badge_desc']),
-                    'icon' => trim($_POST['icon']),
+                    'icon_dir' => trim($_POST['icon_dir']),
                     'badge_name_Error' => '',
                     'badge_desc_Error' => '',
-                    'icon_Error' => ''
+                    'icon_dir_Error' => ''
 
                 ];
 
@@ -132,9 +132,9 @@
 
                 }
 
-                if(empty($data['icon'])) {
+                if(empty($data['icon_dir'])) {
 
-                    $data['icon_Error'] = 'The icon of a badge cannot be empty';
+                    $data['icon_dir_Error'] = 'The icon directory of a badge cannot be empty';
 
                 }
                 // End of Check empty
@@ -152,15 +152,15 @@
 
                 }
 
-                if($data['icon'] == $this->badgeModel->findBadgeById($id)->icon) {
+                if($data['icon_dir'] == $this->badgeModel->findBadgeById($id)->icon_dir) {
 
-                    $data['icon_Error'] = "At least change the icon!";
+                    $data['icon_dir_Error'] = "At least change the icon directory!";
 
                 }
                 // End of Check changes
 
 
-                if (empty($data['badge_name_Error'] && $data['badge_desc_Error'] && $data['icon_Error'])) {
+                if (empty($data['badge_name_Error'] && $data['badge_desc_Error'] && $data['icon_dir_Error'])) {
 
                     if ($this->badgeModel->updateBadge($data)) {
 
@@ -204,10 +204,10 @@
                 'badge' => $badge,
                 'badge_name' => '',
                 'badge_desc' => '',
-                'icon' => '',
+                'icon_dir' => '',
                 'badge_name_Error' => '',
                 'badge_desc_Error' => '',
-                'icon_Error' => ''
+                'icon_dir_Error' => ''
 
             ];
 
