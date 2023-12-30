@@ -174,7 +174,7 @@
 
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-                if(isset($_POST['icon_dir'])) {
+                if(!empty($_FILES['image'])) {
 
                     $filename = $_FILES['image']['name'];
                     $filesize = $_FILES['image']['size'];
@@ -245,7 +245,7 @@
 
                 } else {
 
-                    $newIconPath = $_POST['existing_icon'] . $_FILES['image']['name'];
+                    $newIconPath = $_POST['existing_icon'];
 
                 }
 
