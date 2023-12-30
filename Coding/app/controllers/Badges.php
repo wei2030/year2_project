@@ -52,8 +52,8 @@
                     $maxsize = 5 * 1024 * 1024;
                     if($filesize > $maxsize) {
 
-                        $em = "Sorry, your file is greater than 5Mb";
-                        header("Location: " . URLROOT . "/badges/create.php?error=$em");
+                        $_SESSION['error'] = "Sorry, your file is greater than 5Mb";
+                        header("Location: " . URLROOT . "/badges/create");
 
                     } else {
 
@@ -76,7 +76,9 @@
 
                                 // Create the directory if it doesn't exist
                                 if(!file_exists($uploadDir)) {
+
                                     mkdir($uploadDir, 0755, true);
+
                                 }
 
                                 // Set appropriate permissions on the directory
@@ -92,8 +94,8 @@
     
                         } else {
                             
-                            $em = "Sorry, your file is not supported";
-                            header("Location: " . URLROOT . "/badges/create.php?error=$em");
+                            $_SESSION['error'] = "Sorry, your file is not supported";
+                            header("Location: " . URLROOT . "/badges/create");
 
                         }
 
@@ -101,8 +103,8 @@
 
                 } else {
 
-                    $em = "Unknown error occur";
-                    header("Location: " . URLROOT . "/badges/create.php?error=$em");
+                    $_SESSION['error'] = "Unknown error occur";
+                    header("Location: " . URLROOT . "/badges/create");
 
                 }
 
@@ -158,7 +160,7 @@
                 'badge' => $badge,
                 'badge_name' => '',
                 'badge_desc' => '',
-                'image' => '',
+                'icon_dir' => '',
                 'badge_name_Error' => '',
                 'badge_desc_Error' => '',
                 'icon_dir_Error' => ''
