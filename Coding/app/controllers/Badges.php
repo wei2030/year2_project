@@ -114,6 +114,7 @@
                     'badge_name' => trim($_POST['badge_name']),
                     'badge_desc' => trim($_POST['badge_desc']),
                     'icon_dir' => $newIconPath
+
                 ];
 
                 if ($data['badge_name'] && $data['badge_desc'] && $data['icon_dir']) {
@@ -172,6 +173,82 @@
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+                if(isset($_POST['icon_dir'])) {
+
+                    $filename = $_FILES['image']['name'];
+                    $filesize = $_FILES['image']['size'];
+                    $tempname = $_FILES['image']['tmp_name'];
+                    $error = $_FILES['image']['error'];
+
+                    if($error === 0) {
+
+                        // check filesize
+                        $maxsize = 5 * 1024 * 1024;
+                        if($filesize > $maxsize) {
+
+                            $_SESSION['error'] = "Sorry, your file is greater than 5Mb";
+                            header("Location: " . URLROOT . "/badges/update");
+
+                        } else {
+
+                            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                            $ext_lc = strtolower($ext);
+
+                            $allowed = array("jpg", "jpeg", "png");
+
+                            if(in_array($ext_lc, $allowed)) {
+
+                                $uploadDir = 'assets/media/badges/';
+                                $newIconPath = $uploadDir . basename($filename);
+
+                                // exit if file already existed
+                                if(file_exists($newIconPath)) {
+
+                                    echo $filename . " is already exists.";
+
+                                } else {
+
+                                    // Create the directory if it doesn't exist
+                                    if(!file_exists($uploadDir)) {
+
+                                        mkdir($uploadDir, 0755, true);
+
+                                    }
+
+                                    // Set appropriate permissions on the directory
+                                    chmod($uploadDir, 0755);
+
+                                    // $filenameNew = uniqid('', true) . "." . $ext_lc;
+
+                                    $uploadDir .= "/" . $filename;
+
+                                    move_uploaded_file($tempname, $uploadDir);
+
+                                }
+        
+                            } else {
+                                
+                                $_SESSION['error'] = "Sorry, your file is not supported";
+                                header("Location: " . URLROOT . "/badges/update");
+
+                            }
+
+                        }
+
+                    } else {
+
+                        $_SESSION['error'] = "Unknown error occur";
+                        header("Location: " . URLROOT . "/badges/update");
+
+                    }
+
+                } else {
+
+                    $newIconPath = $_POST['existing_icon'] . $_FILES['image']['name'];
+
+                }
+
                 $data = [
 
                     'badge_id' => $id,
@@ -179,7 +256,7 @@
                     // 'user_id' => $_SESSION['user_id'],
                     'badge_name' => trim($_POST['badge_name']),
                     'badge_desc' => trim($_POST['badge_desc']),
-                    'icon_dir' => trim($_POST['icon_dir']),
+                    'icon_dir' => $newIconPath,
                     'badge_name_Error' => '',
                     'badge_desc_Error' => '',
                     'icon_dir_Error' => ''
