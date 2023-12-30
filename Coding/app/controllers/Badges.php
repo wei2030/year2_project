@@ -46,10 +46,9 @@
                     // 'user_id' => $_SESSION['user_id'],
                     'badge_name' => trim($_POST['badge_name']),
                     'badge_desc' => trim($_POST['badge_desc']),
-                    'icicon_diron' => trim($_POST['icon_dir'])
+                    'icon_dir' => trim($_POST['icon_dir']),
 
                 ];
-
 
                 if ($data['badge_name'] && $data['badge_desc'] && $data['icon_dir']) {
 
