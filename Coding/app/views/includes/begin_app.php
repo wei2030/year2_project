@@ -53,6 +53,7 @@
                                 <!--begin::Logo image-->
                                 <a href="index.html">
                                     <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/YV logo.png" class="h-40px app-sidebar-logo-default" />
+                                    <img alt="Logo" src="https://www.youthventures.asia/content/images/size/w256h256/2022/12/64B429D8-8375-45DE-9164-AE4E9618A879.png" class= "h-40px w-40px app-sidebar-logo-minimize" />
                                 </a>
                                 <!--end::Logo image-->
                                 <!--begin::Sidebar toggle-->
