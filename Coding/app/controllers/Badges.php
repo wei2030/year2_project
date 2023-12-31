@@ -188,7 +188,7 @@
                         if($filesize > $maxsize) {
 
                             $_SESSION['error'] = "Sorry, your file is greater than 5Mb";
-                            header("Location: " . URLROOT . "/badges/update");
+                            header("Location: " . URLROOT . "/badges/update/" . $data['badge']->badge_id);
 
                         } else {
 
@@ -230,18 +230,19 @@
                             } else {
                                 
                                 $_SESSION['error'] = "Sorry, your file is not supported";
-                                header("Location: " . URLROOT . "/badges/update");
+                                header("Location: " . URLROOT . "/badges/update/" . $data['badge']->badge_id);
 
                             }
 
                         }
 
-                    } else {
+                    } 
+                    // else {
 
-                        $_SESSION['error'] = "Unknown error occur";
-                        header("Location: " . URLROOT . "/badges/update");
+                    //     $_SESSION['error'] = "Error uploading file";
+                    //     header("Location: " . URLROOT . "/badges/update/" . $data['badge']->badge_id);
 
-                    }
+                    // }
 
                 } 
                 // else {
@@ -308,6 +309,8 @@
                 if (empty($data['badge_name_Error'] && $data['badge_desc_Error'] && $data['icon_dir_Error'])) {
 
                     if ($this->badgeModel->updateBadge($data)) {
+
+                        $_SESSION['error'] = "";
 
                         header("Location: " . URLROOT. "/badges" );
 
