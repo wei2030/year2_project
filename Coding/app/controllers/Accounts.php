@@ -96,7 +96,8 @@ class Accounts extends Controller
                         'st_race' => trim($_POST['st_race']),
                         'univ_code' => trim($_POST['univ_code']),
                         'st_address' => trim($_POST['st_address']),
-                        'st_image' => $location
+                        'st_image' => $location,
+                        'about_me' => trim($_POST['about_me'])
     
                     ];
 
@@ -111,6 +112,7 @@ class Accounts extends Controller
                         'st_race' => trim($_POST['st_race']),
                         'univ_code' => trim($_POST['univ_code']),
                         'st_address' => trim($_POST['st_address']),
+                        'about_me' => trim($_POST['about_me'])
                
                     ];
                 }

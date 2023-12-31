@@ -136,7 +136,7 @@
 											<div class="menu-content d-flex align-items-center px-3">
 												<!--begin::Avatar-->
 												<div class="symbol symbol-50px me-5">
-													<img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/avatars/300-3.jpg"/>
+
 												</div>
 												<!--end::Avatar-->
 												<!--begin::Username-->

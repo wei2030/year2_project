@@ -71,7 +71,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
             <div class="card-header">
                 <h4 class="card-title">About Me</h4>
                     <div class="card-toolbar">
-                        <a href="<?php echo URLROOT . "/accounts/edit_about"?>" class="btn btn-sm btn-light" role="button">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button">
                         Edit
                         </a>
                     </div>
