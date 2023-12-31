@@ -19,7 +19,7 @@
                             <!--begin::Mobile logo-->
                             <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                                 <a href="index.html" class="d-lg-none">
-                                    <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/default-small.svg" class="h-30px" />
+                                    <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/YV logo.png" class="h-40px" />
                                 </a>
                             </div>
                             <!--end::Mobile logo-->
@@ -52,8 +52,7 @@
                             <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                                 <!--begin::Logo image-->
                                 <a href="index.html">
-                                    <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
-                                    <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
+                                    <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/YV logo.png" class="h-40px app-sidebar-logo-default" />
                                 </a>
                                 <!--end::Logo image-->
                                 <!--begin::Sidebar toggle-->

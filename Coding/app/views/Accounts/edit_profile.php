@@ -97,6 +97,14 @@
             </div>
         </div>
 
+        <!-- About Me Section -->
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">About me</label>
+            <div class="col-lg-8">
+                <textarea class="form-control form-control-solid" name="about_me" rows="3" required><?php echo $studentProfile->about_me ?></textarea>
+            </div>
+        </div>
+
         <!-- Submit Button -->
         <div class="card-footer d-flex justify-content-end py-6 px-9">
             <input type="hidden" id="update_student" name="update_student" value="update_student">
