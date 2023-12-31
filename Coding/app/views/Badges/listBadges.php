@@ -62,7 +62,7 @@
                                         <div class="modal-footer">
                                             <form action="<?php echo URLROOT . "/badges/delete/" . $badge->badge_id; ?>" method="POST">
                                                 <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-light-primary font-weight-bold" data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
                                             </form>
                                         </div>
