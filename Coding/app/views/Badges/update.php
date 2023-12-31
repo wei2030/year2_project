@@ -16,7 +16,7 @@
 
         <form action="<?php echo URLROOT; ?>/badges/update/<?php echo $data['badge']->badge_id ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-10">
-                <label for="badge_name" class="required form-label">Badge Name</label>
+                <label for="badge_name" class="form-label">Badge Name</label>
                 <input type="text" name="badge_name" class="form-control form-control-solid" value="<?php echo $data['badge']->badge_name ?>" required />
 
                 <span class="invalidFeedback">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="mb-10">
-                <label for="badge_desc" class="required form-label">Badge Description</label>
+                <label for="badge_desc" class="form-label">Badge Description</label>
                 <div class="position-relative">
                     <div class="position-absolute top-0"></div>
                     <textarea name="badge_desc" class="form-control" aria-label="With textarea" required><?php echo $data['badge']->badge_desc;?></textarea>
@@ -43,6 +43,11 @@
 
             <div class="mb-10">
                 <label for="image" class="form-label">New Icon ( * if any )</label>
+
+                <?php if(isset($_SESSION['error']) && ($_SESSION['error'] != "")): ?>
+                    <p><?php echo $_SESSION['error']; ?></p>
+                <?php endif ?>
+                
                 <div class="position-relative">
                     <input type="file" name="image" class="form-control form-control-solid"/>                  
                 </div>
