@@ -34,7 +34,7 @@
                                 class="btn btn-light-warning">Update</a>
 
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#kt<?php echo $activities->id?>">
+                                data-bs-target="#kt<?php echo $activities->ac_id?>">
                                 Delete
                             </button>
 
@@ -42,7 +42,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h3 class="modal-title">Modal title</h3>
+                                            <h3 class="modal-title">Delete</h3>
 
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
@@ -54,7 +54,7 @@
                                         </div>
 
                                         <div class="modal-body">
-                                            Are you sure want to delete this transaction?
+                                            Are you sure want to delete this activity?
                                         </div>
 
                                         <div class="modal-footer">
