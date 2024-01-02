@@ -38,6 +38,20 @@
 										</div>
 										<!--end:Menu item (Badge)-->
 
+										<!--begin:Menu item (Skill)-->
+										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+											<!--begin:Menu item-->
+											<div class="menu-item">
+													<!--begin:Menu link-->
+													<a class="menu-link" href="<?php echo URLROOT; ?>/skills">														
+														<span class="menu-title">Skill</span>
+													</a>
+													<!--end:Menu link-->
+												</div>
+											<!--end:Menu item-->								
+										</div>
+										<!--end:Menu item (Skill)-->
+
 
 
 
