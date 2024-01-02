@@ -13,7 +13,7 @@ class Accounts extends Controller
                 'studentProfile' => $studentProfile
             ];
         }
-        else if 
+        else if ($_SESSION['user_role'] == "Lecturer") 
         {
             $lecturerProfile = $this->accountModel->lecturerProfile();
 
