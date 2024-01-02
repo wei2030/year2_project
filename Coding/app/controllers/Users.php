@@ -27,6 +27,7 @@ class Users extends Controller {
             'fullNameError' => '',
             'emailError' => '',
             'icNoError' => '',
+            'image' => '',
         ];
     
         // Check if the form is submitted
@@ -45,9 +46,7 @@ class Users extends Controller {
                 'icNo' => trim($_POST['icNo']),
                 'address' => trim($_POST['address']),
                 'university' => trim($_POST['university']),
-                'course' => trim($_POST['course']),
                 'race' => trim($_POST['race']),
-                'martialStatus' => trim($_POST['martialStatus']),
                 'confirmPassword' => trim($_POST['confirmPassword']),
                 'usernameError' => '',
                 'passwordError' => '',
@@ -55,6 +54,7 @@ class Users extends Controller {
                 'fullNameError' => '',
                 'emailError' => '',
                 'icNoError' => '',
+                'image' => '',
             ];
 
             // Validate username
@@ -70,7 +70,7 @@ class Users extends Controller {
             // Validate fullName
             if (empty($data['fullName'])) {
                 $data['fullNameError'] = 'Please enter your full name.';
-            } else if ($this->userModel->findUserByFullName($data['fullName'])) {
+            } else if ($this->userModel->findUserByFullName($data['fullName'], $data['role'])) {
                 $data['fullNameError'] = 'Full name is already taken.';
             } else if (!preg_match("/^[a-zA-Z ]*$/", $data['fullName'])) {
                 $data['fullNameError'] = 'Please enter a valid full name.';
@@ -98,7 +98,7 @@ class Users extends Controller {
                 $data['confirmPasswordError'] = 'Please confirm password.';
             } else {
                 $confirmPassword = trim($_POST['confirmPassword']);
-                $data['confirmPassword'] = $confirmPassword; // Add this line
+                $data['confirmPassword'] = $confirmPassword; 
                 if (!$this->passwordsMatch($data['password'], $confirmPassword)) {
                     $data['confirmPasswordError'] = 'Passwords do not match, please try again.';
                 }
@@ -108,7 +108,7 @@ class Users extends Controller {
                         // Validate icNo
                         if (empty($data['icNo'])) {
                             $data['icNoError'] = 'Please enter your IC number.';
-                        } elseif ($this->userModel->findUserByIcNo($data['icNo'])) {
+                        } elseif ($this->userModel->findUserByIcNo($data['icNo'], $data['role'])) {
                             $data['icNoError'] = 'IC number is already taken.';
                         } elseif (!preg_match("/^[0-9]{6}-[0-9]{2}-[0-9]{4}$/", $data['icNo']) || strlen(str_replace("-", "", $data['icNo'])) !== 12) {
                             $data['icNoError'] = 'Please enter a valid IC number.';
@@ -117,21 +117,29 @@ class Users extends Controller {
     
             // If there are no validation errors, proceed to registration
             if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError']) && empty($data['icNoError'])) {
-                // Hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                //hash password
+               $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
     
-                // Register user from model function
-                if ($this->userModel->register($data)) {
-                    // Redirect to the login page
-                    header('location: ' . URLROOT . '/users/login');
-                    exit;
-                } else {
-                    die('Something went wrong.'); // You might want to handle this more gracefully, e.g., log the error.
+                if ($data['role'] == "Lecturer") {
+                    if ($this->userModel->registerLecturer($data)) {
+                        header('location: ' . URLROOT . '/users/login');
+                        exit;
+                    } else {
+                        header('location: ' . URLROOT . '/users/login');
+                    }
+                } else if ($data['role'] == "Student") {
+                    if ($this->userModel->registerStudent($data)) {
+                        header('location: ' . URLROOT . '/users/login');
+                        exit;
+                    } else {
+                        header('location: ' . URLROOT . '/users/login');
+                    }
                 }
+            } else {
+                $this->view('users/register', $data);
             }
         }
     
-        // Load the view with the data
         $this->view('users/register', $data);
     }
 
@@ -151,49 +159,44 @@ class Users extends Controller {
             'usernameError' => '',
             'passwordError' => ''
         ];
-
-        //Check for post
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //Sanitize post data
+    
+        // Check for post
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+    
             $data = [
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
                 'usernameError' => '',
                 'passwordError' => '',
             ];
-            //Validate username
+    
+            // Validate username
             if (empty($data['username'])) {
                 $data['usernameError'] = 'Please enter a username.';
             }
-
-            //Validate password
+    
+            // Validate password
             if (empty($data['password'])) {
                 $data['passwordError'] = 'Please enter a password.';
             }
-
-            //Check if all errors are empty
+    
+            // Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['username'], $data['password']);
-
+                var_dump($loggedInUser);
                 if ($loggedInUser) {
+                    // If the login is successful, redirect to the home page or some other page
                     $this->createUserSession($loggedInUser);
                 } else {
                     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
-
-                    $this->view('users/login', $data);
+                    // Log the entered username and password
+                    error_log("Entered Username: {$data['username']}, Entered Password: {$data['password']}");
                 }
             }
-
-        } else {
-            $data = [
-                'username' => '',
-                'password' => '',
-                'usernameError' => '',
-                'passwordError' => ''
-            ];
         }
+    
         $this->view('users/login', $data);
     }
 
