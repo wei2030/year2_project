@@ -45,8 +45,8 @@
 
     .login-box {
       background: linear-gradient(#7C1C2B, #9c485d);
-      width: 80%;
-      max-width: 400px;
+      width: 100%;
+      max-width: 600px;
       border-radius: 5%;
       box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.235);
       padding: 20px;
@@ -160,13 +160,15 @@
     }
 
     .logo {
-      width: 70%;
-      max-width: 200px;
-      margin-bottom: 10px;
-      position: relative;
-      top: 10px;
-      left: 70px;
-    }
+  width: 70%;
+  max-width: 200px;
+  margin-bottom: 10px;
+  position: relative;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
     ::placeholder {
       font-size: 12px;
@@ -216,9 +218,9 @@
             <div class="user-box">
               <label for="role">I am:</label>
               <div class="radio-group">
-                <input class="radio-input" type="radio" name="role" value="0" id="lecturer">
+                <input class="radio-input" type="radio" name="role" value="Lecturer" id="lecturer">
                 <label for="lecturer" class="radio-label">Lecturer</label>
-                <input class="radio-input" type="radio" name="role" value="1" id="student">
+                <input class="radio-input" type="radio" name="role" value="Student" id="student">
                 <label for="student" class="radio-label">Student</label>
               </div>
             </div>
@@ -282,11 +284,6 @@
             </div>
 
             <div class="user-box">
-              <label for="course">Course:</label>
-              <input class="input" type="text" id="course" name="course" placeholder="Enter your course" required="required" />
-            </div>
-
-            <div class="user-box">
               <label for="email">Email:</label>
               <input class="input" type="email" id="email" name="email" placeholder="Enter your email" required="required" />
               <span class="error-message"><?php echo $data['emailError']; ?></span>
@@ -295,11 +292,6 @@
             <div class="user-box">
               <label for="race">Race:</label>
               <input class="input" type="text" id="race" name="race" placeholder="Enter your race" required="required" />
-            </div>
-
-            <div class="user-box">
-              <label for="martialStatus">Martial Status:</label>
-              <input class="input" type="text" id="martialStatus" name="martialStatus" placeholder="Enter your martial status" required="required" />
             </div>
 
           </div>
