@@ -29,7 +29,7 @@
                     <?php foreach($data['skills'] as $skill): ?>
                     <tr>
                         <!-- change to img -->
-                        <td><img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $badge->skill_dir; ?>" alt="Skill icon"></td> 
+                        <td><img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $skill->skill_dir; ?>" alt="Skill icon"></td> 
                         <td><?php echo $skill->skill_name; ?></td>
                         <td><?php echo $skill->skill_desc; ?></td>                      
                         <td>
