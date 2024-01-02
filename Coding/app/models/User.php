@@ -116,18 +116,30 @@ class User {
             return $this->db->rowCount(); // Returns 1 if user exists, 0 if not
         }
     
-        public function findUserByICNo($icNo) {
-            $this->db->query('SELECT * FROM users WHERE icNo = :icNo');
-            $this->db->bind(':icNo', $icNo);
-            $this->db->execute();
-    
-            return $this->db->rowCount(); // Returns 1 if user exists, 0 if not
+        public function findUserByICNo($icNo, $role) {
+            if ($role == "Lecturer") {
+                $this->db->query('SELECT * FROM lc_profile WHERE lc_ic = :icNo');
+                $this->db->bind(':icNo', $icNo);
+                $this->db->execute();
+            } else if ($role == "Student") {
+                $this->db->query('SELECT * FROM st_profile WHERE st_ic = :icNo');
+                $this->db->bind(':icNo', $icNo);
+                $this->db->execute();
+            }
+        
+                return $this->db->rowCount(); // Returns 1 if user exists, 0 if not
         }
     
-        public function findUserByFullName($fullName) {
-            $this->db->query('SELECT * FROM users WHERE fullName = :fullName');
+        public function findUserByFullName($fullName, $role) {
+          if ($role == "Lecturer") {
+            $this->db->query('SELECT * FROM lc_profile WHERE lc_fullname = :fullName');
             $this->db->bind(':fullName', $fullName);
             $this->db->execute();
+          } else if ($role == "Student") {
+            $this->db->query('SELECT * FROM st_profile WHERE st_fullname = :fullName');
+            $this->db->bind(':fullName', $fullName);
+            $this->db->execute();
+          }
     
             return $this->db->rowCount(); // Returns 1 if user exists, 0 if not
         }
