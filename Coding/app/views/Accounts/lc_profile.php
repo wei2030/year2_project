@@ -1,5 +1,5 @@
 <?php
-foreach ($data['studentProfile'] as $studentProfile) :
+foreach ($data['lecturerProfile'] as $lecturerProfile) :
 ?>
 <?php endforeach; ?>
 
@@ -10,9 +10,9 @@ foreach ($data['studentProfile'] as $studentProfile) :
         <div class="card shadow-sm">
         <div class="card-body">
         <!--begin::Image input-->
-        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')">
+        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$lecturerProfile->st_image; ?>')">
             <!--begin::Image preview wrapper-->
-            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')"></div>
+            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('<?php echo URLROOT."/public/".$lecturerProfile->st_image; ?>')"></div>
             <!--end::Image preview wrapper-->
             </div>
         <!--end::Image input-->
@@ -32,16 +32,16 @@ foreach ($data['studentProfile'] as $studentProfile) :
     <div class="card-body">
     <div class="flex-column">
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-danger me-5"></span> <?php echo $studentProfile->st_fullname ?> (<?php echo $studentProfile->st_gender; ?>)
+                <span class="bullet bullet-vertical bg-danger me-5"></span> <?php echo $lecturerProfile->st_fullname ?> (<?php echo $lecturerProfile->st_gender; ?>)
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-warning me-5"></span> <?php echo $studentProfile->st_race; ?>
+                <span class="bullet bullet-vertical bg-warning me-5"></span> <?php echo $lecturerProfile->st_race; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-success me-5"></span> <?php echo $studentProfile->univ_code; ?>
+                <span class="bullet bullet-vertical bg-success me-5"></span> <?php echo $lecturerProfile->univ_code; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical bg-primary me-5"></span> <?php echo $studentProfile->st_address; ?>
+                <span class="bullet bullet-vertical bg-primary me-5"></span> <?php echo $lecturerProfile->st_address; ?>
             </li>
             <li class="d-flex align-items-center py-2">
                 <span class="bullet bullet-vertical me-5"></span> <?php echo $_SESSION['email']; ?>
@@ -77,7 +77,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
                     </div>
             </div>
             <div class="card-body card-scroll h-110px">
-                <?php echo $studentProfile->about_me; ?>
+                <?php echo $lecturerProfile->about_me; ?>
             </div>
         </div>
         <!--end::description-->
