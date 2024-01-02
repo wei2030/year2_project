@@ -233,7 +233,7 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Content-->
                 <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
                     <!--begin::Logo-->
-                    <a href="index.html" class="mb-0 mb-lg-12">
+                    <a href="<?php echo URLROOT ?>pages/index" class="mb-0 mb-lg-12">
                         <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/custom-1.png" class="h-60px h-lg-75px" />
                     </a>
                     <!--end::Logo-->

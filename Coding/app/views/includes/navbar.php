@@ -1,7 +1,3 @@
-<?php
-foreach ($data['studentProfile'] as $studentProfile) :
-?>
-<?php endforeach; ?>
 <div class="app-navbar flex-shrink-0">
 								<!--begin::Search-->
 							
@@ -131,8 +127,8 @@ foreach ($data['studentProfile'] as $studentProfile) :
 								<div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
 									<!--begin::Menu wrapper-->
 									<div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-									<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')">
-												<div class="image-input-wrapper w-35px h-35px" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')"></div>
+									<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$_SESSION['user_pfp']; ?>')">
+												<div class="image-input-wrapper w-35px h-35px" style="background-image: url('<?php echo URLROOT."/public/".$_SESSION['user_pfp']; ?>')"></div>
 												</div>
 									</div>
 									<!--begin::User account menu-->
@@ -142,8 +138,8 @@ foreach ($data['studentProfile'] as $studentProfile) :
 											<div class="menu-content d-flex align-items-center px-3">
 												<!--begin::Avatar-->
 												<div class="symbol symbol-50px me-5">
-												<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')">
-												<div class="image-input-wrapper w-50px h-50px" style="background-image: url('<?php echo URLROOT."/public/".$studentProfile->st_image; ?>')"></div>
+												<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('<?php echo URLROOT."/public/".$_SESSION['user_pfp']; ?>')">
+												<div class="image-input-wrapper w-50px h-50px" style="background-image: url('<?php echo URLROOT."/public/".$_SESSION['user_pfp']; ?>')"></div>
 												</div>
 												</div>
 												<!--end::Avatar-->
@@ -174,7 +170,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item px-5">
-											<a href="<?php echo URLROOT; ?>/account/resume" class="menu-link px-5">My Resume</a>
+											<a href="<?php echo URLROOT; ?>/accounts/resume" class="menu-link px-5">My Resume</a>
 										</div>
 										<!--end::Menu item-->
 										<!--begin::Menu separator-->

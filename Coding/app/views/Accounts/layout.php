@@ -24,17 +24,45 @@
         <?php
 
                     $c_url = URLROOT . "/accounts";
-                    $e_url = URLROOT . "/accounts/edit_profile"; 
+                    $e_url = URLROOT . "/accounts/edit_profile";
+                    
+                    if ($_SESSION['user_role'] == "Student")
+                        {
+                            foreach ($data['studentProfile'] as $studentProfile) :
+                            $_SESSION['user_pfp'] = $studentProfile->st_image;
+                            endforeach;
+                        }
+                    if ($_SESSION['user_role'] == "Student")
+                        {
+                            foreach ($data['studentProfile'] as $studentProfile) :
+                            $_SESSION['user_pfp'] = $studentProfile->st_image;
+                            endforeach;
+                        }
 
                     //error_reporting(0);
-                    if ($url == $c_url) {
-                        require 'profile.php';
-                    } else if ($url == $e_url){
+                    if ($url == $c_url)
+                    {
                         if ($_SESSION['user_role'] == "Student")
                         {
-                            require 'edit_profile.php';
+                            require 'st_profile.php';
                         }
-                    } else
+                        else if ($_SESSION['user_role'] == "Lecturer")
+                        {
+                            require 'lc_profile.php';
+                        }
+                    } 
+                    else if ($url == $e_url)
+                    {
+                        if ($_SESSION['user_role'] == "Student")
+                        {
+                        require 'st_edit_profile.php';
+                        }
+                        else if ($_SESSION['user_role'] == "Lecturer")
+                        {
+                            require 'lc_edit_profile.php';
+                        }
+                    }
+                    else
                     {
                         
                     }

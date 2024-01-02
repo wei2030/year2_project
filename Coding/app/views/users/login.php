@@ -9,7 +9,7 @@
     <base href="../../../" />
     <title>Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes</title>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="https://media.licdn.com/dms/image/C4E0BAQF2uYlKl-qeWQ/company-logo_200_200/0/1622008554055?e=1707350400&v=beta&t=ljEkj7YeEBqF_4AKIpuJPg5OSeibHO_Vgj6ubG1Z2fw" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -132,7 +132,7 @@
                 <!--begin::Content-->
                 <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
                     <!--begin::Logo-->
-                    <a href="index.html" class="mb-0 mb-lg-12">
+                    <a href="<?php echo URLROOT ?>pages/index" class="mb-0 mb-lg-12">
                         <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/YV logo.png" class="h-60px h-lg-75px" />
                     </a>
                     <!--end::Logo-->

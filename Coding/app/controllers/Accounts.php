@@ -5,11 +5,13 @@ class Accounts extends Controller
     {
         $this->accountModel = $this->model('Account');
 
+        if ($_SESSION['user_role'] == "Student") {
         $studentProfile = $this->accountModel->studentProfile();
 
         $data = [
             'studentProfile' => $studentProfile
         ];
+        }
 
         $this->view('accounts/index', $data);
     }
@@ -19,7 +21,7 @@ class Accounts extends Controller
         $this->view('accounts/index');
     }
 
-    public function edit_profile()
+    public function st_edit_profile()
     {
 
         //check for post from form

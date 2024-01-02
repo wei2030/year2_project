@@ -8,7 +8,7 @@
 	<head>
 		<title>YouthVenture System</title>
 		<meta charset="utf-8" />
-		<link rel="shortcut icon" href="https://www.youthventures.asia/content/images/size/w256h256/2022/12/64B429D8-8375-45DE-9164-AE4E9618A879.png"/>
+		<link rel="shortcut icon" href="https://media.licdn.com/dms/image/C4E0BAQF2uYlKl-qeWQ/company-logo_200_200/0/1622008554055?e=1707350400&v=beta&t=ljEkj7YeEBqF_4AKIpuJPg5OSeibHO_Vgj6ubG1Z2fw"/>
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
