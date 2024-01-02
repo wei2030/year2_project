@@ -63,76 +63,60 @@ public function create()
     public function update($ac_id)
     {
         $activities = $this->activityModel->findActivityById($ac_id);
-
-        if(!isLoggedIn()) {
+    
+        if (!isLoggedIn()) {
             header("Location: " . URLROOT . "/activity");
-        }
-        elseif($activities->user_id != $_SESSION['user_id'])
-        {
+            exit();
+        } elseif ($activities->user_id != $_SESSION['user_id']) {
             header("Location: " . URLROOT . "/activity");
-
+            exit();
         }
-
-        $data = 
-        [
+    
+        $data = [
             'activities' => $activities,
-            'title' => '',
+            'name' => '',
             'venue' => '',
+            'desc' => '',
             'nameError' => '',
             'venueError' => '',
-            'u_url' => URLROOT . "/activity/update/".$ac_id
+            'u_url' => URLROOT . "/activity/update/" . $ac_id
         ];
-
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $data = 
-            [
-            'ac_id' => $ac_id,
-            'post' => $activities,
-            'user_id' => $_SESSION['user_id'],
-            'name' => trim($_POST['name']),
-            'venue' => trim($_POST['venue']),
-            'nameError' => '',
-            'venueError' => ''
-            ];
-
-            if(empty($data['name'])){
+            $data['name'] = trim($_POST['name']);
+            $data['venue'] = trim($_POST['venue']);
+            $data['desc'] = trim($_POST['desc']);
+    
+            if (empty($data['name'])) {
                 $data['nameError'] = 'The title of a post cannot be empty';
             }
-
-            if(empty($data['venue'])){
+    
+            if (empty($data['venue'])) {
                 $data['venueError'] = 'The body of a post cannot be empty';
             }
-
-            if($data['name'] == $this->activityModel->findActivityById($ac_id)->name)
-{
-    $data['nameError'] = "At least change the name!";
-}
-
-if($data['venue'] == $this->activityModel->findActivityById($ac_id)->venue)
-{
-    $data['venueError'] = "At least change the venue!";
-}
-
-
-
-            if (empty($data['nameError'] && $data['venueError'])){
-                if ($this->activityModel->updateActivity($data)){
-                    header("Location: " . URLROOT. "/activity" );
-                }
-                else
-                {
+    
+            if ($data['name'] == $activities->name) {
+                $data['nameError'] = "At least change the name!";
+            }
+    
+            if ($data['venue'] == $activities->venue) {
+                $data['venueError'] = "At least change the venue!";
+            }
+    
+            if (empty($data['nameError']) && empty($data['venueError'])) {
+                if ($this->activityModel->updateActivity($ac_id, $data)) {
+                    header("Location: " . URLROOT . "/activity");
+                    exit();
+                } else {
                     die("Something went wrong :(");
                 }
             }
-            else
-            {
-                $this->view('activity/index', $data);
-            }
         }
-
+    
         $this->view('activity/index', $data);
     }
+    
 
 
     public function delete($ac_id)

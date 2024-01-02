@@ -5,36 +5,32 @@
             <?php if(isLoggedIn()): ?>
            
             <?php endif; ?>
-        </div>
+            </div>
     </div>
     <div class="card-body">
-        <form action="<?php echo URLROOT; ?>/activity/update/<?php echo $data['activities']->ac_id ?>" method="POST">
+        <form action="<?php echo $data['u_url']; ?>" method="POST">
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Name</label>
                 <input type="text" name="name" class="form-control form-control-solid"
-                    value="<?php echo $data['activities']->name ?>" required />
+                    value="<?php echo $data['name'] !== '' ? $data['name'] : $data['activities']->name; ?>" required />
             </div>
 
             <div class="mb-10">
-            <label for="exampleFormControlInput1" class="required form-label">Venue of Activity</label>
+                <label for="exampleFormControlInput1" class="required form-label">Venue of Activity</label>
                 <input type="text" name="venue" class="form-control form-control-solid"
-                     value ="<?php echo $data['activities']->venue;?>">
-                </div>
+                    value="<?php echo $data['venue'] !== '' ? $data['venue'] : $data['activities']->venue; ?>">
             </div>
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="form-label">Description</label>
                 <div class="position-relative">
                     <div class="required position-absolute top-0"></div>
-                    <input type="text" name="desc" required textarea name="body" class="form-control" aria-label="With textarea" required value ="<?php echo $data['activities']->desc;?>"></textarea>
+                    <textarea name="desc" class="form-control" required aria-label="With textarea"><?php echo $data['desc'] !== '' ? $data['desc'] : $data['activities']->desc; ?></textarea>
                 </div>
             </div>
 
-
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
-
         </form>
-
     </div>
     <div class="card-footer">
         Footer

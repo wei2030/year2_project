@@ -29,22 +29,18 @@ class Activities
         return $row;
     }
 
-    public function updateActivity($data)
-{
-    $this->db->query('UPDATE activity SET name = :name, venue = :venue, `desc` = :desc WHERE ac_id = :ac_id');
-
-    $this->db->bind(':ac_id', $data['ac_id']);
-    $this->db->bind(':name', $data['name']);
-    $this->db->bind(':venue', $data['venue']);
-
-    // Check if the "desc" key is present before binding
-    if (array_key_exists('desc', $data)) {
+    public function updateActivity($ac_id, $data)
+    {
+        $this->db->query('UPDATE activity SET name = :name, venue = :venue, `desc` = :desc WHERE ac_id = :ac_id');
+    
+        $this->db->bind(':ac_id', $ac_id);
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':venue', $data['venue']);
         $this->db->bind(':desc', $data['desc']);
-    }
-
-    // Execute the query and handle the result (if needed)
-    $this->db->execute();
-}
+    
+        // Execute the query and handle the result (if needed)
+        return $this->db->execute();
+    }    
 
     
 
