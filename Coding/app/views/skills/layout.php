@@ -26,7 +26,7 @@
                     $t_url = URLROOT . "/skills/create";
 
                     if (isset($data['skill']) && is_object($data['skill'])) {
-                        $u_url = URLROOT . "/skills/update/".$data['skill']->badge_id; 
+                        $u_url = URLROOT . "/skills/update/".$data['skill']->skill_id; 
                     }
 
                     //error_reporting(0);
