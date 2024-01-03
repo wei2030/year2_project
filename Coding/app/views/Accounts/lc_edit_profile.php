@@ -34,7 +34,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Full Name</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="st_fullname" type="text" required value="<?php echo $lecturerProfile->st_fullname; ?>" />
+                <input class="form-control form-control-lg form-control-solid" name="lc_fullname" type="text" required value="<?php echo $lecturerProfile->lc_fullname; ?>" />
             </div>
         </div>
 
@@ -42,7 +42,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">IC Number</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="st_ic" type="text" required value="<?php echo $lecturerProfile->st_ic; ?>" />
+                <input class="form-control form-control-lg form-control-solid" name="lc_ic" type="text" required value="<?php echo $lecturerProfile->lc_ic; ?>" />
             </div>
         </div>
 
@@ -50,7 +50,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Email Address</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="st_email" type="text" readonly value="<?php echo $lecturerProfile->st_email; ?>" />
+                <input class="form-control form-control-lg form-control-solid" name="lc_email" type="text" readonly value="<?php echo $lecturerProfile->lc_email; ?>" />
             </div>
         </div>
 
@@ -58,8 +58,8 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Gender</label>
             <div class="col-lg-8">
-                <select class="form-select form-select-solid form-select-lg" name="st_gender">
-                    <option value="<?php echo $lecturerProfile->st_gender ?>"><?php echo $lecturerProfile->st_gender ?></option>
+                <select class="form-select form-select-solid form-select-lg" name="lc_gender">
+                    <option value="<?php echo $lecturerProfile->lc_gender ?>"><?php echo $lecturerProfile->lc_gender ?></option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
@@ -70,8 +70,8 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Race</label>
             <div class="col-lg-8">
-                <select class="form-select form-select-solid form-select-lg" name="st_race">
-                    <option value="<?php echo $lecturerProfile->st_race ?>"><?php echo $lecturerProfile->st_race ?></option>
+                <select class="form-select form-select-solid form-select-lg" name="lc_race">
+                    <option value="<?php echo $lecturerProfile->lc_race ?>"><?php echo $lecturerProfile->lc_race ?></option>
                     <option value="Malay">Malay</option>
                     <!-- Additional options here -->
                 </select>
@@ -93,7 +93,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Address</label>
             <div class="col-lg-8">
-                <textarea class="form-control form-control-solid" name="st_address" rows="3" required><?php echo $lecturerProfile->st_address ?></textarea>
+                <textarea class="form-control form-control-solid" name="lc_address" rows="3" required><?php echo $lecturerProfile->lc_address ?></textarea>
             </div>
         </div>
 

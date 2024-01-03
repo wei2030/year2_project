@@ -185,7 +185,6 @@ class Users extends Controller {
             // Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['username'], $data['password']);
-                var_dump($loggedInUser);
                 if ($loggedInUser) {
                     // If the login is successful, redirect to the home page or some other page
                     $this->createUserSession($loggedInUser);
@@ -205,6 +204,9 @@ class Users extends Controller {
         $_SESSION['username'] = $user->username;
         $_SESSION['email'] = $user->email;
         $_SESSION['user_role'] = $user->user_role;
+
+        $this->userModel->setUserPfp();
+
         header('location:' . URLROOT . '/pages/index');
     }
 
@@ -213,6 +215,7 @@ class Users extends Controller {
         unset($_SESSION['username']);
         unset($_SESSION['email']);
         unset($_SESSION['user_role']);
+        unset($_SESSION['user_pfp']);
         header('location:' . URLROOT . '/users/login');
     }
 }

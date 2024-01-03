@@ -32,10 +32,10 @@
                             $_SESSION['user_pfp'] = $studentProfile->st_image;
                             endforeach;
                         }
-                    if ($_SESSION['user_role'] == "Lecturer")
+                    else if ($_SESSION['user_role'] == "Lecturer")
                         {
                             foreach ($data['lecturerProfile'] as $lecturerProfile) :
-                            $_SESSION['user_pfp'] = $lecturerProfile->st_image;
+                            $_SESSION['user_pfp'] = $lecturerProfile->lc_image;
                             endforeach;
                         }
 

@@ -143,4 +143,34 @@ class User {
     
             return $this->db->rowCount(); // Returns 1 if user exists, 0 if not
         }
+
+        public function setUserPfp()
+        {
+            $email = $_SESSION['email'];
+
+            if ($_SESSION['user_role'] == "Student")
+            {
+                $this->db->query('SELECT * FROM st_profile WHERE st_email = :email');
+            }
+            else if ($_SESSION['user_role'] == "Lecturer")
+            {
+                $this->db->query('SELECT * FROM lc_profile WHERE lc_email = :email');
+            }
+
+            $this->db->bind(':email', $email);
+
+            $row = $this->db->single();
+
+            if ($row) 
+            {
+                if ($_SESSION['user_role'] == "Student")
+                {
+                    $_SESSION['user_pfp'] = $row->st_image;
+                }
+                else if ($_SESSION['user_role'] == "Lecturer")
+                {
+                    $_SESSION['user_pfp'] = $row->lc_image;
+                }
+            }
+        }
 }
