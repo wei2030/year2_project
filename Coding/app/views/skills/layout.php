@@ -26,21 +26,53 @@
                     $t_url = URLROOT . "/skills/create";
 
                     if (isset($data['skill']) && is_object($data['skill'])) {
+
                         $u_url = URLROOT . "/skills/update/".$data['skill']->skill_id; 
+
                     }
 
                     //error_reporting(0);
                     if ($url == $c_url) {
-        
-                        require 'listSkills.php';
+
+                        if ($_SESSION['user_role'] == "Student"){
+
+                            require 'studSkills.php';
+
+                        }
+    
+                        elseif ($_SESSION['user_role'] == "Admin"){
+    
+                            require 'listSkills.php';
+    
+                        }
 
                     } elseif($url == $t_url) {
 
-                        require 'create.php';
+                        if ($_SESSION['user_role'] == "Student"){
+
+                            header("Location: " . URLROOT . "/skills");
+
+                        }
+    
+                        elseif ($_SESSION['user_role'] == "Admin"){
+    
+                            require 'create.php';
+    
+                        }
 
                     } elseif($url == $u_url) {
 
-                        require 'update.php';
+                        if ($_SESSION['user_role'] == "Student"){
+
+                            header("Location: " . URLROOT . "/skills");
+
+                        }
+    
+                        elseif ($_SESSION['user_role'] == "Admin"){
+    
+                            require 'update.php';
+    
+                        }
 
                     } else {
 
