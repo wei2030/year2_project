@@ -6,18 +6,36 @@
 
             $this->skillModel = $this->model('Skill');
 
+            if ($_SESSION['user_role'] == "Student") {
+
+                $studentSkills = $this->skillModel->findStudentSkills();
+
+                $data = [
+
+                    'studentSkills' => $studentSkills
+
+                ];
+
+            }
+            elseif($_SESSION['user_role'] == "Admin") {
+
+                $skills = $this->skillModel->findAllSkills();
+
+                $data = [
+
+                    'skills' => $skills
+
+                ];
+
+            }
+
+            $this->view('skills/index',$data);
+
         }
 
         public function index() {
 
-            $skills = $this->skillModel->findAllSkills();
-            $data = [
-
-                'skills' => $skills
-
-            ];
-
-            $this->view('skills/index', $data);
+            $this->view('skills/index');
 
         }
 
