@@ -62,6 +62,7 @@
                     <option value="<?php echo $lecturerProfile->lc_gender ?>"><?php echo $lecturerProfile->lc_gender ?></option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
+                    <option value="Others">Others</option>
                 </select>
             </div>
         </div>
@@ -73,6 +74,9 @@
                 <select class="form-select form-select-solid form-select-lg" name="lc_race">
                     <option value="<?php echo $lecturerProfile->lc_race ?>"><?php echo $lecturerProfile->lc_race ?></option>
                     <option value="Malay">Malay</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Others">Others</option>
                     <!-- Additional options here -->
                 </select>
             </div>
@@ -84,6 +88,10 @@
             <div class="col-lg-8">
                 <select class="form-select form-select-solid form-select-lg" name="univ_code">
                     <option value="UTM">UTM</option>
+                    <option value="UM">UM</option>
+                    <option value="UPM">UPM</option>
+                    <option value="UKM">UKM</option>
+                    <option value="USM">USM</option>
                     <!-- Additional options here -->
                 </select>
             </div>
@@ -114,8 +122,5 @@
 </form>
 
 
-    </div>
-    <div class="card-footer">
-        Footer
     </div>
 </div>

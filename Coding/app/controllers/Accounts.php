@@ -17,9 +17,29 @@ class Accounts extends Controller
         {
             $lecturerProfile = $this->accountModel->lecturerProfile();
 
+            $lc_id = $lecturerProfile['lc_id'];
+
             $data = [
                 'lecturerProfile' => $lecturerProfile
             ];
+
+        //     $st_lc_assoc_info = $this->accountModel->findAssoc($lc_id);
+
+        //     $data2 = [
+        //     '$st_lc_assoc_info' => $st_lc_assoc_info
+        // ];
+        }
+        else if ($_SESSION['user_role'] == "Partner") 
+        {
+            $partnerProfile = $this->accountModel->partnerProfile();
+
+            $data = [
+                'partnerProfile' => $partnerProfile
+            ];
+        }
+        else
+        {
+            $data = [ ];
         }
 
         $this->view('accounts/index', $data);
@@ -164,23 +184,61 @@ class Accounts extends Controller
                     ];
                 }
             }
+            else if ($_POST['update_partner'])
+            {
+                if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
+
+                    $data = [
+
+                        'pn_name' => trim($_POST['pn_name']),
+                        'pn_email' => trim($_POST['pn_email']),
+                        'pn_address' => trim($_POST['pn_address']),
+                        'pn_phone' => trim($_POST['pn_phone']),
+                        'pn_image' => $location,
+                        'about_me' => trim($_POST['about_me'])
+    
+                    ];
+
+                }else{
+
+                    $data = [
+
+                        'pn_name' => trim($_POST['pn_name']),
+                        'pn_email' => trim($_POST['pn_email']),
+                        'pn_address' => trim($_POST['pn_address']),
+                        'pn_phone' => trim($_POST['pn_phone']),
+                        'about_me' => trim($_POST['about_me'])
+               
+                    ];
+                }
+            }
 
 
-          if ($_POST['update_student']) {
+            if ($_POST['update_student']) {
                 if ($this->accountModel->updateStudentProfile($data)) {
                     header("Location: " . URLROOT . "/accounts");
                 } else {
                     die("Something went wrong, please try again!");
                 }
             }
-          else if($_POST['update_lecturer']){
+            else if($_POST['update_lecturer']){
                 if ($this->accountModel->updateLecturerProfile($data)) {
                     header("Location: " . URLROOT . "/accounts");
                 } else {
                     die("Something went wrong, please try again!");
                 }
 
-            } else {
+            }
+            else if($_POST['update_partner']){
+                if ($this->accountModel->updatePartnerProfile($data)) {
+                    header("Location: " . URLROOT . "/accounts");
+                } else {
+                    die("Something went wrong, please try again!");
+                }
+
+            } 
+           else 
+            {
                 $this->view('accounts');
             }
         } // end of if statement 
@@ -197,9 +255,20 @@ class Accounts extends Controller
             'lecturerProfile' => $lecturerProfile
         ];
 
-        $this->view('accounts/index', $data, $data_2);
+        $partnerProfile = $this->accountModel->partnerProfile();
+
+        $data_3 = [
+            'partnerProfile' => $partnerProfile
+        ];
+
+
+        $this->view('accounts/index', $data, $data_2, $data_3);
     }
 
+    public function add_student()
+    {
+
+    }
 
 }
 ?>

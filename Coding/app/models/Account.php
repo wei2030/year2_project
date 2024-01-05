@@ -32,9 +32,19 @@ class Account
         return $result;
     }
 
+    public function partnerProfile()
+    {
+        $this->db->query("SELECT * FROM pn_profile WHERE pn_email = :email");
+
+        $this->db->bind(':email', $_SESSION['email']);
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function updateStudentProfile($data)
     {
-
  
         if (isset($data['st_image'])) {
 
@@ -79,7 +89,6 @@ class Account
 
     public function updateLecturerProfile($data)
     {
-
  
         if (isset($data['lc_image'])) {
 
@@ -120,6 +129,53 @@ class Account
         } else {
             return false;
         }
+    }
+
+    public function updatePartnerProfile($data)
+    {
+ 
+        if (isset($data['pn_image'])) {
+
+        $this->db->query("UPDATE pn_profile 
+        SET pn_email = :email, pn_name = :pn_name, pn_address = :pn_address, pn_phone = :pn_phone, pn_image = :pn_image, about_me = :about_me WHERE pn_email  = :email;");
+
+        $this->db->bind(':email', $_SESSION['email']);
+        $this->db->bind(':pn_name', $data['pn_name']);
+        $this->db->bind(':pn_address', $data['pn_address']);
+        $this->db->bind(':pn_phone', $data['pn_phone']);
+        $this->db->bind(':pn_image', $data['pn_image']);
+        $this->db->bind(':about_me', $data['about_me']);
+
+        }else{
+
+        $this->db->query("UPDATE pn_profile 
+        SET pn_email = :email, pn_name = :pn_name, pn_address = :pn_address, pn_phone = :pn_phone, about_me = :about_me WHERE pn_email  = :email;");
+
+        $this->db->bind(':email', $_SESSION['email']);
+        $this->db->bind(':pn_name', $data['pn_name']);
+        $this->db->bind(':pn_address', $data['pn_address']);
+        $this->db->bind(':pn_phone', $data['pn_phone']);
+        $this->db->bind(':about_me', $data['about_me']);
+            
+        }
+        
+        //execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function findAssoc($lc_id)
+    {
+        $this->db->query("SELECT * FROM st_lc_assoc WHERE lc_id = :lc_id");
+
+        $this->db->bind(":lc_id", $lc_id);
+
+        $result = $this->db->resultSet();
+
+        return $result;
     }
 }
 

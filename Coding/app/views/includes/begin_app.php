@@ -18,7 +18,7 @@
                             <!--end::Sidebar mobile toggle-->
                             <!--begin::Mobile logo-->
                             <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                                <a href="<?php echo URLROOT ?>pages/index" class="d-lg-none">
+                                <a href="<?php echo URLROOT ?>/pages/index" class="d-lg-none">
                                     <img alt="Logo" src="<?php echo URLROOT ?>/public/assets/media/logos/YV logo.png" class="h-40px" />
                                 </a>
                             </div>

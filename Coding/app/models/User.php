@@ -156,6 +156,16 @@ class User {
             {
                 $this->db->query('SELECT * FROM lc_profile WHERE lc_email = :email');
             }
+            else if ($_SESSION['user_role'] == "Partner")
+            {
+                $this->db->query('SELECT * FROM pn_profile WHERE pn_email = :email');
+            }
+            else if ($_SESSION['user_role'] == "Admin")
+            {
+                $_SESSION['user_pfp'] = "images/users/admin@gmail.com/blank-pfp.png";
+
+                return 0;
+            }
 
             $this->db->bind(':email', $email);
 
@@ -170,6 +180,10 @@ class User {
                 else if ($_SESSION['user_role'] == "Lecturer")
                 {
                     $_SESSION['user_pfp'] = $row->lc_image;
+                }
+                else if ($_SESSION['user_role'] == "Partner")
+                {
+                    $_SESSION['user_pfp'] = $row->pn_image;
                 }
             }
         }
