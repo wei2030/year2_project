@@ -25,20 +25,8 @@
 
                     $c_url = URLROOT . "/accounts";
                     $e_url = URLROOT . "/accounts/edit_profile";
+                    $a_url = URLROOT . "/accounts/add_assoc_student";
                     
-                    if ($_SESSION['user_role'] == "Student")
-                        {
-                            foreach ($data['studentProfile'] as $studentProfile) :
-                            $_SESSION['user_pfp'] = $studentProfile->st_image;
-                            endforeach;
-                        }
-                    else if ($_SESSION['user_role'] == "Lecturer")
-                        {
-                            foreach ($data['lecturerProfile'] as $lecturerProfile) :
-                            $_SESSION['user_pfp'] = $lecturerProfile->lc_image;
-                            endforeach;
-                        }
-
                     //error_reporting(0);
                     if ($url == $c_url)
                     {
@@ -49,6 +37,14 @@
                         else if ($_SESSION['user_role'] == "Lecturer")
                         {
                             require 'lc_profile.php';
+                        }
+                        else if ($_SESSION['user_role'] == "Partner")
+                        {
+                            require 'pn_profile.php';
+                        }
+                        else if ($_SESSION['user_role'] == "Admin")
+                        {
+                            require 'ad_profile.php';
                         }
                     } 
                     else if ($url == $e_url)
@@ -61,10 +57,14 @@
                         {
                             require 'lc_edit_profile.php';
                         }
+                        else if ($_SESSION['user_role'] == "Partner")
+                        {
+                            require 'pn_edit_profile.php';
+                        }
                     }
-                    else
+                    else if ($url == $a_url)
                     {
-                        
+                        require 'add_assoc_student.php';
                     }
 
                     ?>
