@@ -91,7 +91,7 @@
 
         }
 
-        public function assignSkills(){ // assign skills to student
+        public function assignSkills($data){ // assign skills to student
 
             $this->db->query('INSERT INTO stud_skills (st_id, skill_id) VALUES (:st_id, :skill_id)');
         
