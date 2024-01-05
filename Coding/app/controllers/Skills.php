@@ -343,11 +343,6 @@
                 header("Location: " . URLROOT . "/skills");
 
             }
-            // elseif($post->user_id != $_SESSION['user_id'])
-            // {
-            //     header("Location: " . URLROOT . "/posts");
-
-            // }
 
             $data = [
 
@@ -378,6 +373,77 @@
 
             }
             
+        }
+
+        public function assign() {
+
+            if(!isLoggedIn()) {
+
+                header("Location: " . URLROOT . "/skills");
+
+            }
+
+            $data = [
+
+                'st_id' => '',
+                'skill' => '',
+                'st_id_Error' => '',
+                'skill_id_Error' => ''
+
+            ];
+
+            
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+                $data = [
+
+                    'st_id' => trim($_POST['st_id']),
+                    'skill' => trim($_POST['skill_id']),
+                    'st_id_Error' => '',
+                    'skill_id_Error' => ''
+
+                ];
+
+                // Check empty
+                if(empty($data['st_id'])) {
+
+                    $data['st_id_Error'] = "The student's field cannot be empty";
+
+                }
+
+                if(empty($data['skill_id'])) {
+
+                    $data['skill_id_Error'] = "The skill's field cannot be empty";
+
+                }
+                // End of Check empty
+
+                if (empty($data['st_name_Error'] && $data['skill_name_Error'])) {
+
+                    if ($this->skillModel->assignSkill($data)) {
+
+                        $_SESSION['error'] = "";
+
+                        header("Location: " . URLROOT. "/skills" );
+
+                    } else {
+
+                        die("Something went wrong :(");
+
+                    }
+
+                } else {
+
+                    $this->view('skills/index', $data);
+
+                }
+
+            }
+
+            $this->view('skills/index', $data);
+
         }
 
     }
