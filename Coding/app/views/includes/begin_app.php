@@ -34,7 +34,7 @@
 
                                 <!--end::Menu wrapper-->
                                 <!--begin::Navbar-->
-                                <?php
+                                        <?php
                                             require APPROOT . '/views/includes/navbar.php';
                                         ?>
                                 <!--end::Navbar-->
