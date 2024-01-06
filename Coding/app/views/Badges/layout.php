@@ -30,22 +30,29 @@
                     }
 
                     //error_reporting(0);
-                    if ($url == $c_url) {
-        
-                        require 'listBadges.php';
+                    if ($_SESSION['user_role'] == "Student"){
 
-                    } elseif($url == $t_url) {
+                        header("Location: " . URLROOT . "/accounts");
 
-                        require 'create.php';
+                    } elseif ($_SESSION['user_role'] == "Admin") {
 
-                    } elseif($url == $u_url) {
+                        if ($url == $c_url) {
+            
+                            require 'listBadges.php';
+    
+                        } elseif($url == $t_url) {
+    
+                            require 'create.php';
+    
+                        } elseif($url == $u_url) {
+    
+                             require 'update.php';
 
-                        require 'update.php';
+                        }
 
                     } else {
 
                     }
-
                     ?>
 
         <!--End of Content area here-->
