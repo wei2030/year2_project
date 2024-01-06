@@ -18,39 +18,36 @@
     $allSkills = $result->fetch_assoc();
 
     $counter = 0;
-    foreach($allSkills as $skills) {
 
-        if($counter % 3 == 0){
-            echo "<div class="row g-3">";
-        }
+    ?>
 
-        echo "<div class="col">";
-            echo "<div class="card card-stretch-50 card-bordered mb-5">";
+    <?php foreach($allSkills as $skills):?>
 
-                echo "<div class="card-header">";
-                    echo "<img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $skills->skill_dir; ?>" alt="Skill icon">"
-                echo "</div>";
+        <?php if($counter % 3 == 0): ?>
+            <div class="row g-3">
+        <?php endif; ?>
 
-                echo "<div class="card-body">";
-                    echo "<h2 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_name;?></h2>";
-                    echo "<h3 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_desc;?></h3>";
-                echo "</div>";
+        <div class="col">
+            <div class="card card-stretch-50 card-bordered mb-5">
 
-            echo "</div>";
-        echo "</div>";
+                <div class="card-header">
+                    <img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $skills->skill_dir; ?>" alt="Skill icon">
+                </div>
 
-        if($counter % 3 == 0){
-            echo "</div>";
-        }
+                <div class="card-body">
+                    <h2 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_name;?></h2>
+                    <h3 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_desc;?></h3>
+                </div>
+
+            </div>
+        </div>
+
+        <?php if($counter % 3 == 0): ?>
+            <div class="row g-3">
+        <?php endif; ?>
         
-        $counter++;
-    }
+        <?php $counter++;
 
-    
-
-    $sql = "SELECT * FROM badges WHERE badge_name = $badge_name";
-    $result = $conn->query($sql);
-
-    $badge = $result->fetch_assoc();
+    endforeach;
 
 ?>
