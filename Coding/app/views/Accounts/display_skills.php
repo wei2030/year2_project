@@ -46,8 +46,8 @@
             <div class="row g-3">
         <?php endif; ?>
         
-        <?php $counter++;
+        <?php $counter++; ?>
 
-    endforeach;
+    <?php endforeach;
 
 ?>
