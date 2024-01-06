@@ -89,25 +89,11 @@ foreach ($data['studentProfile'] as $studentProfile) :
             <div class="card-header">
                 <h4 class="card-title">Skills</h4>
             </div>
+
             <div class="card-body">
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 1" data-bs-content="Description of skill 1">
-                Skill 1
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 2" data-bs-content="Description of skill 2">
-                Skill 2
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 3" data-bs-content="Description of skill 3">
-                Skill 3
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 4" data-bs-content="Description of skill 4">
-                Skill 4
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 5" data-bs-content="Description of skill 5">
-                Skill 5
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 6" data-bs-content="Description of skill 6">
-                Skill 6
-            </button>
+
+                <?php include 'display_skills.php'?>
+                
             </div>
         </div>
         <!--end::skill-->
