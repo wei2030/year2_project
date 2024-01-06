@@ -43,7 +43,7 @@
         </div>
 
         <?php if($counter % 3 == 0): ?>
-            <div class="row g-3">
+            </div>
         <?php endif; ?>
         
         <?php $counter++; ?>
