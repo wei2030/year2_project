@@ -15,13 +15,11 @@
 
     $result = $this->db->resultSet();
 
-    $allSkills = $result->fetch_assoc();
-
     $counter = 0;
 
     ?>
 
-    <?php foreach($allSkills as $skills):?>
+    <?php foreach($result as $skills):?>
 
         <?php if($counter % 3 == 0): ?>
             <div class="row g-3">
@@ -35,8 +33,8 @@
                 </div>
 
                 <div class="card-body">
-                    <h2 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_name;?></h2>
-                    <h3 class="m-grid-col-middle m-grid-col-center"><?php echo $skills->skill_desc;?></h3>
+                    <h4><?php echo $skills->skill_name;?></h4>
+                    <h6><?php echo $skills->skill_desc;?></h6>
                 </div>
 
             </div>
