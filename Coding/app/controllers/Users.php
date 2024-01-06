@@ -207,7 +207,7 @@ class Users extends Controller {
 
         $this->userModel->setUserPfp();
 
-        header('location:' . URLROOT . '/pages/index');
+        header('location:' . URLROOT . '/dashboards');
     }
 
     public function logout() {
