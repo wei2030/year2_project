@@ -1,3 +1,8 @@
+<?php
+foreach ($data['lecturerProfile'] as $lecturerProfile) :
+?>
+<?php endforeach; ?>
+
 <div class="row">
     <!--begin::left side-->
     <div class="col-sm-3 col-lg-2">
@@ -75,7 +80,7 @@
                         </a>
                     </div>
             </div>
-            <div class="card-body card-scroll h-110px">
+            <div class="card-body card-scroll h-225px">
                 <table>
                 <?php foreach($data['st_lc_assoc_info'] as $assoc_info): ?>
                     <tr>

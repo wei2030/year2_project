@@ -29,14 +29,34 @@
                         
                                     <?php
                                             require APPROOT . '/views/includes/header_wrapper.php';
-                                        ?>
+                                    ?>
 
 
                                 <!--end::Menu wrapper-->
+
+                                <!--begin::Search profile-->
+
+                                <?php
+                                            require APPROOT . '/views/includes/search_profile.php';
+                                    ?>
+
+                                <!--end::Search profile-->
+
                                 <!--begin::Navbar-->
                                 <?php
-                                            require APPROOT . '/views/includes/navbar.php';
-                                        ?>
+                                if ($_SESSION['user_role'] == "Student"){
+                                            require APPROOT . '/views/includes/st_navbar.php';
+                                }
+                                if ($_SESSION['user_role'] == "Lecturer"){
+                                            require APPROOT . '/views/includes/lc_navbar.php';
+                                }
+                                if ($_SESSION['user_role'] == "Partner"){
+                                            require APPROOT . '/views/includes/pn_navbar.php';
+                                }
+                                if ($_SESSION['user_role'] == "Admin"){
+                                            require APPROOT . '/views/includes/ad_navbar.php';
+                                }
+                                ?>
                                 <!--end::Navbar-->
                             </div>
                             <!--end::Header wrapper-->
