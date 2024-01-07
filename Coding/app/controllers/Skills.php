@@ -6,6 +6,10 @@
 
             $this->skillModel = $this->model('Skill');
 
+        }
+
+        public function index() {
+
             if ($_SESSION['user_role'] == "Student") {
 
                 $studentSkills = $this->skillModel->findStudentSkills();
@@ -30,12 +34,6 @@
             }
 
             $this->view('skills/index',$data);
-
-        }
-
-        public function index() {
-
-            $this->view('skills/index');
 
         }
 
