@@ -9,12 +9,24 @@ class Activity extends Controller
     public function index()
     {
         $activities = $this->activityModel->findAllActivity();
-        $data = 
-        [
-            'activity' => $activities
+        $data = [
+            'activity' => $activities,
+            'isStudentJoined' => function ($user_id, $ac_id) {
+                return $this->activityModel->isStudentJoined($user_id, $ac_id);
+            }
         ];
-        $this->view('activity/index', $data);
+    
+        // Check if the user is a student
+        if ($_SESSION['user_role'] == "Student") {
+            // For each activity, determine if the student has joined
+            foreach ($activities as &$activity) {
+                $activity->status = $data['isStudentJoined']($_SESSION['user_id'], $activity->ac_id) ? 'joined' : 'not-joined';
+            }
+        }
+    
+        $this->view('activity/index', $data,);
     }
+    
 
     public function create()
     {
