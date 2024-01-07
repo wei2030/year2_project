@@ -82,66 +82,6 @@ foreach ($data['partnerProfile'] as $partnerProfile) :
         </div>
         <!--end::description-->
         <br>
-<div class="row">
-<div class="col-sm-6 col-lg-6">
-        <!--start::skill-->
-        <div class="card shadow-sm card-dashed">
-            <div class="card-header">
-                <h4 class="card-title">Skills</h4>
-            </div>
-            <div class="card-body">
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 1" data-bs-content="Description of skill 1">
-                Skill 1
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 2" data-bs-content="Description of skill 2">
-                Skill 2
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 3" data-bs-content="Description of skill 3">
-                Skill 3
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 4" data-bs-content="Description of skill 4">
-                Skill 4
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 5" data-bs-content="Description of skill 5">
-                Skill 5
-            </button>
-            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Skill 6" data-bs-content="Description of skill 6">
-                Skill 6
-            </button>
-            </div>
-        </div>
-        <!--end::skill-->
-</div>
-<div class="col-sm-6 col-lg-6">
-        <!--start::badges-->
-        <div class="card shadow-sm card-dashed">
-            <div class="card-header">
-                <h4 class="card-title">Badges</h4>
-            </div>
-            <div class="card-body">
-                <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Github" data-bs-content="Description of Badge">
-                <div class="symbol symbol-50px">
-                    <img src="<?php echo URLROOT ?>/public/assets/media/svg/social-logos/github.svg" alt=""/>
-                </div>
-                </button>
-                <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Youtube" data-bs-content="Description of Badge">
-                <div class="symbol symbol-50px">
-                    <img src="<?php echo URLROOT ?>/public/assets/media/svg/social-logos/youtube.svg" alt=""/>
-                </div>
-                </button>
-                <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Dribbble" data-bs-content="Description of Badge">
-                <div class="symbol symbol-50px">
-                    <img src="<?php echo URLROOT ?>/public/assets/media/svg/social-logos/dribbble.svg" alt=""/>
-                </div>
-                <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Github" data-bs-content="Description of Badge">
-                <div class="symbol symbol-50px">
-                    <img src="<?php echo URLROOT ?>/public/assets/media/svg/social-logos/twitter.svg" alt=""/>
-                </div>
-                </button>
-                </button>
-            </div>
-        </div>
-        <!--start::badges-->
-</div>
+
 </div>
 </div>
