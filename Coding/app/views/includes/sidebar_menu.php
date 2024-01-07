@@ -100,24 +100,7 @@
 										</div>
 										<!--end:Menu item (Post Option)-->
 
-										<div class="menu-item">
-											<div>
-												<div>
-													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/Activity/">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Activity List</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-										
-											</div>
-											<!--end:Menu sub-->
-										</div>
-										<!--end:Menu item-->
-
+							
 
 
 
@@ -158,19 +141,33 @@
 													</a>
 													<!--end:Menu link-->
 												</div>
+
+												<div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="<?php echo URLROOT; ?>/activity/joined">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Joined Activities</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
 												<!--end:Menu item-->
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/activity/create">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Create Activity</span>
-													</a>
+													<?php if ($_SESSION['user_role'] !== "Student"): ?>
+														<a class="menu-link" href="<?php echo URLROOT; ?>/activity/create">
+															<span class="menu-bullet">
+																<span class="bullet bullet-dot"></span>
+															</span>
+															<span class="menu-title">Create Activity</span>
+														</a>
+													<?php endif; ?>
 													<!--end:Menu link-->
 												</div>
 												<!--end:Menu item-->
+
 										
 											</div>
 											<!--end:Menu sub-->
