@@ -12,7 +12,7 @@ class Activities
 
     public function findAllActivity()
     {
-        $this->db->query('SELECT * FROM activity ORDER BY date ASC');
+        $this->db->query('SELECT * FROM activity ORDER BY ac_id ASC');
     
         $result = $this->db->resultSet();
 
