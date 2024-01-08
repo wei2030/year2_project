@@ -24,9 +24,11 @@
                     // rule to access each file
                     $c_url = URLROOT . "/skills";
                     $t_url = URLROOT . "/skills/create";
+                    // $a_url = URLROOT . "/skills/assign";
 
                     if (isset($data['skill']) && is_object($data['skill'])) {
 
+                        $a_url = URLROOT . "/skills/assign/".$data['skill']->skill_id;
                         $u_url = URLROOT . "/skills/update/".$data['skill']->skill_id; 
 
                     }
@@ -60,6 +62,20 @@
     
                         }
 
+                    } elseif($url == $a_url) {
+
+                        if ($_SESSION['user_role'] == "Student"){
+
+                            header("Location: " . URLROOT . "/skills");
+
+                        }
+    
+                        elseif ($_SESSION['user_role'] == "Admin"){
+    
+                            require 'assign.php';
+    
+                        }
+
                     } elseif($url == $u_url) {
 
                         if ($_SESSION['user_role'] == "Student"){
@@ -75,6 +91,8 @@
                         }
 
                     } else {
+
+
 
                     }
 
