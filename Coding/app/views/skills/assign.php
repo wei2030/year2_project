@@ -14,99 +14,27 @@
 
     <div class="card-body">
 
-        <form action="<?php echo URLROOT; ?>/skills/assign" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo URLROOT; ?>/skills/assign/<?php echo $data['skill']->skill_id ?>" method="POST" enctype="multipart/form-data">
 
-            <label for="student">Student:</label>
-
-            <?php if(isset($_SESSION['st_id'])):?>
-
-                <!-- after evaluating feedback form -->
-                <?php 
-                    $this->db->query('SELECT * FROM st_profile WHERE st_id = :st_id');
-                    $this->db->bind(':st_id', $_SESSION['st_id']);
-                        
-                    $result = $this->db->resultSet();
-                ?>
-
-                <select id="student" name="st_id" disabled>
-
-                    <?php
-                        while ($row = mysql_fetch_array($result)) {
-                            echo "<option value='" . $row['st_id '] . "'>" . $row['st_fullname'] . "[" . $row['st_id '] . "]" . "</option>";
-                        }
-                    ?>
-
+            <div class="mb-10">
+                <label for="student">Student:</label>
+                <select class="form-control selectpicker" id="student" name="st_id" data-live-search="true" required>
+                    <?php foreach ($data_2['stu_list'] as $row): ?>
+                        <option value="<?php echo $row->st_id; ?>">
+                            <?php echo $row->st_fullname; ?> [<?php echo $row->st_id; ?>]
+                        </option>
+                    <?php endforeach ?>
                 </select>
-
-            <?php else: ?>
-
-                <!-- assign skill at skills list -->
-                <?php 
-                    $this->db->query('SELECT * FROM st_profile'); 
-
-                    $result = $this->db->resultSet();
-                ?>
-
-                <select id="student" name="st_id">
-
-                    <?php
-                        while ($row = mysql_fetch_array($result)) {
-                            echo "<option value='" . $row['st_id '] . "'>" . $row['st_fullname'] . "[" . $row['st_id '] . "]" . "</option>";                       
-                        }
-                    ?>
-
+            </div> 
+            
+            <div class="mb-10">
+                <label for="student">Skill:</label>
+                <select class="form-control selectpicker" id="skill" name="skill_id" data-live-search="true" required>
+                    <option value="<?php echo $data['skill']->skill_id; ?>">
+                        <?php echo $data['skill']->skill_name; ?>
+                    </option>
                 </select>
-                    
-            <?php endif; ?>
-
-
-
-
-
-
-
-            <label for="student">Skill:</label>
-
-            <?php if(isset($_GET['skill_id'])):?>
-
-                <!-- assign skill at skills list -->
-                <?php 
-                    $this->db->query('SELECT * FROM skills WHERE skill_id = :skill_id');
-                    $this->db->bind(':skill_id', $_GET['skill_id']);
-
-                    $result = $this->db->resultSet();
-                ?>
-
-                <select id="skill" name="skill_id" disabled>
-
-                    <?php
-                        while ($row = mysql_fetch_array($result)) {
-                            echo "<option value='" . $row['skill_id '] . "'>" . $row['skill_name'] . "</option>";                       
-                        }
-                    ?>
-
-                </select>
-
-            <?php else: ?>
-
-                <!-- after evaluating feedback form -->
-                <?php 
-                    $this->db->query('SELECT * FROM skills'); 
-
-                    $result = $this->db->resultSet();
-                ?>
-
-                <select id="skill" name="skill_id">
-
-                    <?php
-                        while ($row = mysql_fetch_array($result)) {
-                            echo "<option value='" . $row['skill_id '] . "'>" . $row['skill_name'] . "</option>";                       
-                        }
-                    ?>
-
-                </select>
-                    
-            <?php endif; ?>
+            </div> 
 
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
 
