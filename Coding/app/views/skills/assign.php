@@ -29,7 +29,7 @@
             
             <div class="mb-10">
                 <label for="student">Skill:</label>
-                <select class="form-control selectpicker" id="skill" name="skill_id" data-live-search="true" required>
+                <select class="form-control selectpicker" id="skill" name="skill_id" data-live-search="true" disabled>
                     <option value="<?php echo $data['skill']->skill_id; ?>">
                         <?php echo $data['skill']->skill_name; ?>
                     </option>
