@@ -261,10 +261,112 @@ class Accounts extends Controller
         $this->view('accounts/index', $data, $data_2, $data_3);
     }
 
-    public function add_student()
+    public function create_pn_account()
     {
+        
+        $data = [
+            'username' => '',
+            'password' => '',
+            'pn_image' => '',
+            'pn_name' => '',
+            'pn_email' => '',
+            'pn_address' => '',
+            'pn_phone' => '',
+            'about_me' => '',    
+        ];
+    
+        // Check if the form is submitted
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            // Sanitize POST data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+            // Check if file was uploaded without errors
+        if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
+            $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+            $filename = $_FILES["file"]["name"];
+            $filetype = $_FILES["file"]["type"];
+            $filesize = $_FILES["file"]["size"];
+
+            $fileExt = explode('.', $filename);
+            $fileActualExt = strtolower(end($fileExt));
+
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            if (!array_key_exists($ext, $allowed)){
+                $_SESSION['failed'] = "Error: You cannot upload files of this type!";
+                header("Location: " . URLROOT . "/accounts/create_pn_account");
+            }
+
+            $username = $_SESSION['email'];
+            $maxsize = 5 * 1024 * 1024;
+            if ($filesize > $maxsize){
+                $_SESSION['failed'] = "Error: File size is larger than the allowed limit.";
+                        header("Location: " . URLROOT . "/accounts/create_pn_account");
+            } 
+            $location = "images/users/" . $username;
+            if (in_array($filetype, $allowed)) {
+
+                if (file_exists($location . $filename)) {
+                    echo $filename . " is already exists.";
+                } else {
+                    
+                        # create directory if not exists in upload/ directory
+                        if (!is_dir($location)) {
+                            //mkdir($location, 0755);
+                            mkdir('images/users/' . $username, 0777, true);
+                        }
+
+                        $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+
+                        $location .= "/" . $fileNameNew;
+
+                        move_uploaded_file($_FILES['file']['tmp_name'], $location);
+                }
+            } else {
+                $_SESSION['failed'] = "Error: There was an error uploading your file!";
+                    header("Location: " . URLROOT . "/accounts/create_pn_account");
+            }
+        } else {
+
+            $_SESSION['failed'] = "Error: There was an error uploading your file!";
+                    header("Location: " . URLROOT . "/accounts/create_pn_account");
+          
+        }
+            
+            if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0){
+            // Assign POST data to $data
+            $data = [
+            'username' => trim($_POST['username']),
+            'password' => trim($_POST['password']),
+            'pn_image' => $location,
+            'pn_name' => trim($_POST['pn_name']),
+            'pn_email' => trim($_POST['pn_email']),
+            'pn_address' => trim($_POST['pn_address']),
+            'pn_phone' => trim($_POST['pn_phone']),
+            'about_me' => trim($_POST['about_me'])
+            ];
+            } else {
+            $data = [
+            'username' => trim($_POST['username']),
+            'password' => trim($_POST['password']),
+            'pn_name' => trim($_POST['pn_name']),
+            'pn_email' => trim($_POST['pn_email']),
+            'pn_address' => trim($_POST['pn_address']),
+            'pn_phone' => trim($_POST['pn_phone']),
+            'about_me' => trim($_POST['about_me'])
+            ];
+            }
+
+            if ($data['username'] && $data['password']) {
+                //hash password
+               $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+            }
+
+            if ($this->accountModel->registerPartner($data)) {
+            header('location: ' . URLROOT . '/accounts');
+            exit;
+            }
+        }
+        $this->view("accounts/index");
     }
-
 }
 ?>

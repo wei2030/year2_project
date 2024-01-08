@@ -7,13 +7,13 @@
     </div>
     <div class="card-body">
                                   
-    <form action="<?php echo URLROOT; ?>/accounts/add_pn_account" method="POST" class="form" enctype="multipart/form-data" id="kt_account_profile_details_form">
+    <form action="<?php echo URLROOT; ?>/accounts/create_pn_account" method="POST" class="form" enctype="multipart/form-data" id="kt_account_profile_details_form">
     <div class="card-body border-top p-9">
         <!-- Username Section -->
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Username</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="userame" type="text" placeholder="Insert partner username..."/>
+                <input class="form-control form-control-lg form-control-solid" name="username" type="text" placeholder="Insert partner username..."/>
             </div>
         </div>
 
@@ -21,7 +21,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Password</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="password" type="text" placeholder="Insert partner password..." />
+                <input class="form-control form-control-lg form-control-solid" name="password" type="password" placeholder="Insert partner password..." />
             </div>
         </div>
 

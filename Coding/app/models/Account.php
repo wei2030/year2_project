@@ -171,6 +171,35 @@ class Account
         }
     }
 
+    public function registerPartner($partnerData)
+    {
+        // Insert into users table
+        $this->db->query('INSERT INTO users (username, email, password, user_role, datetime_register, user_reg_status) 
+                          VALUES (:username, :email, :password, "Partner", NOW(), "Valid")');
+    
+        // Bind values
+        $this->db->bind(':username', $partnerData['username']);
+        $this->db->bind(':email', $partnerData['pn_email']);
+        $this->db->bind(':password', $partnerData['password']);
+    
+        // Execute query
+        $this->db->execute();
+
+        // Insert into lecturer table
+        $this->db->query('INSERT INTO pn_profile (pn_email, pn_name, pn_address, pn_phone, pn_image, about_me) 
+                         VALUES (:email, :pn_name, :pn_address, :pn_phone, :pn_image, :about_me)');
+    
+        // Bind values
+        $this->db->bind(':email', $partnerData['pn_email']);
+        $this->db->bind(':pn_name', $partnerData['pn_name']);
+        $this->db->bind(':pn_image', $partnerData['pn_image']);
+        $this->db->bind(':pn_address', $partnerData['pn_address']);
+        $this->db->bind(':pn_phone', $partnerData['pn_phone']);
+        $this->db->bind(':about_me', $partnerData['about_me']);
+
+        // Execute query
+        $this->db->execute();
+    }
 }
 
 ?>
