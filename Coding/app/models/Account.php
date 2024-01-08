@@ -167,16 +167,6 @@ class Account
         }
     }
 
-    public function findAssoc($lc_id)
-    {
-        $this->db->query("SELECT * FROM st_lc_assoc WHERE lc_id = :lc_id");
-
-        $this->db->bind(":lc_id", $lc_id);
-
-        $result = $this->db->resultSet();
-
-        return $result;
-    }
 }
 
 ?>

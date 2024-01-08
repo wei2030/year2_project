@@ -17,17 +17,9 @@ class Accounts extends Controller
         {
             $lecturerProfile = $this->accountModel->lecturerProfile();
 
-            $lc_id = $lecturerProfile['lc_id'];
-
             $data = [
                 'lecturerProfile' => $lecturerProfile
             ];
-
-        //     $st_lc_assoc_info = $this->accountModel->findAssoc($lc_id);
-
-        //     $data2 = [
-        //     '$st_lc_assoc_info' => $st_lc_assoc_info
-        // ];
         }
         else if ($_SESSION['user_role'] == "Partner") 
         {

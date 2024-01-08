@@ -21,28 +21,9 @@
 
     <?php foreach($result as $skills):?>
 
-        <?php if($counter % 3 == 0): ?>
-            <div class="row g-3">
-        <?php endif; ?>
-
-        <div class="col">
-            <div class="card card-stretch-50 card-bordered mb-5">
-
-                <div class="card-header">
-                    <img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $skills->skill_dir; ?>" alt="Skill icon">
-                </div>
-
-                <div class="card-body">
-                    <h4><?php echo $skills->skill_name;?></h4>
-                    <h6><?php echo $skills->skill_desc;?></h6>
-                </div>
-
-            </div>
-        </div>
-
-        <?php if($counter % 3 == 0): ?>
-            </div>
-        <?php endif; ?>
+        <button type="button" class="btn btn-secondary me-5" data-bs-toggle="popover" data-bs-placement="top" title="<?php echo $skills->skill_name;?>" data-bs-content="<?php echo $skills->skill_desc;?>">
+        <img class="icon h-50px w-50px" src="<?php echo URLROOT ?>/public/<?php echo $skills->skill_dir; ?>" alt="Skill icon">
+        </button>
         
         <?php $counter++; ?>
 

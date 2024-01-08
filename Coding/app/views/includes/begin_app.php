@@ -34,14 +34,6 @@
 
                                 <!--end::Menu wrapper-->
 
-                                <!--begin::Search profile-->
-
-                                <?php
-                                            require APPROOT . '/views/includes/search_profile.php';
-                                    ?>
-
-                                <!--end::Search profile-->
-
                                 <!--begin::Navbar-->
                                 <?php
                                 if ($_SESSION['user_role'] == "Student"){
