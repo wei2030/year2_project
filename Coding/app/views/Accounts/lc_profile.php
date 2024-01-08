@@ -44,7 +44,10 @@ foreach ($data['lecturerProfile'] as $lecturerProfile) :
                 <span class="bullet bullet-vertical bg-primary me-5"></span> <?php echo $lecturerProfile->lc_address; ?>
             </li>
             <li class="d-flex align-items-center py-2">
-                <span class="bullet bullet-vertical me-5"></span> <?php echo $_SESSION['email']; ?>
+                <span class="bullet bullet-vertical bg-info me-5"></span> <?php echo $_SESSION['email']; ?>
+            </li>
+            <li class="d-flex align-items-center py-2">
+                <span class="bullet bullet-vertical me-5"></span> <?php echo $lecturerProfile->lc_phone; ?>
             </li>
     </div>
     </div>

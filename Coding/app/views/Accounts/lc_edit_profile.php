@@ -105,6 +105,14 @@
             </div>
         </div>
 
+        <!-- Phone Section -->
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Phone</label>
+            <div class="col-lg-8">
+                <input class="form-control form-control-lg form-control-solid" name="lc_phone" type="text" readonly value="<?php echo $lecturerProfile->lc_phone; ?>" />
+            </div>
+        </div>
+
         <!-- About Me Section -->
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">About me</label>
