@@ -25,7 +25,7 @@
 
                     $c_url = URLROOT . "/accounts";
                     $e_url = URLROOT . "/accounts/edit_profile";
-                    $a_url = URLROOT . "/accounts/add_assoc_student";
+                    $r_url = URLROOT . "/accounts/resume";
                     
                     //error_reporting(0);
                     if ($url == $c_url)
@@ -62,9 +62,9 @@
                             require 'pn_edit_profile.php';
                         }
                     }
-                    else if ($url == $a_url)
+                    else if ($url == $r_url)
                     {
-                        require 'add_assoc_student.php';
+                        require 'resume.php';
                     }
 
                     ?>
