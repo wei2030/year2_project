@@ -33,7 +33,7 @@
 
             }
 
-            $this->view('skills/index',$data);
+            $this->view('skills/index', $data);
 
         }
 
@@ -373,7 +373,9 @@
             
         }
 
-        public function assign() {
+        public function assign($id) {
+
+            $skill = $this->skillModel->findSkillById($id);
 
             if(!isLoggedIn()) {
 
@@ -383,13 +385,9 @@
 
             $data = [
 
-                'st_id' => '',
-                'skill' => '',
-                'st_id_Error' => '',
-                'skill_id_Error' => ''
+                'skill' => $skill
 
             ];
-
             
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -397,30 +395,29 @@
 
                 $data = [
 
+                    'skill' => $skill,
                     'st_id' => trim($_POST['st_id']),
-                    'skill' => trim($_POST['skill_id']),
-                    'st_id_Error' => '',
-                    'skill_id_Error' => ''
+                    'skill_id' => trim($_POST['skill_id'])
 
                 ];
 
-                // Check empty
-                if(empty($data['st_id'])) {
+                // // Check empty
+                // if(empty($data['st_id'])) {
 
-                    $data['st_id_Error'] = "The student's field cannot be empty";
+                //     $data['st_id_Error'] = "The student's field cannot be empty";
 
-                }
+                // }
 
-                if(empty($data['skill_id'])) {
+                // if(empty($data['skill_id'])) {
 
-                    $data['skill_id_Error'] = "The skill's field cannot be empty";
+                //     $data['skill_id_Error'] = "The skill's field cannot be empty";
 
-                }
-                // End of Check empty
+                // }
+                // // End of Check empty
 
-                if (empty($data['st_name_Error'] && $data['skill_name_Error'])) {
+                if ($data['st_id'] && $data['skill_id']) {
 
-                    if ($this->skillModel->assignSkill($data)) {
+                    if ($this->skillModel->assignSkills($data)) {
 
                         $_SESSION['error'] = "";
 
@@ -440,7 +437,25 @@
 
             }
 
-            $this->view('skills/index', $data);
+            $stu_list = $this->skillModel->studentList();
+
+            $data_2 = [
+
+                'stu_list' => $stu_list
+
+            ];
+
+            $skill_list = $this->skillModel->findAllSkills();
+
+            $data_3 = [
+
+                'skill_list' => $skill_list
+
+            ];
+
+            
+
+            $this->view('skills/index', $data, $data_2, $data_3);
 
         }
 
