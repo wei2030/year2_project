@@ -9,10 +9,10 @@
         <!-- End of pie chart -->
 
         <!-- List of number each user -->
-        <div class="col-md-8">
+        <div class="col-md-7">
             <!-- Row for number of student -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                     <!--begin::Number-->
                     <div class="d-flex align-items-center">
                         <span class="fs-3 text-success me-2">
@@ -36,7 +36,7 @@
 
             <!-- Row for number of lecturer -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
 
                     <!--begin::Number-->
                     <div class="d-flex align-items-center">
@@ -62,7 +62,7 @@
 
             <!-- Row for number of organizer -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
 
                     <!--begin::Number-->
                     <div class="d-flex align-items-center">
@@ -95,11 +95,12 @@
     <div class="row">
         <!-- left side -->
         <div class="col-md-5">
+        
             <?php if($_SESSION['user_role'] == "Partner"): ?>
                 <!-- Num of activity created -->
                 <div class="row">
                     <a href="<?php echo URLROOT ?>/activity">           
-                        <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                             <div class="d-flex align-items-center">
                                 <span class="fs-3 text-success me-2">
                                     <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
@@ -119,28 +120,27 @@
                     </a>
                 </div>
                 <!-- End of Num of activity created -->
-            <?php endif ?>
+            <?php endif; ?>
+        
 
             <!-- Number of students registered to all activity created -->
             <div class="row">
                 <a href="<?php echo URLROOT ?>/activity">
-                    <div class="row">
-                        <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
-                            <div class="d-flex align-items-center">
-                                <span class="fs-3 text-success me-2">
-                                    <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
-                                </span>
+                    <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-3 text-success me-2">
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            </span>
 
-                                <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                                    Number of students registered: 
-                                </span>
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
+                                Number of students registered: 
+                            </span>
 
-                                <?php foreach($data_5['totalStu'] as $totalStu): ?>
-                                    <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $totalStu->totalStu ?>" style="margin-left: 10px;">
-                                        0
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                            <?php foreach($data_5['totalStu'] as $totalStu): ?>
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $totalStu->totalStu ?>" style="margin-left: 10px;">
+                                    0
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </a>
