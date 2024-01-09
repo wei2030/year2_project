@@ -152,33 +152,55 @@
             </a>
             <!-- End of row badge -->
 
-            <!-- Row for number of activity registered -->
-            <a href="<?php echo URLROOT ?>/activity">
-                <div class="row">
+            <!-- Num of activity created -->
+            <div class="row">
+                <a href="<?php echo URLROOT ?>/activity">           
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
-
-                        <!--begin::Number-->
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
                                 <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                                Total number of registered in all activities: 
+                                Created activities:  
                             </span>
 
                             <?php foreach($data_6['numAct'] as $numAct): ?>
-                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numAct->numAct ?>" style="margin-left: 10px;">
+                                <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numAct->numAct ?>" style="margin-left: 10px;">
+                                    <?php echo $numAct->numAct; ?>
+                                </span>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>            
+                </a>
+            </div>
+            <!-- End of Num of activity created -->
+        
+
+            <!-- Number of students registered to all activity created -->
+            <div class="row">
+                <a href="<?php echo URLROOT ?>/activity">
+                    <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-3 text-success me-2">
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            </span>
+
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
+                                Number of students registered: 
+                            </span>
+
+                            <?php foreach($data_7['totalStu'] as $totalStu): ?>
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $totalStu->totalStu ?>" style="margin-left: 10px;">
                                     0
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <!--end::Number-->
-
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
             <!-- End of row num of activity register -->
+
         </div>
         <!-- End of left side -->
 
@@ -281,7 +303,7 @@
                         </thead>
 
                         <tbody>
-                            <?php foreach($data_7['leaderboard'] as $leaderboard): ?>
+                            <?php foreach($data_8['leaderboard'] as $leaderboard): ?>
                             <tr>
                                 <?php
                                     $num_activity = $leaderboard->numActJoin;
