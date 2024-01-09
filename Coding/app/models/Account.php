@@ -200,6 +200,53 @@ class Account
         // Execute query
         $this->db->execute();
     }
+
+    public function findStudentBadge($email)
+    {
+        $this->db->query("SELECT st_email, COUNT(ac_id) numAct FROM activity_participants WHERE st_email = :st_email GROUP BY st_email");
+        $this->db->bind(':st_email', $email);
+
+        $result = $this->db->resultSet();
+
+        if (!empty($result)) {
+            
+            $row = $result[0]; // Assuming the result set is not empty
+
+            $num_activity = $row->numAct;
+
+            if ($num_activity >= 0 && $num_activity <= 9) {
+                $badge_name = 'Iron';
+            } elseif ($num_activity >= 10 && $num_activity <= 19) {
+                $badge_name = 'Bronze';
+            } elseif ($num_activity >= 20 && $num_activity <= 29) {
+                $badge_name = 'Silver';
+            } elseif ($num_activity >= 30 && $num_activity <= 39) {
+                $badge_name = 'Gold';
+            } elseif ($num_activity >= 40 && $num_activity <= 49) {
+                $badge_name = 'Platinum';
+            } elseif ($num_activity >= 50 && $num_activity <= 59) {
+                $badge_name = 'Diamond';
+            } else {
+                $badge_name = 'Adventurer';
+            }
+
+            $sql = "SELECT * FROM badges WHERE badge_name = :badge_name";
+            $this->db->query($sql);
+            $this->db->bind(':badge_name', $badge_name);
+
+            $result = $this->db->resultSet();
+
+            return $result;
+
+        } else {
+
+            // Handle the case where the result set is empty
+            return false;
+
+        }
+    }
+
+
 }
 
 ?>
