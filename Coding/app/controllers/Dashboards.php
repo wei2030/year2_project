@@ -35,6 +35,7 @@
                 $data_5 = [];
                 $data_6 = [];
                 $data_7 = [];
+                $data_8 = [];
 
             }
             elseif($_SESSION['user_role'] == "Admin") {
@@ -64,13 +65,18 @@
                     'numBadge' => $numBadge
                 ];
 
-                $numAct = $this->dashboardModel->findTotalAct();
+                $numAct = $this->dashboardModel->findCreatedAct();
                 $data_6 = [
                     'numAct' => $numAct
                 ];
 
-                $leaderboard = $this->dashboardModel->listLeaderboard();
+                $totalStu = $this->dashboardModel->findStuJoined();
                 $data_7 = [
+                    'totalStu' => $totalStu
+                ];
+
+                $leaderboard = $this->dashboardModel->listLeaderboard();
+                $data_8 = [
                     'leaderboard' => $leaderboard
                 ];
 
@@ -104,6 +110,7 @@
 
                 $data_6 = [];
                 $data_7 = [];
+                $data_8 = [];
 
             }
             else {
@@ -115,10 +122,11 @@
                 $data_5 = [];
                 $data_6 = [];
                 $data_7 = [];
+                $data_8 = [];
 
             }
 
-            $this->view('dashboards/index', $data, $data_2, $data_3, $data_4, $data_5, $data_6, $data_7);
+            $this->view('dashboards/index', $data, $data_2, $data_3, $data_4, $data_5, $data_6, $data_7, $data_8);
 
         }
     }
