@@ -183,13 +183,13 @@
             $this->db->query(
 
                 'SELECT COUNT(ac_id) numAct
-                FROM pn_profile AS pp
-                INNER JOIN activity AS a ON pp.pn_id = a.pn_id
-                WHERE pp.pn_email = :pn_email'
+                FROM users AS u
+                INNER JOIN activity AS a ON u.id = a.uploader_id
+                WHERE u.email = :email'
 
             );
 
-            $this->db->bind(':pn_email', $_SESSION['email']);
+            $this->db->bind(':email', $_SESSION['email']);
     
             $result = $this->db->resultSet();
 
@@ -202,14 +202,14 @@
             $this->db->query(
 
                 'SELECT COUNT(ap.st_id) totalStu
-                FROM pn_profile AS pp
-                INNER JOIN activity AS a ON pp.pn_id = a.pn_id
+                FROM users AS u
+                INNER JOIN activity AS a ON u.id = a.uploader_id
                 INNER JOIN activity_participants AS ap ON a.ac_id = ap.ac_id
-                WHERE pp.pn_email = :pn_email'
+                WHERE u.email = :email'
 
             );
 
-            $this->db->bind(':pn_email', $_SESSION['email']);
+            $this->db->bind(':email', $_SESSION['email']);
     
             $result = $this->db->resultSet();
 
