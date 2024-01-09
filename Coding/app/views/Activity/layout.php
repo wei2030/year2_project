@@ -1,52 +1,66 @@
-
-
 <!--begin::Content-->
 <div id="kt_app_content" class="app-content flex-column-fluid">
     <!--begin::Content container-->
     <div id="kt_app_content_container" class="app-container container-fluid">
         <!--begin::Row-->
 
-
         <!--Content area here-->
         <?php
-                    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-                        $url = "https://";
-                    else
-                        $url = "http://";
-                    // Append the host(domain name, ip) to the URL.   
-                    $url .= $_SERVER['HTTP_HOST'];
+        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+            $url = "https://";
+        } else {
+            $url = "http://";
+        }
+        // Append the host(domain name, ip) to the URL.   
+        $url .= $_SERVER['HTTP_HOST'];
 
-                    // Append the requested resource location to the URL   
-                    $url .= $_SERVER['REQUEST_URI'];
-                    
-                    ?>
+        // Append the requested resource location to the URL   
+        $url .= $_SERVER['REQUEST_URI'];
 
-        <?php
-                
-                    $c_url = URLROOT . "/activity"; 
-                    $t_url = URLROOT . "/activity/create"; 
+        $c_url = URLROOT . "/activity";
+        $t_url = URLROOT . "/activity/create";
+        $j_url = URLROOT . "/activity/joined";
 
-                    if (isset($data['activities']) && is_object($data['activities'])) {
-                    $u_url = URLROOT . "/activity/update/".$data['activities']->ac_id; 
-                  }
+        $f_url = ""; // Initialize $f_url
 
+        if (isset($data['activities']) && is_object($data['activities'])) {
+            $u_url = URLROOT . "/activity/update/" . $data['activities']->ac_id;
+            $f_url = URLROOT . "/activity/form/" . $data['activities']->ac_id;
+        }
 
-                    //error_reporting(0);
-                    if ($url == $c_url){
-                        require 'manage.php';
-                    }elseif($url == $t_url){
-                        require 'create.php';
-                   }elseif ($url == $u_url){
-                        require 'update.php';
-                    } else {
+        // Assuming $_SESSION['user_role'] contains the role of the logged-in user
+        $userRole = $_SESSION['user_role'];
 
-                    }
-                    ?>
+        // error_reporting(0);
+        if ($userRole == 'Admin' || $userRole == 'Partner') {
+            if ($url == $c_url) {
+                require 'manage.php';
+            } elseif ($url == $t_url) {
+                require 'create.php';
+            } elseif ($url == $u_url) {
+                require 'update.php';
+            } else { 
+                // Handle other URLs if needed
+            }
+        } elseif ($userRole == 'Student') {
+            if ($url == $c_url) {
+                require 'manage.php';
+            } else if ($url == $j_url) {
+                require 'joined.php';
+            }  elseif (strpos($url, $f_url) !== false) {
+                require 'form.php';
+            } else {
+                // Handle other URLs if needed
+            }
+        }  else {
+            if ($url == $c_url) {
+                require 'manage.php';
+            } 
+        }
+        ?>
 
         <!--end::Row-->
     </div>
     <!--end::Content container-->
 </div>
 <!--end::Content-->
-
-

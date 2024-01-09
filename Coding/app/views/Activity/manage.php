@@ -2,7 +2,7 @@
     <div class="card-header">
         <h3 class="card-title">Manage Activity</h3>
         <div class="card-toolbar">
-        <?php if (isLoggedIn() && $_SESSION['user_role'] == "Lecturer"): ?>
+        <?php if (isLoggedIn() && $_SESSION['user_role'] !== "Lecturer" && $_SESSION['user_role'] !== "Student"): ?>
                 <a href="<?php echo URLROOT;?>/activity/create" class="btn btn-light-primary">Create</a>
             <?php endif; ?>
         </div>
@@ -29,8 +29,8 @@
                         <th>No.</th>
                         <th>Category</th>
                         <th>Activity's Name</th>
-                        <th>Start - End Registration</th>
-                        <th>Start Activity Date</th>
+                        <th>Registration Date</th>
+                        <th>Activity Date</th>
                         <th>Venue</th>
                         <th>Description</th>
                         <th>Participants</th>
@@ -44,7 +44,7 @@
             <td><?php echo $activities->category; ?></td>
             <td><?php echo $activities->name; ?></td>
             <td><?php echo date('d/m/y ', strtotime($activities->date_reg_start)); ?> - <?php echo date('d/m/y ', strtotime($activities->date_reg_end)); ?></td>
-            <td><?php echo date('d/m/y ', strtotime($activities->activitystart)); ?></td>
+            <td><?php echo date('d/m/y ', strtotime($activities->activitystart)); ?> - <?php echo date('d/m/y ', strtotime($activities->activityend)); ?></td>
             <td><?php echo $activities->venue; ?></td>
             <td><?php echo $activities->desc; ?></td>
             <td><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
@@ -52,7 +52,7 @@
            
             <td>
     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $activities->user_id): ?>
-        <?php if ($_SESSION['user_role'] == "Lecturer"): ?>
+        <?php if ($_SESSION['user_role'] !== "Student" && $_SESSION['user_role'] !== "Lecturer"): ?>
             <!-- Existing code for Lecturer buttons -->
             <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-light-warning">Update</a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
@@ -71,11 +71,11 @@
         <?php elseif ($this->activityModel->isActivityFull($activities->ac_id)): ?>
             <button class="btn btn-secondary" disabled>Full</button>
         <?php else: ?>
-            <a href="<?php echo URLROOT . "/activity/join/" . $activities->ac_id ?>" class="btn btn-light-warning">Join</a>
+            <a href="<?php echo URLROOT . "/activity/join/" . $activities->ac_id ?>" class="btn btn-light-warning" data-bs-toggle="modal" data-bs-target="#joinModal<?php echo $activities->ac_id; ?>">Join</a>
         <?php endif; ?>
     <?php endif; ?>
             
-
+                <?php if ($_SESSION['user_role'] !== "Student"): ?>
                 <div class="modal fade" tabindex="-1" id="kt<?php echo $activities->ac_id?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -103,6 +103,39 @@
                         </div>
                     </div>
                 </div>
+                <?php endif ?>
+
+                <?php if ($_SESSION['user_role'] == "Student"): ?>
+                           <!-- Add the modal for Join action -->
+                           <div class="modal fade" tabindex="-1" id="joinModal<?php echo $activities->ac_id; ?>">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Join Activity</h3>
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p><strong>Activity Name:</strong> <?php echo $activities->name; ?></p>
+                <p><strong>Category:</strong> <?php echo $activities->category; ?></p>
+                <p><strong>Registration Date:</strong> <?php echo date('d/m/y ', strtotime($activities->date_reg_start)); ?> - <?php echo date('d/m/y ', strtotime($activities->date_reg_end)); ?>
+                <p><strong>Activity Date:</strong> <?php echo date('d/m/y', strtotime($activities->activitystart)); ?></p>
+                <p><strong>Venue:</strong> <?php echo $activities->venue; ?></p>
+                <p><strong>Description:</strong> <?php echo $activities->desc; ?></p>
+                <p><strong>Participants:</strong> <?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></p>
+                <hr>
+                <p>Are you sure to join this activity?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-primary font-weight-bold" data-bs-dismiss="modal">Cancel</button>
+                <a href="<?php echo URLROOT . "/activity/join/" . $activities->ac_id ?>" class="btn btn-primary font-weight-bold">Join</a>
+            </div>
+        </div>
+    </div>
+</div>
+                <?php endif ?>
+                
             </td>
         </tr>
     <?php endforeach; ?>

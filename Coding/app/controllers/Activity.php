@@ -5,30 +5,42 @@ class Activity extends Controller
     public function __construct()
     {
         $this->activityModel = $this->model('Activities');
+        $this->accountModel = $this->model('Account');
     }
+    
     public function index()
-    {
+{
+    $user_role = $_SESSION['user_role'];// Replace this with your actual logic to get the user role
+
+    $activities = [];
+
+    if ($user_role === 'Student' || $user_role === 'Lecturer') {
         $activities = $this->activityModel->findAllActivity();
+        $studentProfile = $this->accountModel->studentProfile();
+        $data = [
+            'activity' => $activities,
+            'isStudentJoined' => function ($user_id, $ac_id) {
+                return $this->activityModel->isStudentJoined($user_id, $ac_id);
+            },
+            'studentProfile' => $studentProfile
+        ];
+    } else {
+        $user_id = $_SESSION['user_id']; // Replace this with your actual logic to get the user ID
+        $activities = $this->activityModel->findAllActivityOrganizer($user_id);
         $data = [
             'activity' => $activities,
             'isStudentJoined' => function ($user_id, $ac_id) {
                 return $this->activityModel->isStudentJoined($user_id, $ac_id);
             }
         ];
-    
-        // Check if the user is a student
-        if ($_SESSION['user_role'] == "Student") {
-            // For each activity, determine if the student has joined
-            foreach ($activities as &$activity) {
-                $activity->status = $data['isStudentJoined']($_SESSION['user_id'], $activity->ac_id) ? 'joined' : 'not-joined';
-            }
-        }
-    
-        $this->view('activity/index', $data,);
     }
-    
 
-    public function create()
+
+    $this->view('activity/index', $data);
+}
+
+
+public function create()
     {
         if (!isLoggedIn()){
             header("Location: " . URLROOT. "/users/login" );
@@ -41,6 +53,7 @@ class Activity extends Controller
             'date_reg_start' => '',
             'date_reg_end' => '',
             'activitystart' => '',
+            'activityend' => '',
             'venue' => '',
             'desc' => '',
             'max_participants' => '',
@@ -56,6 +69,7 @@ class Activity extends Controller
             'date_reg_start' => trim($_POST['date_reg_start']),
             'date_reg_end' => trim($_POST['date_reg_end']),
             'activitystart' => trim($_POST['activitystart']),
+            'activityend' => trim($_POST['activityend']),
             'venue' => trim($_POST['venue']),
             'desc' => trim($_POST['desc']),
             'max_participants' => trim($_POST['max_participants']),
@@ -98,6 +112,7 @@ class Activity extends Controller
             'date_reg_start' => '',
             'date_reg_end' => '',
             'activitystart' => '',
+            'activityend' => '',
             'venue' => '',
             'desc' => '',
             'max_participants' => '',
@@ -114,6 +129,7 @@ class Activity extends Controller
             $data['date_reg_start'] = trim($_POST['date_reg_start']);
             $data['date_reg_end'] = trim($_POST['date_reg_end']);
             $data['activitystart'] = trim($_POST['activitystart']);
+            $data['activityend'] = trim($_POST['activityend']);
             $data['max_participants'] = trim($_POST['max_participants']);
     
             if (empty($data['name'])) {
@@ -207,16 +223,87 @@ public function joined()
         exit();
     }
 
-    // Fetch activities that the current student has joined
+   // Fetch activities that the current student has joined
     $joinedActivities = $this->activityModel->getJoinedActivities($_SESSION['user_id']);
 
     $data = [
-        'activity' => $joinedActivities,
+        'joinedActivities' => $joinedActivities,
     ];
 
-    $this->view('activity/joined', $data);
+
+    $this->view('activity/index', $data);
 }
 
+public function form($ac_id)
+{
+    if (!isLoggedIn() || $_SESSION['user_role'] !== "Student") {
+        header("Location: " . URLROOT . "/activity");
+        exit();
+    }
+
+    $activity = $this->activityModel->findActivityById($ac_id);
+    $participant_id = $this->activityModel->getParticipantId($ac_id, $_SESSION['user_id']);
+
+    $data = [
+        'ac_id' => isset($activity->ac_id) ? $activity->ac_id : '',
+        'name' => isset($activity->name) ? $activity->name : '',
+        'st_id' => '',
+        'st_fullname' => '',
+        'univ_code' => '',
+        'q1' => '',
+        'q2' => '',
+        'q3' => '',
+        'content_q1' => '',
+        'content_q2' => '',
+        'content_q3' => '',
+        'presenter_q1' => '',
+        'presenter_q2' => '',
+        'presenter_q3' => '',
+        'projectFile' => '',
+        'activity' => $activity,
+        'studentProfile' => $this->accountModel->studentProfile(),
+        'participant_id' => $participant_id
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $data = [
+            'ac_id' => trim($_POST['ac_id']),
+            'name' => trim($_POST['ac_name']),
+            'st_id' => trim($_POST['st_id']),
+            'st_fullname' => trim($_POST['st_fullname']),
+            'univ_code' => trim($_POST['univ_code']),
+            'q1' => trim($_POST['q1']),
+            'q2' => trim($_POST['q2']),
+            'q3' => trim($_POST['q3']),
+            'content_q1' => trim($_POST['content_q1']),
+            'content_q2' => trim($_POST['content_q2']),
+            'content_q3' => trim($_POST['content_q3']),
+            'presenter_q1' => trim($_POST['presenter_q1']),
+            'presenter_q2' => trim($_POST['presenter_q2']),
+            'presenter_q3' => trim($_POST['presenter_q3']),
+            'projectFile' => trim($_POST['projectFile']),
+            'activity' => $activity,
+            'studentProfile' => $this->accountModel->studentProfile(),
+            'participant_id' => $participant_id
+        ];
+
+        if ($this->activityModel->addFeedback($data)) {
+            header("Location: " . URLROOT . "/activity/joined");
+            exit();
+        } else {
+            die("Something went wrong :(");
+        }
+    }
+
+    $this->view('activity/index', $data);
 }
+
+
+
+
+}
+
+
 
 ?>
