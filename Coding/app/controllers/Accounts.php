@@ -12,6 +12,12 @@ class Accounts extends Controller
             $data = [
                 'studentProfile' => $studentProfile
             ];
+
+            $studentBadge = $this->accountModel->findStudentBadge($_SESSION['email']);
+
+            $data_2 = [
+                'studentBadge' => $studentBadge
+            ];
         }
         else if ($_SESSION['user_role'] == "Lecturer") 
         {
@@ -20,6 +26,9 @@ class Accounts extends Controller
             $data = [
                 'lecturerProfile' => $lecturerProfile
             ];
+
+            $data_2 = [];
+
         }
         else if ($_SESSION['user_role'] == "Partner") 
         {
@@ -28,13 +37,18 @@ class Accounts extends Controller
             $data = [
                 'partnerProfile' => $partnerProfile
             ];
+
+            $data_2 = [];
+
         }
         else
         {
             $data = [ ];
+            $data_2 = [];
+
         }
 
-        $this->view('accounts/index', $data);
+        $this->view('accounts/index', $data, $data_2);
     }
 
     public function index()
