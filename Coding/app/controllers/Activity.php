@@ -14,7 +14,7 @@ class Activity extends Controller
 
     $activities = [];
 
-    if ($user_role === 'Student' || $user_role === 'Lecturer') {
+    if ($user_role === 'Student' || $user_role === 'Lecturer' || $user_role === 'Admin') {
         $activities = $this->activityModel->findAllActivity();
         $studentProfile = $this->accountModel->studentProfile();
         $data = [
