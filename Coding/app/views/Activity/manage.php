@@ -51,8 +51,14 @@
             
            
             <td>
+            <?php if ($_SESSION['user_role'] == "Admin"): ?>
+            <!-- Existing code for Lecturer buttons -->
+            <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-light-warning">Update</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
+                Delete
+            </button>
     <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $activities->user_id): ?>
-        <?php if ($_SESSION['user_role'] !== "Student" && $_SESSION['user_role'] !== "Lecturer"): ?>
+        <?php elseif ($_SESSION['user_role'] == "Partner"): ?>
             <!-- Existing code for Lecturer buttons -->
             <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-light-warning">Update</a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
