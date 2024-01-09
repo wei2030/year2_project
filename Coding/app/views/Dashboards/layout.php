@@ -26,8 +26,31 @@
 
                     //error_reporting(0);
                     if ($url == $c_url) {
-        
-                        require 'overview.php';
+
+                        if ($_SESSION['user_role'] == "Student") {
+
+                            require 'dashStudent.php';
+            
+                        }
+                        elseif($_SESSION['user_role'] == "Admin") {
+
+                            require 'dashAdmin.php';
+
+                        }
+                        elseif($_SESSION['user_role'] == "Lecturer") {
+
+                            require 'dashLecturer.php';
+
+                        }
+                        elseif($_SESSION['user_role'] == "Partner") {
+
+                            require 'dashPartner.php';
+
+                        }
+                        else {
+
+                        }
+                        
 
                     }
 
