@@ -37,14 +37,9 @@
                             require 'dashAdmin.php';
 
                         }
-                        elseif($_SESSION['user_role'] == "Lecturer") {
+                        elseif($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Partner") {
 
-                            require 'dashLecturer.php';
-
-                        }
-                        elseif($_SESSION['user_role'] == "Partner") {
-
-                            require 'dashPartner.php';
+                            require 'dashLectPart.php';
 
                         }
                         else {
