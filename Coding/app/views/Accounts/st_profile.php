@@ -112,10 +112,14 @@ foreach ($data['studentProfile'] as $studentProfile) :
             <div class="card-body" style="text-align:center">
 
                 <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="Github" data-bs-content="Description of Badge">
-                <div class="symbol symbol-50px">
-                    <img src="<?php echo URLROOT ?>/public/<?php echo $badge['icon_dir']; ?>" alt=""/>
-                </div>
+                    <div class="symbol symbol-50px">
+
+                    <?php foreach ($data_2['studentBadge'] as $studentBadge) :?>
+                        <img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
+                    <?php endforeach; ?>
+                    
                 </button>
+                
             </div>
         </div>
         <!--end::badges -->
