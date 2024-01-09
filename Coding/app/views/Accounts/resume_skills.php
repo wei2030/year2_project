@@ -21,7 +21,7 @@
 
     <?php foreach($result as $skills):
         
-        if ($counter < 10){
+        if ($counter < 5){
         ?>
 
         <h6 class="fw-light"><img class="icon h-25px w-25px" src="<?php echo URLROOT ?>/public/<?php echo $skills->skill_dir; ?>" alt="Skill icon"><?php echo $skills->skill_name?></h6>

@@ -12,12 +12,6 @@ class Accounts extends Controller
             $data = [
                 'studentProfile' => $studentProfile
             ];
-
-            $studentBadge = $this->accountModel->findStudentBadge($_SESSION['email']);
-
-            $data_2 = [
-                'studentBadge' => $studentBadge
-            ];
         }
         else if ($_SESSION['user_role'] == "Lecturer") 
         {
@@ -26,9 +20,6 @@ class Accounts extends Controller
             $data = [
                 'lecturerProfile' => $lecturerProfile
             ];
-
-            $data_2 = [];
-
         }
         else if ($_SESSION['user_role'] == "Partner") 
         {
@@ -37,16 +28,19 @@ class Accounts extends Controller
             $data = [
                 'partnerProfile' => $partnerProfile
             ];
-
-            $data_2 = [];
-
         }
         else
         {
             $data = [ ];
-            $data_2 = [];
-
         }
+
+        $this->activityModel = $this->model('Activities');
+
+        $activities = $this->activityModel->getJoinedActivities($_SESSION['user_id']);
+
+        $data_2 = [
+        'activities' => $activities
+        ];
 
         $this->view('accounts/index', $data, $data_2);
     }
@@ -381,6 +375,19 @@ class Accounts extends Controller
             }
         }
         $this->view("accounts/index");
+    }
+
+    public function resume_activities()
+    {
+        $this->activityModel = $this->model('Activities');
+
+        $activities = $this->activityModel->getJoinedActivities($_SESSION['user_id']);
+
+        $data = [
+        'activities' => $activities
+        ];
+
+        $this->view("accounts", $data);
     }
 }
 ?>
