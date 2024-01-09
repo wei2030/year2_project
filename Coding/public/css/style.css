@@ -249,10 +249,3 @@ textarea {
     background-color:rgb(149, 2, 2);
     transition: 0.20s ease-in-out;
 }
-
-/* reward page */
-img {
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-}
