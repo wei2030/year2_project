@@ -53,19 +53,17 @@
 
                 <!-- Badge assigned -->
                 <div class="col-md-4">
-                    <a href="<?php echo URLROOT ?>/badges">
-                        <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3 d-flex flex-column align-items-center">
+                    <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3 d-flex flex-column align-items-center">
 
-                            <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
-                                <img class="icon w-100px h-100px" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
-                            <?php endforeach; ?>
+                        <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
+                            <img class="icon w-100px h-100px" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
+                        <?php endforeach; ?>
 
-                            <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-top: 10px;">
-                                Badge
-                            </div>
-
+                        <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-top: 10px;">
+                            Badge
                         </div>
-                    </a>
+
+                    </div>
                 </div>
                 <!-- End of Badge assigned -->
             </div>
