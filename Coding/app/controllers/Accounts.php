@@ -42,7 +42,14 @@ class Accounts extends Controller
         'activities' => $activities
         ];
 
-        $this->view('accounts/index', $data, $data_2);
+        $this->dashboardModel = $this->model('Dashboard');
+
+        $studentBadge = $this->dashboardModel->findBadge();
+        $data_3 = [
+        'studentBadge' => $studentBadge
+        ];
+
+        $this->view('accounts/index', $data, $data_2, $data_3);
     }
 
     public function index()

@@ -26,7 +26,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
 		    <header class="resume-header pt-4 pt-md-0">
 			    <div class="row">
 				    <div class="col-block col-md-auto resume-picture-holder text-center text-md-start" style="margin-left:20px;margin-top:15px">
-				        <img class="picture" src="<?php echo URLROOT."/public/".$studentProfile->st_image; ?>" alt="">
+				        <img class="icon w-75px h-75px" src="<?php echo URLROOT."/public/".$studentProfile->st_image; ?>" alt="">
 				    </div><!--//col-->
 				    <div class="col">
 					    <div class="row p-4 justify-content-center justify-content-md-between">
