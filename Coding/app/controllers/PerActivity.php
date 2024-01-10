@@ -53,7 +53,32 @@ public function create()
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+              // Handle file upload
+    $uploadDir = 'uploads/';
+    $evidenceFile = $_FILES['evidence'];
+
+    if (!empty($evidenceFile['name'])) {
+        $allowedExtensions = ['pdf', 'docx', 'jpg', 'jpeg', 'png', 'gif'];
+
+        $fileExtension = strtolower(pathinfo($evidenceFile['name'], PATHINFO_EXTENSION));
+
+        if (in_array($fileExtension, $allowedExtensions)) {
+            $uploadPath = $uploadDir . uniqid() . '.' . $fileExtension;
+
+            if (move_uploaded_file($evidenceFile['tmp_name'], $uploadPath)) {
+                $data['evidence'] = $uploadPath;
+            } else {
+                die("File upload failed");
+            }
+        } else {
+            die("Invalid file type");
+        }
+    }
+
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            
             $data = 
             [
             'st_id' => $st_id,
@@ -99,6 +124,7 @@ public function create()
             'venue' => '',
             'date' => '',
             'description' => '',
+            'evidence' => '',
             'nameError' => '',
             'venueError' => '',
             'u_url' => URLROOT . "/peractivity/update/" . $pac_id
@@ -113,6 +139,7 @@ public function create()
                 'venue' => trim($_POST['venue']),
                 'date' => trim($_POST['date']),
                 'description' => trim($_POST['description']),
+                'evidence' => trim($_POST['evidence']),
                 'nameError' => '',
                 'venueError' => ''
             ];

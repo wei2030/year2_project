@@ -32,7 +32,14 @@
         <td><?php echo date('F j h:m', strtotime($peractivities->date)); ?></td>
         <td><?php echo $peractivities->venue; ?></td>
         <td><?php echo $peractivities->description; ?></td>
-        <td><?php echo $peractivities->evidence; ?></td>
+        <td>    <?php
+    if (!empty($peractivities->evidence)) {
+        echo '<a href="' . $peractivities->evidence . '" target="_blank">Download Evidence</a>';
+    } else {
+        echo 'No evidence';
+    }
+    ?>
+</td></td>
         <?php if ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
             <td> 
                 <?php
