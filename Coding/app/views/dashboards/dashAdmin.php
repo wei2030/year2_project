@@ -153,8 +153,8 @@
             <!-- End of row badge -->
 
             <!-- Num of activity created -->
-            <div class="row">
-                <a href="<?php echo URLROOT ?>/activity">           
+            <a href="<?php echo URLROOT ?>/activity">
+                <div class="row">                        
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
@@ -171,15 +171,15 @@
                                 </span>
                             <?php endforeach; ?>
                         </div>
-                    </div>            
-                </a>
-            </div>
+                    </div> 
+                </div>           
+            </a>
             <!-- End of Num of activity created -->
         
 
             <!-- Number of students registered to all activity created -->
-            <div class="row">
-                <a href="<?php echo URLROOT ?>/activity">
+            <a href="<?php echo URLROOT ?>/activity">
+                <div class="row">
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
@@ -197,8 +197,8 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                </a>
-            </div>
+                </div>           
+            </a>
             <!-- End of row num of activity register -->
 
         </div>
