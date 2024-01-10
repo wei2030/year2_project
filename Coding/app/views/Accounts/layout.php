@@ -26,6 +26,7 @@
                     $c_url = URLROOT . "/accounts";
                     $e_url = URLROOT . "/accounts/edit_profile";
                     $r_url = URLROOT . "/accounts/resume";
+                    $p_url = URLROOT . "/accounts/create_pn_account";
                     
                     //error_reporting(0);
                     if ($url == $c_url)
@@ -65,6 +66,10 @@
                     else if ($url == $r_url)
                     {
                         require 'resume.php';
+                    }
+                    else if ($url == $p_url)
+                    {
+                        require 'create_pn_account.php';
                     }
 
                     ?>

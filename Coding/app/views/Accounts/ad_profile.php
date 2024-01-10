@@ -17,7 +17,7 @@
     <!--start::activities-->
     <div class="card shadow-sm card-px-0">
     <div class="card-body" style="margin-left:12px; height:90px; padding-top: 12px;">
-        <a href="create_pn_account.php" class="btn btn-flex px-2 hover-scale btn-active-primary" style="color:#000000">
+        <a href="<?php echo URLROOT; ?>/accounts/create_pn_account" class="btn btn-flex px-2 hover-scale btn-active-primary" style="color:#000000">
             <i class="ki-duotone ki-graph-3 fs-2x"><span class="path1"></span><span class="path2"></span></i>
         <span class="d-flex flex-column align-items-start ms-2">
             <span class="fs-3 fw-bold">Create</span>

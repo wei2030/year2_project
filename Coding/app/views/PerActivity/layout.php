@@ -26,6 +26,7 @@
                     $c_url = URLROOT . "/peractivity"; 
                     $t_url = URLROOT . "/peractivity/create"; 
                     $p_url = URLROOT . "/peractivity/approved";
+                    $u_url = '';
 
                     if (isset($data['perActivity']) && is_object($data['perActivity'])) {
                     $u_url = URLROOT . "/peractivity/update/".$data['perActivity']->pac_id; 
