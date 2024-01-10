@@ -82,7 +82,7 @@ class Activities
 
 public function addActivity($data)
 {
-    $this->db->query('INSERT INTO activity (name, category, date_reg_start, date_reg_end, activitystart, activityend, venue, `desc`, user_id, max_participants) VALUES (:name, :category, :date_reg_start, :date_reg_end, :activitystart, :activityend, :venue, :desc, :user_id, :max_participants)');
+    $this->db->query('INSERT INTO activity (name, category, date_reg_start, date_reg_end, activitystart, activityend, venue, `desc`, uploader_id, max_participants) VALUES (:name, :category, :date_reg_start, :date_reg_end, :activitystart, :activityend, :venue, :desc, :uploader_id, :max_participants)');
 
     $this->db->bind(':name', $data['name']);
     $this->db->bind(':category', $data['category']);
@@ -92,7 +92,7 @@ public function addActivity($data)
     $this->db->bind(':activityend', $data['activityend']);
     $this->db->bind(':venue', $data['venue']);
     $this->db->bind(':desc', $data['desc']); // Wrap `desc` in backticks
-    $this->db->bind(':user_id', $data['user_id']);
+    $this->db->bind(':uploader_id', $data['uploader_id']);
     $this->db->bind(':max_participants', $data['max_participants']);
 
     if ($this->db->execute()) {
@@ -329,8 +329,8 @@ public function getJoinedActivities($user_id)
 }
 
 public function findAllActivityOrganizer($user_id) {
-    $this->db->query('SELECT * FROM activity WHERE user_id = :user_id');
-    $this->db->bind(':user_id', $user_id);
+    $this->db->query('SELECT * FROM activity WHERE uploader_id = :uploader_id');
+    $this->db->bind(':uploader_id', $user_id);
     
     // Execute the query and fetch results, return them as needed
     return $this->db->resultSet();
@@ -443,5 +443,33 @@ public function getStudentID($user_id) {
 
     return $st_id;
 }
+
+public function getLecturerID($user_id) {
+    // Fetch user details
+    $this->db->query('SELECT * FROM users WHERE id = :user_id');
+    $this->db->bind(':user_id', $user_id);
+    $user = $this->db->single();
+
+    // Check if user exists
+    if (!$user) {
+        return false;
+    }
+
+    $email = $user->email;
+
+    // Fetch lecturer profile based on email
+    $this->db->query('SELECT * FROM lc_profile WHERE lc_email = :email');
+    $this->db->bind(':email', $email);
+    $lecturerProfile = $this->db->single();
+
+    // Check if the lecturer profile exists
+    if (!$lecturerProfile) {
+        return false;
+    }
+
+    return $lecturerProfile->lc_id;
+}
+
+
 }
 ?>

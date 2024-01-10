@@ -213,8 +213,32 @@
 													</a>
 													<!--end:Menu link-->
 												</div>
+												<?php if ($_SESSION ['user_role'] == "Student"): ?>
 												<!--end:Menu item-->
-										
+												<div class="menu-item">
+													<!--begin:Menu link-->
+				
+													<a class="menu-link" href="<?php echo URLROOT; ?>/peractivity/create">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Create Personal Activities</span>
+													</a>
+													<!--end:Menu link-->
+												</div>
+												<!--end:Menu item-->
+												<div class="menu-item">
+													<!--begin:Menu link-->
+													<a class="menu-link" href="<?php echo URLROOT; ?>/peractivity/approved">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Approved Personal Activities</span>
+													</a>
+													<!--end:Menu link-->
+												</div>
+												<?php endif; ?>
+												<!--end:Menu item-->
 											</div>
 											<!--end:Menu sub-->
 										</div>
