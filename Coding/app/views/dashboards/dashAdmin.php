@@ -13,77 +13,73 @@
         <div class="col-md-8">
             <!-- Row for number of student -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                    <!--begin::Number-->
-                    <div class="d-flex align-items-center">
-                        <span class="fs-3 text-success me-2">
-                            <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/student.png"/>
-                        </span>
+                <a href="<?php echo URLROOT ?>/userlists/stuList">
+                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-3 text-success me-2">
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/student.png"/>
+                            </span>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                            Number of student registered: 
-                        </span>
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
+                                Number of student registered: 
+                            </span>
 
-                        <?php foreach($data['numStu'] as $numStu): ?>
-                            <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numStu->numStu ?>" style="margin-left: 10px;">
-                                0
-                            </div>
-                        <?php endforeach; ?>
+                            <?php foreach($data['numStu'] as $numStu): ?>
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numStu->numStu ?>" style="margin-left: 10px;">
+                                    0
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                    <!--end::Number-->
-                </div>
+                </a>
             </div>
             <!-- End of row student -->
 
             <!-- Row for number of lecturer -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                <a href="<?php echo URLROOT ?>/userlists/lecList">
+                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-3 text-success me-2">
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
+                            </span>
 
-                    <!--begin::Number-->
-                    <div class="d-flex align-items-center">
-                        <span class="fs-3 text-success me-2">
-                            <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
-                        </span>
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
+                                Number of lecturer registered: 
+                            </span>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                            Number of lecturer registered: 
-                        </span>
-
-                        <?php foreach($data_2['numLec'] as $numLec): ?>
-                            <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numLec->numLec ?>" style="margin-left: 10px;">
-                                0
-                            </div>
-                        <?php endforeach; ?>
+                            <?php foreach($data_2['numLec'] as $numLec): ?>
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numLec->numLec ?>" style="margin-left: 10px;">
+                                    0
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                    <!--end::Number-->
-
-                </div>
+                </a>
             </div>
             <!-- End of row lecturer -->
 
             <!-- Row for number of organizer -->
             <div class="row">
-                <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                <a href="<?php echo URLROOT ?>/userlists/orgList">
+                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-3 text-success me-2">
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
+                            </span>
 
-                    <!--begin::Number-->
-                    <div class="d-flex align-items-center">
-                        <span class="fs-3 text-success me-2">
-                            <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
-                        </span>
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
+                                Number of partner/organizer registered: 
+                            </span>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                            Number of partner/organizer registered: 
-                        </span>
-
-                        <?php foreach($data_3['numPart'] as $numPart): ?>
-                            <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numPart->numPart ?>" style="margin-left: 10px;">
-                                0
-                            </div>
-                        <?php endforeach; ?>
+                            <?php foreach($data_3['numPart'] as $numPart): ?>
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numPart->numPart ?>" style="margin-left: 10px;">
+                                    0
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
-                    <!--end::Number-->
-
-                </div>
+                </a>
             </div>
             <!-- End of row partner -->
 
