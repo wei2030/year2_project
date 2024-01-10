@@ -177,6 +177,7 @@
 										<!--end:Menu item-->
 
 										<!--begin:Menu item-->
+										<?php if ($_SESSION['user_role'] !== "Partner"): ?>
 										<div class="menu-item pt-5">
 											<!--begin:Menu content-->
 											<div class="menu-content">
@@ -195,6 +196,7 @@
 														<span class="path1"></span>
 														<span class="path2"></span>
 													</i>
+													
 												</span>
 												<span class="menu-title">Personal Activity Options</span>
 												<span class="menu-arrow"></span>
@@ -238,11 +240,13 @@
 													<!--end:Menu link-->
 												</div>
 												<?php endif; ?>
+										
 												<!--end:Menu item-->
 											</div>
 											<!--end:Menu sub-->
 										</div>
 										<!--end:Menu item-->
+										<?php endif; ?>
 
 
 					
