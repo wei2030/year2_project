@@ -6,50 +6,116 @@
 									<!--begin::Menu-->
 									<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 
+										<!--begin:Menu item (User)-->
+										<?php if($_SESSION['user_role'] == "Admin" || $_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Partner"): ?>
+											<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 
-										<!--begin:Menu item (Dashboard)-->
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu item-->
-											<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/dashboards">														
-														<span class="menu-title">Dashboard</span>
-													</a>
-													<!--end:Menu link-->
+												<!--begin:Menu link-->
+												<span class="menu-link">
+													<span class="menu-icon">
+														<i class="ki-duotone ki-element-7 fs-2">
+															<span class="path1"></span>
+															<span class="path2"></span>
+														</i>
+													</span>
+													<span class="menu-title">User</span>
+													<span class="menu-arrow"></span>
+												</span>
+												<!--end:Menu link-->
+
+												<!--begin:Menu sub-->
+												<div class="menu-sub menu-sub-accordion">
+
+													<!--begin:Menu item (User)-->
+													<?php if($_SESSION['user_role'] == "Admin"): ?>
+														<div class="menu-item">
+															<!--begin:Menu link-->
+															<a class="menu-link" href="<?php echo URLROOT; ?>/userlists">
+																<span class="menu-bullet">
+																	<span class="bullet bullet-dot"></span>
+																</span>
+																<span class="menu-title">User lists</span>
+															</a>
+															<!--end:Menu link-->
+														</div>
+													<?php endif; ?>
+													<!--end:Menu item (User)-->
+
+													<!--begin:Menu item (Student)-->
+													<div class="menu-item">
+														<!--begin:Menu link-->
+														<a class="menu-link" href="<?php echo URLROOT; ?>/userlists/stuList">
+															<span class="menu-bullet">
+																<span class="bullet bullet-dot"></span>
+															</span>
+															<span class="menu-title">Student lists</span>
+														</a>
+														<!--end:Menu link-->
+													</div>
+													<!--end:Menu item (Student)-->
+
+													<!--begin:Menu item (Lecturer)-->
+													<div class="menu-item">
+														<!--begin:Menu link-->
+														<a class="menu-link" href="<?php echo URLROOT; ?>/userlists/lecList">
+															<span class="menu-bullet">
+																<span class="bullet bullet-dot"></span>
+															</span>
+															<span class="menu-title">Lecturer lists</span>
+														</a>
+														<!--end:Menu link-->
+													</div>
+													<!--end:Menu item (Lecturer)-->
+
+													<!--begin:Menu item (Partner)-->
+													<div class="menu-item">
+														<!--begin:Menu link-->
+														<a class="menu-link" href="<?php echo URLROOT; ?>/userlists/orgList">
+															<span class="menu-bullet">
+																<span class="bullet bullet-dot"></span>
+															</span>
+															<span class="menu-title">Partner lists</span>
+														</a>
+														<!--end:Menu link-->
+													</div>
+													<!--end:Menu item (Partner)-->
 												</div>
-											<!--end:Menu item-->								
-										</div>
-										<!--end:Menu item (Dashboard)-->
-										
+												<!--end:Menu sub-->
 
-
+											</div>
+										<?php endif; ?>
+										<!--end:Menu item (User)-->
 										
 										<!--begin:Menu item (Badge)-->
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu item-->
-											<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/badges">														
-														<span class="menu-title">Badge</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-											<!--end:Menu item-->								
-										</div>
+										<?php if($_SESSION['user_role'] == "Admin"): ?>
+											<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+												<!--begin:Menu item-->
+												<div class="menu-item">
+														<!--begin:Menu link-->
+														<a class="menu-link" href="<?php echo URLROOT; ?>/badges">														
+															<span class="menu-title">Badge</span>
+														</a>
+														<!--end:Menu link-->
+													</div>
+												<!--end:Menu item-->								
+											</div>
+										<?php endif; ?>
 										<!--end:Menu item (Badge)-->
 
 										<!--begin:Menu item (Skill)-->
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu item-->
-											<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="<?php echo URLROOT; ?>/skills">														
-														<span class="menu-title">Skill</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-											<!--end:Menu item-->								
-										</div>
+										<?php if($_SESSION['user_role'] == "Admin" || $_SESSION['user_role'] == "Student"): ?>
+											<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+												<!--begin:Menu item-->
+												<div class="menu-item">
+														<!--begin:Menu link-->
+														<a class="menu-link" href="<?php echo URLROOT; ?>/skills">														
+															<span class="menu-title">List of Skill</span>
+														</a>
+														<!--end:Menu link-->
+													</div>
+												<!--end:Menu item-->								
+											</div>
+										<?php endif; ?>
 										<!--end:Menu item (Skill)-->
 
 										<!--begin:Menu item-->
@@ -78,6 +144,7 @@
 											<!--end:Menu link-->
 											<!--begin:Menu sub-->
 											<div class="menu-sub menu-sub-accordion">
+
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
@@ -90,19 +157,21 @@
 													<!--end:Menu link-->
 												</div>
 
+												<!--begin:Menu item-->
 												<div class="menu-item">
-                                <!--begin:Menu link-->
-								<?php if ($_SESSION['user_role'] == "Student"): ?>
-                                <a class="menu-link" href="<?php echo URLROOT; ?>/activity/joined">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Joined Activities</span>
-                                </a>
-								<?php endif ?>
-                                <!--end:Menu link-->
-                            </div>
+													<!--begin:Menu link-->
+													<?php if ($_SESSION['user_role'] == "Student"): ?>
+													<a class="menu-link" href="<?php echo URLROOT; ?>/activity/joined">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Joined Activities</span>
+													</a>
+													<?php endif ?>
+													<!--end:Menu link-->
+												</div>
 												<!--end:Menu item-->
+
 												<!--begin:Menu item-->
 												<div class="menu-item">
 													<!--begin:Menu link-->
@@ -135,8 +204,8 @@
 										</div>
 										<!--end:Menu item-->
 
-																				<!--begin:Menu item-->
-																				<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+										<!--begin:Menu item-->
+										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<!--begin:Menu link-->
 											<span class="menu-link">
 												<span class="menu-icon">
