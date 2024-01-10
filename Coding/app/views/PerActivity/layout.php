@@ -25,22 +25,37 @@
                 
                     $c_url = URLROOT . "/peractivity"; 
                     $t_url = URLROOT . "/peractivity/create"; 
+                    $p_url = URLROOT . "/peractivity/approved";
 
-                    if (isset($data['peractivities']) && is_object($data['peractivities'])) {
-                    $u_url = URLROOT . "/peractivity/update/".$data['peractivities']->pac_id; 
+                    if (isset($data['perActivity']) && is_object($data['perActivity'])) {
+                    $u_url = URLROOT . "/peractivity/update/".$data['perActivity']->pac_id; 
+                    $a_url = URLROOT . "/peractivity/assign/".$data['perActivity']->pac_id;
                   }
 
 
                     //error_reporting(0);
-                    if ($url == $c_url){
-                        require 'manage.php';
-                    }elseif($url == $t_url){
-                        require 'create.php';
-                   }elseif ($url == $u_url){
-                        require 'update.php';
-                    } else {
+                    if ($_SESSION['user_role'] == 'Student'){
+                        if ($url == $c_url){
+                            require 'manage.php';
+                        }elseif($url == $t_url){
+                            require 'create.php';
+                        }elseif ($url == $u_url){
+                            require 'update.php';
+                        } elseif ($url == $p_url){
+                            require 'approved.php';
+                        } elseif ($url == $a_url){
+                            require 'assign.php';
+                        } else {
 
-                    }
+                        }
+
+                        } elseif ($_SESSION['user_role'] == 'Lecturer' || $_SESSION['user_role'] == 'Admin') {
+                            if ($url == $c_url){
+                                require 'manage.php';
+                            } else {
+
+                            }
+                        }
                     ?>
 
         <!--end::Row-->

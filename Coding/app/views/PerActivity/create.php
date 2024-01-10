@@ -42,7 +42,7 @@
                 <?php endif ?>
                 
                 <div class="position-relative">
-                    <input type="file" class="form-control" name="image">
+                    <input type="file" class="form-control" name="evidence">
                 </div>
 
                 <!-- <label for="exampleFormControlInput1" class="required form-label">Icon</label>
