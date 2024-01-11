@@ -22,9 +22,9 @@ foreach ($data['partnerProfile'] as $partnerProfile) :
     <!--begin::info-->
     <div class="card shadow-sm card-px-0">
     <div class="card-header ml-5">
-                <h4 class="card-title" style="margin-left:20px">My Info</h4>
+                <h4 class="card-title ls-3 fw-bold" style="margin-left:20px">INFO</h4>
                     <div class="card-toolbar">
-                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button" style="margin-right:10px">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-warning" role="button" style="margin-right:10px">
                         Edit
                         </a>
                     </div>
@@ -69,15 +69,15 @@ foreach ($data['partnerProfile'] as $partnerProfile) :
         <!--start::description-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h4 class="card-title">About Me</h4>
+                <h4 class="card-title ls-3 fw-bold">ABOUT ME</h4>
                     <div class="card-toolbar">
-                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-warning" role="button">
                         Edit
                         </a>
                     </div>
             </div>
             <div class="card-body card-scroll h-110px">
-                <?php echo $partnerProfile->about_me; ?>
+            <span class="ls-1" style="font-style:italic"><?php echo $partnerProfile->about_me; ?></span>
             </div>
         </div>
         <!--end::description-->

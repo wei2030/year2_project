@@ -32,7 +32,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-uppercase text-uppercase"><?php echo $studentProfile->st_fullname ?></h1>
-							    <div class="title mb-3"><?php echo $_SESSION['user_role']; ?></div>
+							    <div class="title mb-3" style="font-style:italic"><?php echo $_SESSION['user_role']; ?></div>
 							    <ul class="list-unstyled">
 								    <li class="mb-2"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?php echo $_SESSION['email']; ?></li>
 								    <li><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?php echo $studentProfile->st_phone; ?></li>
@@ -49,7 +49,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
 			    <section class="resume-section summary-section mb-5">
 				    <h5 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Description</h5>
 				    <div class="resume-section-content">
-					    <p class="mb-0"><?php echo $studentProfile->about_me; ?></p>
+					    <p class="mb-0" style="font-style:italic"><?php echo $studentProfile->about_me; ?></p>
 				    </div>
                     <br>
 			    </section><!--//summary-section-->

@@ -33,10 +33,10 @@
         <!--start::description-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h4 class="card-title">Description</h4>
+                <h4 class="card-title ls-3 fw-bold">DESCRIPTION</h4>
             </div>
             <div class="card-body card-scroll h-110px">
-                <h5>This is an admin account. </h5>
+            <span class="ls-1" style="font-style:italic">This is an admin account.</span>
             </div>
         </div>
         <!--end::description-->

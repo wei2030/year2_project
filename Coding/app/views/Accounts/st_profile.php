@@ -22,9 +22,9 @@ foreach ($data['studentProfile'] as $studentProfile) :
     <!--begin::info-->
     <div class="card shadow-sm card-px-0">
     <div class="card-header ml-5">
-                <h4 class="card-title" style="margin-left:20px">My Info</h4>
+                <h4 class="card-title ls-3 fw-bold" style="margin-left:20px">INFO</h4>
                     <div class="card-toolbar">
-                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button" style="margin-right:10px">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-warning" role="button" style="margin-right:10px">
                         Edit
                         </a>
                     </div>
@@ -72,15 +72,15 @@ foreach ($data['studentProfile'] as $studentProfile) :
         <!--start::description-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h4 class="card-title">About Me</h4>
+                <h4 class="card-title ls-3 fw-bold">ABOUT ME</h4>
                     <div class="card-toolbar">
-                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-light" role="button">
+                        <a href="<?php echo URLROOT . "/accounts/edit_profile"?>" class="btn btn-sm btn-warning" role="button">
                         Edit
                         </a>
                     </div>
             </div>
             <div class="card-body card-scroll h-110px">
-                <?php echo $studentProfile->about_me; ?>
+                <span class="ls-1" style="font-style:italic"><?php echo $studentProfile->about_me; ?></span>
             </div>
         </div>
         <!--end::description-->
@@ -90,7 +90,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
         <!--start::skill-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h4 class="card-title">Skills</h4>
+                <h4 class="card-title ls-3 fw-bold">SKILLS</h4>
             </div>
 
             <div class="card-body">
@@ -106,13 +106,13 @@ foreach ($data['studentProfile'] as $studentProfile) :
         <!-- start::badges-->
         <div class="card shadow-sm card-dashed">
             <div class="card-header">
-                <h4 class="card-title">Badge</h4>
+                <h4 class="card-title ls-3 fw-bold">BADGE</h4>
             </div>
 
             <div class="card-body" style="text-align:center">
             <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
                 <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="<?php echo $studentBadge->badge_name; ?>">
-                    <div class="symbol symbol-50px">
+                    <div class="symbol symbol-100px">
                     
                         <img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
             <?php endforeach; ?>

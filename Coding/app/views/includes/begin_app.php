@@ -5,7 +5,7 @@
                     <!--begin::Header-->
                     <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
                         <!--begin::Header container-->
-                        <div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+                        <div style="background-image: linear-gradient(#FCBD32, white);" class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
                             <!--begin::Sidebar mobile toggle-->
                             <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
                                 <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle">
@@ -59,7 +59,7 @@
                     <!--begin::Wrapper-->
                     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                         <!--begin::Sidebar-->
-                        <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+                        <div style="background-image: linear-gradient(to right,#183D64, #7C1C2B);" id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                             <!--begin::Logo-->
                             <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                                 <!--begin::Logo image-->
