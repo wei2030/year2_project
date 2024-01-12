@@ -228,7 +228,7 @@
 
             <div class="row">
                 <!-- Link to Approved Feedback -->
-                <a href="<?php echo URLROOT ?>/feedback" class="card hover-elevate-up shadow-sm parent-hover">
+                <a href="<?php echo URLROOT ?>/feedback/approved" class="card hover-elevate-up shadow-sm parent-hover">
                     <div class="card-body d-flex align-items">
                         <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="approved feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/approved feedback.png"/>
 
