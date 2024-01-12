@@ -46,6 +46,11 @@
             </div>
 
             <div class="mb-10">
+                <label for="exampleFormControlInput1" class="required form-label">Date Activity Start</label>
+                <input type="date" name="activityend" class="form-control form-control-solid" required />
+            </div>
+
+            <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Venue</label>
                 <input type="text" name="venue" class="form-control form-control-solid" placeholder="Venue of Activity" required />
             </div>
