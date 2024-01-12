@@ -162,6 +162,13 @@ public function getLecturerFullName($lc_id)
     return $row ? $row->lc_fullname : ''; // Return the full name if it exists, otherwise an empty string
 }
 
+public function showAllApproved() {
+    $this->db->query('SELECT * FROM peractivity WHERE status = "Approved" ORDER BY date ASC');
+    $result = $this->db->resultSet();
+
+    return $result;
+}
+
 
 }
 ?>
