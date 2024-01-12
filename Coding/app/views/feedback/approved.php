@@ -59,6 +59,9 @@
                             <p><strong>Full Name:</strong></p>
 <p><?php echo $activities->st_fullname; ?></p>
 
+<p><strong>University:</strong></p>
+<p><?php echo $activities->univ_code; ?></p>
+
 <p><strong>1. What is your role in this activity?</strong></p>
 <p><?php echo $activities->q1; ?></p>
 
