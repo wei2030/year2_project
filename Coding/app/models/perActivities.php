@@ -30,13 +30,15 @@ class perActivities
 
     public function updateperActivity($data)
 {
-    $this->db->query('UPDATE peractivity SET name = :name, venue = :venue, date = :date , `description` = :description WHERE pac_id = :pac_id');
+    $this->db->query('UPDATE peractivity SET name = :name, venue = :venue, date = :date , `description` = :description, evidence = :evidence WHERE pac_id = :pac_id');
 
     $this->db->bind(':pac_id', $data['pac_id']);
     $this->db->bind(':name', $data['name']);
     $this->db->bind(':venue', $data['venue']);
     $this->db->bind(':date', $data['date']);
     $this->db->bind(':description', $data['description']);
+    $this->db->bind(':evidence', $data['evidence']);
+
 
     // Execute the query and handle the result (if needed)
     $this->db->execute();

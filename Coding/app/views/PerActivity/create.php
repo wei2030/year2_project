@@ -35,7 +35,7 @@
             </div>
 
             <div class="mb-10">
-                <label for="image" class="required form-label">Evidence</label>
+                <label for="image" class="required form-label">Evidence (PDF Only)</label>
 
                 <?php if(isset($_SESSION['error']) && ($_SESSION['error'] != "")): ?>
                     <p><?php echo $_SESSION['error']; ?></p>

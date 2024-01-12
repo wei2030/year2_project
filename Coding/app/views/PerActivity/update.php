@@ -33,7 +33,7 @@
                 </div>
 
             <div class="mb-10">
-                <label for="image" class="required form-label">Evidence</label>
+                <label for="image" class="required form-label">Evidence (PDF Only)</label>
                 <?php if (!empty($data['perActivity']->evidence)): ?>
     <p>Current Evidence: <?php echo $data['perActivity']->evidence; ?></p>
 <?php endif; ?>
