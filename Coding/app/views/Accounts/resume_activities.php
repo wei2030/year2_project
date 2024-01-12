@@ -1,4 +1,4 @@
-<?php foreach ($data_2['activities'] as $activities): ?>
+<?php foreach ($data['activities'] as $activities): ?>
 
 <div>
     <h6 class="fw-bold">

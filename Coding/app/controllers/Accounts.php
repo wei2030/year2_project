@@ -4,13 +4,21 @@ class Accounts extends Controller
     public function __construct()
     {
         $this->accountModel = $this->model('Account');
+        $this->activityModel = $this->model('Activities');
 
         if ($_SESSION['user_role'] == "Student") 
         {
             $studentProfile = $this->accountModel->studentProfile();
+            
+            $st_id = $this->activityModel->getStudentID($_SESSION['user_id']);
+
+            $this->feedbackModel = $this->model('Feedbacks');
+
+            $activities = $this->feedbackModel->findApprovedFeedback($st_id);
 
             $data = [
-                'studentProfile' => $studentProfile
+                'studentProfile' => $studentProfile,
+                'activities' => $activities
             ];
         }
         else if ($_SESSION['user_role'] == "Lecturer") 
@@ -33,14 +41,6 @@ class Accounts extends Controller
         {
             $data = [ ];
         }
-
-        $this->activityModel = $this->model('Activities');
-
-        $activities = $this->activityModel->getJoinedActivities($_SESSION['user_id']);
-
-        $data_2 = [
-        'activities' => $activities
-        ];
 
         $this->dashboardModel = $this->model('Dashboard');
 
