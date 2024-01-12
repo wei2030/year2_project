@@ -33,6 +33,7 @@
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Date Activity End</label>
                 <input type="date" name="activityend" class="form-control form-control-solid" value="<?php echo date('Y-m-d', strtotime($data['activities']->activityend)); ?>" required />
+            </div>
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Venue</label>
