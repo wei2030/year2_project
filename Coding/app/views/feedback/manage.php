@@ -123,7 +123,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Reject</h3>
+                                <h3 class="modal-title">Approve</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -178,7 +178,7 @@
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Reject</button>
+                                    <button type="submit" class="btn btn-primary font-weight-bold">Approve</button>
                                 </form>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Approve</h3>
+                                <h3 class="modal-title">Reject</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -203,9 +203,9 @@
                             </div>
 
                             <div class="modal-footer">
-                                <form action="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" method="POST">
+                                <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Approve</button>
+                                    <button type="submit" class="btn btn-primary font-weight-bold">Reject</button>
                                 </form>
                             </div>
                         </div>
