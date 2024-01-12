@@ -1,6 +1,6 @@
 <div class="card shadow-sm">
-    <div class="card-header">
-        <h3 class="card-title">Create Personal Activity</h3>
+    <div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
+        <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Create Personal Activity</h1>
         <div class="card-toolbar">
             <?php if(isLoggedIn()): ?>
             <a href="<?php echo URLROOT;?>/posts" class="btn btn-light-primary">Manage Personal Activity</a>
@@ -56,7 +56,7 @@
         </form>
 
     </div>
-    <div class="card-footer">
-        Footer
-    </div>
+    <div class="card-footer" style="background-image: linear-gradient(white,#FCBD32); color: #FCBD32; text-align: center; padding: 20px;">
+    <h4 class="mb-0 text-uppercase fw-bold text-gray-600 fs-6 ls-1">From lead generation, community building to program development, let us help you reach out to youths!</h4>
+</div>
 </div>

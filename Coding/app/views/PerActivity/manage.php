@@ -1,45 +1,46 @@
 <div class="card shadow-sm">
-    <div class="card-header">
-        <h3 class="card-title">Manage Personal Activity</h3>
+    <div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
+        <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Manage Personal Activity</h1>
         <div class="card-toolbar">
             <?php if(isLoggedIn() && $_SESSION['user_role'] == "Student"): ?>
-                <a href="<?php echo URLROOT;?>/peractivity/create" class="btn btn-light-primary">Create</a>
+                <a href="<?php echo URLROOT;?>/peractivity/create" class="btn btn-light-primary btn-sm">Create</a>
             <?php endif; ?>
         </div>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table id="kt_datatable_posts" class="table table-row-bordered gy-5">
+        <table id="kt_datatable_posts" class="table table-hover table-bordered">
                 <thead>
-                    <tr class="fw-semibold fs-6 text-muted">
-                        <th>Personal Activity's Name</th>
-                        <th>Date</th>
-                        <th>Venue</th>
-                        <th>Description</th>
-                        <th>Evidence</th>
+                <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
+                        <th class="w-150px" style="color: #FFFFFF; font-size: 14px;">Personal Activity's Name</th>
+                        <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Date</th>
+                        <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Venue</th>
+                        <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Description</th>
+                        <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Evidence</th>
                         <?php if ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
-                            <th>Student</th>
+                            <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Student</th>
                         <?php elseif($_SESSION['user_role'] == "Student"): ?>
-                            <th>Lecturer</th>   
+                            <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Lecturer</th>   
                         <?php endif; ?>
-                        <th>Action</th>
+                        <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($data['perActivity'] as $peractivities): ?>
-    <tr>
-        <td><?php echo $peractivities->name; ?></td>
-        <td><?php echo date('F j', strtotime($peractivities->date)); ?></td>
-        <td><?php echo $peractivities->venue; ?></td>
-        <td><?php echo $peractivities->description; ?></td>
-        <td>    <?php
-        if ($peractivities->evidence != null) {
-            echo '<a href="' . URLROOT . '/public/' . $peractivities->evidence . '" target="_blank">View</a>';
-        } else {
-            echo 'No evidence';
-        }
-    ?>
-</td>
+                <?php foreach($data['perActivity'] as $index => $peractivities): ?>
+    <tr class="table-row" style="background: <?php echo ($index % 2 == 0) ? '#f8f9fa' : '#e9ecef'; ?>">
+        <td style="font-size: 12px;"><?php echo $peractivities->name; ?></td>
+        <td style="font-size: 12px; color: #183D64;"><?php echo date('F j', strtotime($peractivities->date)); ?></td>
+        <td style="font-size: 12px; color: #183D64;"><?php echo $peractivities->venue; ?></td>
+        <td style="font-size: 12px; color: #183D64;"><?php echo $peractivities->description; ?></td>
+        <td style="font-size: 12px; color: #183D64;">
+            <?php
+            if ($peractivities->evidence != null) {
+                echo '<a href="' . URLROOT . '/public/' . $peractivities->evidence . '" target="_blank">View</a>';
+            } else {
+                echo 'No evidence';
+            }
+            ?>
+        </td>
         <?php if ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
             <td> 
                 <?php
@@ -56,22 +57,35 @@
         <td>
             <?php if ($_SESSION['user_role'] == "Student"): ?>
                 <!-- Student actions -->
-                <a href="<?php echo URLROOT . "/peractivity/update/" . $peractivities->pac_id ?>"
-                    class="btn btn-light-warning">Update</a>
-                <a href="<?php echo URLROOT . "/peractivity/assign/" . $peractivities->pac_id ?>"
-                    class="btn btn-light-primary">Assign To</a>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#kt<?php echo $peractivities->pac_id?>">
-                    Delete
-                </button>
-            <?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
-                <!-- Lecturer actions -->
-                <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>"
-                    class="btn btn-light-warning">Approve</a>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#kt<?php echo $peractivities->pac_id?>">
-                    Reject
-                </button>
+                <div class="btn-group" style="margin-right: 10px;">
+    <a href="<?php echo URLROOT . "/peractivity/update/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Update</a>
+    <a href="<?php echo URLROOT . "/peractivity/assign/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-primary">Assign To</a>
+    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Delete</button>
+</div>
+
+<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
+
+<div class="btn-group" style="margin-right: 10px;">
+    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
+    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+</div>
+
+
+<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
+
+<div class="btn-group" style="margin-right: 10px;">
+    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
+    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+</div>
+
+
+<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
+
+<div class="btn-group">
+    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
+    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+</div>
+
                 <!-- Add additional code for assigning to lecturers if needed -->
             <?php endif; ?>
             <!-- Delete modal -->
@@ -82,7 +96,8 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Reject</h3>
+                            <h1 class="modal-title text-danger">WARNING!</h1>
+
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -92,8 +107,16 @@
                             </div>
 
                             <div class="modal-body">
-                                Are you sure want to reject this activity?
-                            </div>
+    <p class="font-weight-bold">
+        <h3>⚠️ This action is irreversible.</h3>
+        
+        <h3 style="color: #FF6347;">Are you absolutely sure you want to reject this activity?</h3>
+    </p>
+</div>
+
+
+
+
 
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/peractivity/delete/" . $peractivities->pac_id; ?>" method="POST">
@@ -151,7 +174,8 @@
             });
         </script>
     </div>
-    <div class="card-footer">
-        Footer
     </div>
+    <div class="card-footer" style="background-image: linear-gradient(white,#FCBD32); color: #FCBD32; text-align: center; padding: 20px;">
+    <h4 class="mb-0 text-uppercase fw-bold text-gray-600 fs-6 ls-1">From lead generation, community building to program development, let us help you reach out to youths!</h4>
+</div>
 </div>

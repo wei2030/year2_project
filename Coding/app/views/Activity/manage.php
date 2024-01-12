@@ -42,6 +42,7 @@
                 </thead>
                 <tbody>
                 <?php foreach($data['activity'] as $index => $activities): ?>
+                    
     <tr class="table-row" style="background: <?php echo ($index % 2 == 0) ? '#f8f9fa' : '#e9ecef'; ?>; <?php echo ($activities->action === 'ended') ? 'background-color: #c7943d !important; color: white !important;' : ''; echo ($activities->action === 'joined' || $activities->action === 'join') ? 'background-color: #ffcb5a !important;' : ''; ?>">
         <td style="font-size: 12px;"><?php echo $activities->ac_id; ?></td>
         <td style="font-size: 12px; color: #183D64;"><?php echo $activities->category; ?></td>
@@ -92,7 +93,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Delete</h3>
+                            <h1 class="modal-title text-danger">WARNING!</h1>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -102,13 +103,17 @@
                             </div>
 
                             <div class="modal-body">
-                                Are you sure want to delete this activity?
+                            <p class="font-weight-bold">
+        <h3>⚠️ This action is irreversible.</h3>
+        
+        <h3 style="color: #FF6347;">Are you absolutely sure you want to reject this activity?</h3>
+    </p>
                             </div>
 
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/activity/delete/" . $activities->ac_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                                    
                                     <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
                                 </form>
                             </div>
