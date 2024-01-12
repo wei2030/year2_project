@@ -44,7 +44,7 @@
                     class="btn btn-light-warning">Approve</a> -->
                                     <button type="button" class="btn btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">
                                         Approve</button>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_reject<?php echo $activities->feedback_id?>">
                                         Reject
                                     </button>
                             <?php endif; ?>
@@ -185,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="modal fade" tabindex="-1" id="kt<?php echo $activities->feedback_id?>">
+                <div class="modal fade" tabindex="-1" id="kt_reject<?php echo $activities->feedback_id?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
