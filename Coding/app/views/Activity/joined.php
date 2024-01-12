@@ -37,6 +37,7 @@
                 </thead>
                 <tbody>
                     <?php $index = 1; ?>
+                    <?php if (!empty($data['joinedActivities'])): ?>
                     <?php foreach ($data['joinedActivities'] as $activities): ?>
                     
                         <tr class="table-row" style="background: <?php echo ($index % 2 == 0) ? '#f8f9fa' : '#e9ecef'; ?>; <?php echo ($activities->action === 'ended') ? 'background-color: #c7943d !important; color: white !important;' : ''; echo ($activities->action === 'joined' || $activities->action === 'join') ? 'background-color: #ffcb5a !important;' : ''; ?>">
@@ -61,6 +62,7 @@
     </td>
                         </tr>
                     <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
