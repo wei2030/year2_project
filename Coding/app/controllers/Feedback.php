@@ -59,7 +59,7 @@ class Feedback extends Controller
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         
 
-            if($this->feedbackModel->deleteActivity($feedback_id)){
+            if($this->feedbackModel->deleteFeedback($feedback_id)){
                 header("Location: " . URLROOT . "/feedback");
             }
             else
