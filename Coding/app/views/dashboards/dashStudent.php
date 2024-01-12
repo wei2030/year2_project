@@ -73,7 +73,7 @@
             <div class="row-md-12">
                 <div class="card border border-gray-300 border-solid rounded p-10" style="margin-top: 20px; margin-bottom: 40px;">
                     <div class="col-md-12 mb-4">
-                        <h3 class="text-center" style="color: #183D64; font-size: 2.5rem; font-family: 'Arial', sans-serif; font-weight: bold;">Leaderboard</h3>
+                        <h4 class="text-center ls-1 text-uppercase fs-2" style="color: #183D64; font-family: 'Arial', sans-serif; font-weight: bold;"><span class="text-uppercase fs-1" style="color:#7C1C2B">Leader</span>board</h4>
                     </div>
 
                     <div class="col-md-12 mb-4">
@@ -81,10 +81,10 @@
                             <table id="kt_datatable_posts" class="table table-striped table-row-bordered gy-5 table-hover">
 
                                 <thead>
-                                    <tr class="fw-bold fs-6 text-white" style="background-color: #183D64;">
-                                    <th style="padding-left: 10px; width: 20%;">Badge</th>
-                                    <th>Name</th>
-                                    <th>Number of Joins</th>
+                                    <tr class="fw-bold fs-6 text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
+                                    <th class="rounded" style="padding-left: 10px; width: 20%;">Badge</th>
+                                    <th class="rounded">Name</th>
+                                    <th class="rounded">Number of Joins</th>
                                     </tr>
                                 </thead>
 
@@ -163,8 +163,8 @@
                     <div class="card-body d-flex align-items">
                         <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="join activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/join activity.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join Activity
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Join Activity
                         </span>
                     </div>
                 </a>
@@ -174,10 +174,10 @@
                 <!-- Link to Manage Personal Activity -->
                 <a href="<?php echo URLROOT ?>/peractivity" class="card hover-elevate-up shadow-sm parent-hover">
                     <div class="card-body d-flex align-items">
-                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="manage personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
+                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px; margin-top:14px" alt="manage personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Personal Activity
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Manage Personal Activity
                         </span>
                     </div>
                 </a>
@@ -187,10 +187,10 @@
                 <!-- Link to Create Personal Activity -->
                 <a href="<?php echo URLROOT ?>/peractivity/create" class="card hover-elevate-up shadow-sm parent-hover">
                     <div class="card-body d-flex align-items">
-                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="create personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/create.png"/>
+                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px; margin-top:14px" alt="create personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/create.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create Personal Activity
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Create Personal Activity
                         </span>
                     </div>
                 </a>
@@ -200,10 +200,10 @@
                 <!-- Link to Approved Personal Activity -->
                 <a href="<?php echo URLROOT ?>/peractivity/approved" class="card hover-elevate-up shadow-sm parent-hover">
                     <div class="card-body d-flex align-items">
-                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="approved personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/approved PA.png"/>
+                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px; margin-top:14px" alt="approved personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/approved PA.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approved Personal Activity
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Approved Personal Activity
                         </span>
                     </div>
                 </a>
@@ -215,8 +215,8 @@
                     <div class="card-body d-flex align-items">
                         <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="pending icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/pending.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pending Feedback
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Pending Feedback
                         </span>
                     </div>
                 </a>
@@ -228,8 +228,8 @@
                     <div class="card-body d-flex align-items">
                         <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="approved feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/approved feedback.png"/>
 
-                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approved Feedback
+                        <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                            Approved Feedback
                         </span>
                     </div>
                 </a>

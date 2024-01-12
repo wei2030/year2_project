@@ -207,9 +207,9 @@
                             </span>
 
                             <?php foreach($data_6['numAct'] as $numAct): ?>
-                                <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numAct->numAct ?>" style="margin-left: 10px;">
+                                <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" data-kt-countup="true" data-kt-countup-value="<?php echo $numAct->numAct ?>" style="margin-left: 97px;">
                                     <?php echo $numAct->numAct; ?>
-                                </span>
+                                </div>
                             <?php endforeach; ?>
                         </div>
                     </div> 
@@ -242,7 +242,7 @@
 
         </div>
         <!-- End of left side -->
-
+                            
 
         <!-- right side -->
         <div class="col-md-7">
@@ -253,8 +253,8 @@
                         <div class="card-body d-flex align-items">
                             <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="user icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listuser.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Users
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                                List of Users
                             </span>
                         </div>
                     </a>
@@ -264,10 +264,10 @@
                     <!-- Link to Manege Activity -->
                     <a href="<?php echo URLROOT ?>/activity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/manage activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/manage activity.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:35px">
+                                Manage Activity
                             </span>
                         </div>
                     </a>
@@ -279,10 +279,10 @@
                     <!-- Link to List of Badge -->
                     <a href="<?php echo URLROOT ?>/badges" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="badge icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listbadge.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width:45px;height: 45px;" alt="badge icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listbadge.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Badges
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                                List of Badges
                             </span>
                         </div>
                     </a>
@@ -292,10 +292,10 @@
                     <!-- Link to Manege Personal Activity -->
                     <a href="<?php echo URLROOT ?>/peractivity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="PA icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px;" alt="PA icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Personal Activity
+                            <span class="text-gray-700 parent-hover-primary fs-2 fw-bold" style="margin-left:35px;">
+                                Manage Personal Activity
                             </span>
                         </div>
                     </a>
@@ -309,8 +309,8 @@
                         <div class="card-body d-flex align-items">
                             <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="skill icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listskill.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Skills
+                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px; margin-left:57px">
+                                List of Skills
                             </span>
                         </div>
                     </a>
@@ -320,10 +320,10 @@
                     <!-- Link to Manege Feedback -->
                     <a href="<?php echo URLROOT ?>/feedback" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;height: 50px; margin-top:14px" alt="feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
 
-                            <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Feedback
+                            <span class="text-gray-700 parent-hover-primary fs-2 fw-bold" style="padding-top: 8px; margin-left:35px">
+                                Manage Feedback
                             </span>
                         </div>
                     </a>
@@ -333,7 +333,7 @@
             <div class="row-md-10">
                 <div class="card border border-gray-300 border-solid rounded p-10" style="margin-top: 20px; margin-bottom: 40px;">
                     <div class="col-md-12 mb-4">
-                        <h3 class="text-center" style="color: #183D64; font-size: 2.5rem; font-family: 'Arial', sans-serif; font-weight: bold;">Leaderboard</h3>
+                    <h4 class="text-center ls-1 text-uppercase fs-2" style="color: #183D64; font-family: 'Arial', sans-serif; font-weight: bold;"><span class="text-uppercase fs-1" style="color:#7C1C2B">Leader</span>board</h4>
                     </div>
 
                     <div class="col-md-12 mb-4">
@@ -341,10 +341,10 @@
                             <table id="kt_datatable_posts" class="table table-striped table-row-bordered gy-5 table-hover">
 
                                 <thead>
-                                    <tr class="fw-bold fs-6 text-white" style="background-color: #183D64;">
-                                    <th style="padding-left: 10px; width: 20%;">Badge</th>
-                                    <th>Name</th>
-                                    <th>Number of Joins</th>
+                                <tr class="fw-bold fs-6 text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
+                                    <th class="rounded" style="padding-left: 10px; width: 20%;">Badge</th>
+                                    <th class="rounded">Name</th>
+                                    <th class="rounded">Number of Joins</th>
                                     </tr>
                                 </thead>
 
