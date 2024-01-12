@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-        <table id="kt_datatable_posts" class="table table-hover table-bordered">
+        <table id="kt_datatable_posts" class="table table-bordered gy-5 table-hover">
                 <thead>
                 <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
                         <th class="w-150px" style="color: #FFFFFF; font-size: 14px;">Personal Activity's Name</th>
@@ -31,7 +31,10 @@
         <td style="font-size: 12px;"><?php echo $peractivities->name; ?></td>
         <td style="font-size: 12px; color: #183D64;"><?php echo date('F j', strtotime($peractivities->date)); ?></td>
         <td style="font-size: 12px; color: #183D64;"><?php echo $peractivities->venue; ?></td>
-        <td style="font-size: 12px; color: #183D64;"><?php echo $peractivities->description; ?></td>
+        <td style="font-size: 12px; color: #183D64;">
+        <button type="button" class="btn btn-secondary me-5" data-bs-toggle="popover" data-bs-placement="left" title="Description" data-bs-content="<?php echo $peractivities->description;?>">
+        <img src="https://static.thenounproject.com/png/1815789-200.png" alt="icon" class="icon w-20px h-20px">
+        </button>
         <td style="font-size: 12px; color: #183D64;">
             <?php
             if ($peractivities->evidence != null) {
@@ -61,7 +64,8 @@
     <a href="<?php echo URLROOT . "/peractivity/update/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Update</a>
     <a href="<?php echo URLROOT . "/peractivity/assign/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-primary">Assign To</a>
     <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Delete</button>
-</div>
+
+    </div>
 
 <?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
 

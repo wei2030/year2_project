@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-        <table id="kt_datatable_posts" class="table table-hover table-bordered">
+        <table id="kt_datatable_posts" class="table table-bordered gy-5 table-hover">
                 <thead>
                     <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
                     <th class="w-150px" style="color: #FFFFFF; font-size: 14px;">Personal Activity's Name</th>
@@ -30,7 +30,10 @@
                             <td style="font-size: 12px;"><?php echo $peractivity->name; ?></td>
         <td style="font-size: 12px;"><?php echo date('F j', strtotime($peractivity->date)); ?></td>
         <td style="font-size: 12px;"><?php echo $peractivity->venue; ?></td>
-        <td style="font-size: 12px;"><?php echo $peractivity->description; ?></td>
+        <td style="font-size: 12px; color: #183D64;">
+        <button type="button" class="btn btn-secondary me-5" data-bs-toggle="popover" data-bs-placement="left" title="Description" data-bs-content="<?php echo $peractivity->description;?>">
+        <img src="https://static.thenounproject.com/png/1815789-200.png" alt="icon" class="icon w-20px h-20px">
+        </button>
         <td style="font-size: 12px;">    <?php
         if ($peractivity->evidence != null) {
             echo '<a href="' . URLROOT . '/public/' . $peractivity->evidence . '" target="_blank">View</a>';
