@@ -55,9 +55,21 @@
                 <div class="col-md-4">
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3 d-flex flex-column align-items-center">
 
-                        <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
-                            <img class="icon w-100px h-100px" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
-                        <?php endforeach; ?>
+                        <?php if(isset($data_3['studentBadge'])): ?>
+                            <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
+                                <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="<?php echo $studentBadge->badge_name; ?>">
+                                    <div class="symbol symbol-100px">
+                                        <img class="icon" src="<?php echo URLROOT ?>/public/<?php echo $studentBadge->icon_dir; ?>" alt="badge icon">
+                                    </div>
+                                </button>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="iron">
+                                <div class="symbol symbol-100px">
+                                    <img class="icon" src="<?php echo URLROOT ?>/public/assets/media/badges/iron.png" alt="badge icon">
+                                </div>
+                            </button>
+                        <?php endif; ?>
 
                         <div class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-top: 10px;">
                             Badge
