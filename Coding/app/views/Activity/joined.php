@@ -22,7 +22,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table id="kt_datatable_posts" class="table table-hover table-bordered">
+        <table id="kt_datatable_posts" class="table table-bordered gy-5 table-hover">
                 <thead>
                 <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
                         <th class="w-45px" style="color: #FFFFFF; font-size: 14px;">No.</th>
