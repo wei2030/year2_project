@@ -7,8 +7,8 @@ class User {
 
     public function registerLecturer($lecturerData) {
         // Insert into lecturer table
-        $this->db->query('INSERT INTO lc_profile (lc_ic, lc_email, lc_fullname, lc_gender, lc_race, univ_code, lc_address, lc_image) 
-                         VALUES (:icNo, :email, :fullName, :gender, :race, :university, :address, :image)');
+        $this->db->query('INSERT INTO lc_profile (lc_ic, lc_email, lc_fullname, lc_gender, lc_race, univ_code, lc_address, lc_image, lc_phone) 
+                         VALUES (:icNo, :email, :fullName, :gender, :race, :university, :address, :image, :phone)');
     
         // Bind values
         $this->db->bind(':icNo', $lecturerData['icNo']);
@@ -19,7 +19,8 @@ class User {
         $this->db->bind(':university', $lecturerData['university']);
         $this->db->bind(':address', $lecturerData['address']);
         $this->db->bind(':image', $lecturerData['image']);
-    
+        $this->db->bind(':phone', $lecturerData['phone']);
+
         // Execute query
         $this->db->execute();
     
@@ -36,8 +37,8 @@ class User {
     
     public function registerStudent($studentData) {
         // Insert into student table
-        $this->db->query('INSERT INTO st_profile (st_ic, st_email, st_fullname, st_gender, st_race, univ_code, st_address, st_image) 
-                          VALUES (:icNo, :email, :fullName, :gender, :race, :university, :address, :image)');
+        $this->db->query('INSERT INTO st_profile (st_ic, st_email, st_fullname, st_gender, st_race, univ_code, st_address, st_image, st_phone) 
+                          VALUES (:icNo, :email, :fullName, :gender, :race, :university, :address, :image, :phone)');
     
         // Bind values
         $this->db->bind(':icNo', $studentData['icNo']);
@@ -48,6 +49,7 @@ class User {
         $this->db->bind(':university', $studentData['university']);
         $this->db->bind(':address', $studentData['address']);
         $this->db->bind(':image', $studentData['image']);
+        $this->db->bind(':phone', $studentData['phone']);
     
         // Execute query
         $this->db->execute();
