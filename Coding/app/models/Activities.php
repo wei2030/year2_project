@@ -92,7 +92,7 @@ public function addActivity($data)
     $this->db->bind(':activityend', $data['activityend']);
     $this->db->bind(':venue', $data['venue']);
     $this->db->bind(':desc', $data['desc']); // Wrap `desc` in backticks
-    $this->db->bind(':uploader_id', $data['uploader_id']);
+    $this->db->bind(':uploader_id', $data['user_id']);
     $this->db->bind(':max_participants', $data['max_participants']);
 
     if ($this->db->execute()) {
