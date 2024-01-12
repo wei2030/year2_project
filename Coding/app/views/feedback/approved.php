@@ -38,15 +38,15 @@
                             <td style="font-size: 12px;"><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
                                                    
                             <td style="font-size: 12px;">
-                                    <button class="btn btn-success" disabled>Approved</button>
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">Approved (Details)</button>
                                     
 
-                            <?php  if ($_SESSION['user_role'] == "Student"): ?>
+                            <?php  if ($_SESSION['user_role'] == "Student" || $_SESSION['user_role'] == "Admin"): ?>
                                 <div class="modal fade" tabindex="-1" id="kt<?php echo $activities->feedback_id?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Delete</h3>
+                                <h3 class="modal-title">Details</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -58,6 +58,9 @@
                             <div class="modal-body">
                             <p><strong>Full Name:</strong></p>
 <p><?php echo $activities->st_fullname; ?></p>
+
+<p><strong>University:</strong></p>
+<p><?php echo $activities->univ_code; ?></p>
 
 <p><strong>1. What is your role in this activity?</strong></p>
 <p><?php echo $activities->q1; ?></p>
@@ -86,18 +89,18 @@
 <p><strong>Presenters were easy to understand:</strong></p>
 <p><?php echo $activities->presenter_q3; ?></p>
 
-<hr>
+<p><strong>Project File:</strong></p>
+<?php if ($activities->projectFile != null) {
+            echo '<a href="' . URLROOT . '/public/' . $activities->projectFile . '" target="_blank">View</a>';
+        } else {
+            echo 'No evidence';
+        } ?>
 
-<p>Are you sure you want to delete this feedback?</p>
 
                             </div>
 
                             <div class="modal-footer">
-                                <form action="<?php echo URLROOT . "/feedback/delete/".  $activities->feedback_id; ?>" method="POST">
-                                    <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
-                                </form>
-                            </div>
+                                <button type="button" class="btn btn-light-primary font-weight-bold" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
