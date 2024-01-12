@@ -204,20 +204,35 @@ public function addActivity($data)
     
 
 
-   // Add a method to check if the registration date has ended
-public function isRegistrationEnded($ac_id, $date_reg_end)
-{
-    $currentDate = date('Y-m-d');
-
-    return $currentDate > $date_reg_end;
-}
-
-public function isRegistrationStarted($ac_id, $date_reg_start)
-{
-    $currentDate = date('Y-m-d');
-
-    return $currentDate < $date_reg_start;
-}
+    public function isRegistrationEnded($ac_id, $date_reg_end)
+    {
+        // Set Malaysia timezone
+        $malaysiaTimezone = new DateTimeZone('Asia/Kuala_Lumpur');
+    
+        // Get the current date in Malaysia timezone
+        $currentDate = new DateTime('now', $malaysiaTimezone);
+    
+        // Convert registration end date to Malaysia timezone
+        $registrationEndDate = new DateTime($date_reg_end);
+        $registrationEndDate->setTimezone($malaysiaTimezone);
+    
+        return $currentDate > $registrationEndDate;
+    }
+    
+    public function isRegistrationStarted($ac_id, $date_reg_start)
+    {
+        // Set Malaysia timezone
+        $malaysiaTimezone = new DateTimeZone('Asia/Kuala_Lumpur');
+    
+        // Get the current date in Malaysia timezone
+        $currentDate = new DateTime('now', $malaysiaTimezone);
+    
+        // Convert registration start date to Malaysia timezone
+        $registrationStartDate = new DateTime($date_reg_start);
+        $registrationStartDate->setTimezone($malaysiaTimezone);
+    
+        return $currentDate < $registrationStartDate;
+    }
 
 public function getParticipantNumber($ac_id)
 {
@@ -336,11 +351,19 @@ public function findAllActivityOrganizer($user_id) {
     return $this->db->resultSet();
 }
 
- public function isActivityEnd($ac_id, $activityend) {
-    $currentDate = date('Y-m-d');
+public function isActivityEnd($ac_id, $activityend) {
 
-    return $currentDate > $activityend;
- }
+    $malaysiaTimezone = new DateTimeZone('Asia/Kuala_Lumpur');
+
+    // Get the current date in Malaysia timezone
+    $currentDate = new DateTime('now', $malaysiaTimezone);
+
+    // Convert activity end date to Malaysia timezone
+    $activityEndDate = new DateTime($activityend);
+    $activityEndDate->setTimezone($malaysiaTimezone);
+
+    return $currentDate > $activityEndDate;
+}
 
  public function addFeedback($data)
  {

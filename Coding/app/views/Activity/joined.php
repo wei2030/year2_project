@@ -47,8 +47,13 @@
                             <td><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
                             <td> <button class="btn btn-success" disabled>Joined</button>
                             <?php if ($this->activityModel->isActivityEnd($activities->ac_id, $activities->activityend)): ?>
-                            <a href="<?php echo URLROOT . "/activity/form/" . $activities->ac_id ?>" class="btn btn-light-warning">Feedback</a></td>
-                            <?php endif; ?>
+    <?php if (!$this->activityModel->hasFeedback($activities->ac_id, $_SESSION['user_id'])): ?>
+        <a href="<?php echo URLROOT . "/activity/form/" . $activities->ac_id ?>" class="btn btn-light-warning">Feedback</a>
+    <?php else: ?>
+        <button class="btn btn-secondary" disabled>Filled</button>
+    <?php endif; ?>
+<?php endif; ?>
+    </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
