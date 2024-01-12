@@ -1,12 +1,12 @@
 <div class="card shadow-sm">
 
 <div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
-<h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">List of Skills</h1>
+<h1 class="card-title ls-1" style="font-size: 24px; font-weight: bold; color: #fff;">List of Skills</h1>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-            <table id="kt_datatable_posts" class="table table-hover table-bordered">
+            <table id="kt_datatable_posts" class="table table-hover table-bordered gy-5">
 
                 <thead>
                 <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
@@ -22,7 +22,7 @@
 
                         <!-- change to img -->
                         <td><img class="icon w-100px h-100px" src="<?php echo URLROOT ?>/public/<?php echo $skill->skill_dir; ?>" alt="Skill icon"></td> 
-                        <td class="ls-1 text-uppercase" style="font-style:italic"><?php echo $skill->skill_name; ?></td>
+                        <td class="ls-1 text-uppercase"><?php echo $skill->skill_name; ?></td>
                         <td class="ls-1"><?php echo $skill->skill_desc; ?></td>                      
                         
                     </tr>

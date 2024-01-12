@@ -2,8 +2,8 @@
 
 <div class="card shadow-sm">
 
-    <div class="card-header">
-        <h3 class="card-title">List of Skills</h3>
+<div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
+<h1 class="card-title ls-1" style="font-size: 24px; font-weight: bold; color: #fff;">List of Skills</h1>
 
         <!-- Check whether logged in or not -->
         <div class="card-toolbar">
@@ -16,14 +16,14 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table id="kt_datatable_posts" class="table table-row-bordered gy-5">
+        <table id="kt_datatable_posts" class="table table-bordered gy-5 table-hover">
 
                 <thead>
-                    <tr class="fw-semibold fs-6 text-muted">
-                        <th>Skills</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Action</th>
+                <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
+                        <th style="color: #FFFFFF; font-size: 14px;">Skills</th>
+                        <th style="color: #FFFFFF; font-size: 14px;">Name</th>
+                        <th style="color: #FFFFFF; font-size: 14px;">Description</th>
+                        <th style="color: #FFFFFF; font-size: 14px;">Action</th>
                     </tr>
                 </thead>
 
@@ -32,14 +32,14 @@
                     <tr>
                         <!-- change to img -->
                         <td><img class="icon w-100px h-100px" src="<?php echo URLROOT ?>/public/<?php echo $skill->skill_dir; ?>" alt="Skill icon"></td> 
-                        <td><?php echo $skill->skill_name; ?></td>
-                        <td><?php echo $skill->skill_desc; ?></td>                      
+                        <td style="font-size: 12px;"><?php echo $skill->skill_name; ?></td>
+                        <td style="font-size: 12px;"><?php echo $skill->skill_desc; ?></td>                      
                         <td>
                             <a href="<?php echo URLROOT . "/skills/update/" . $skill->skill_id ?>"
                                 class="btn btn-light-warning">Update</a>
 
                             <a href="<?php echo URLROOT . "/skills/assign/" . $skill->skill_id ?>"
-                                class="btn btn-light-warning">Assign TO</a>
+                                class="btn btn-light-info">Assign TO</a>
 
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#kt<?php echo $skill->skill_id?>">
