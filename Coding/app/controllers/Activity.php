@@ -266,6 +266,23 @@ public function form($ac_id)
     ];
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //Upload file
+        if (!empty($_FILES['projectFile']['name'])){            
+            $file_name=$_FILES['projectFile']['name'];
+            $file_temp=$_FILES['projectFile']['tmp_name'];
+            $file_destination= 'uploads/'.$file_name;
+
+            if(move_uploaded_file($file_temp, $file_destination)){
+                $data['projectFile']=$file_destination;
+            }
+            else{
+                echo "File upload failed!";
+            } 
+        } else {
+            $data['projectFile'] = '';
+        }
+        
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         $data = [
             'ac_id' => trim($_POST['ac_id']),
@@ -282,7 +299,7 @@ public function form($ac_id)
             'presenter_q1' => trim($_POST['presenter_q1']),
             'presenter_q2' => trim($_POST['presenter_q2']),
             'presenter_q3' => trim($_POST['presenter_q3']),
-            'projectFile' => trim($_POST['projectFile']),
+            'projectFile' => $data['projectFile'],
             'activity' => $activity,
             'studentProfile' => $this->accountModel->studentProfile(),
             'participant_id' => $participant_id
@@ -297,6 +314,19 @@ public function form($ac_id)
     }
 
     $this->view('activity/index', $data);
+}
+
+public function checkFeedbackStatus($activity_id)
+{
+    if (!isLoggedIn()) {
+        // Handle the case when the user is not logged in
+        return false;
+    }
+
+    // Check if the user has already submitted feedback for the activity
+    $hasFeedback = $this->activityModel->hasFeedback($activity_id, $_SESSION['user_id']);
+
+    return $hasFeedback;
 }
 
 

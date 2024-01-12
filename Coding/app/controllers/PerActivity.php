@@ -54,28 +54,18 @@ public function create()
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-              // Handle file upload
-    $uploadDir = 'uploads/';
-    $evidenceFile = $_FILES['evidence'];
-
-    if (!empty($evidenceFile['name'])) {
-        $allowedExtensions = ['pdf', 'docx', 'jpg', 'jpeg', 'png', 'gif'];
-
-        $fileExtension = strtolower(pathinfo($evidenceFile['name'], PATHINFO_EXTENSION));
-
-        if (in_array($fileExtension, $allowedExtensions)) {
-            $uploadPath = $uploadDir . uniqid() . '.' . $fileExtension;
-
-            if (move_uploaded_file($evidenceFile['tmp_name'], $uploadPath)) {
-                $data['evidence'] = $uploadPath;
-            } else {
-                die("File upload failed");
+            if (!empty($_FILES['evidence']['name'])){            
+                $file_name=$_FILES['evidence']['name'];
+                $file_temp=$_FILES['evidence']['tmp_name'];
+                $file_destination= 'uploads/'.$file_name;
+    
+                if(move_uploaded_file($file_temp, $file_destination)){
+                    $data['evidence']=$file_destination;
+                }
+                else{
+                    echo "File upload failed!";
+                }
             }
-        } else {
-            die("Invalid file type");
-        }
-    }
-
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             
@@ -86,7 +76,7 @@ public function create()
             'date' => trim($_POST['date']),
             'venue' => trim($_POST['venue']),
             'description' => trim($_POST['description']),
-            'evidence' => trim($_POST['evidence'])
+            'evidence' => $data['evidence'],
             ];
 
 
@@ -118,47 +108,55 @@ public function create()
         }
     
         $data = [
-            'pac_id' => $pac_id, // Added this line to pass the activity ID to the view
+            'pac_id' => $pac_id,
             'perActivity' => $peractivity,
             'name' => '',
             'venue' => '',
             'date' => '',
             'description' => '',
-            'evidence' => '',
+            'evidence' => $peractivity->evidence, // Preserving existing evidence file
             'nameError' => '',
             'venueError' => '',
             'u_url' => URLROOT . "/peractivity/update/" . $pac_id
         ];
     
+        // Handle form submission
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $data = [
-                'pac_id' => $pac_id,
-                'perActivity' => $peractivity,
-                'name' => trim($_POST['name']),
-                'venue' => trim($_POST['venue']),
-                'date' => trim($_POST['date']),
-                'description' => trim($_POST['description']),
-                'evidence' => trim($_POST['evidence']),
-                'nameError' => '',
-                'venueError' => ''
-            ];
     
-            // Check if there are no errors
-            if (empty($data['nameError']) && empty($data['venueError'])) {
+            $data['name'] = trim($_POST['name']);
+            $data['venue'] = trim($_POST['venue']);
+            $data['date'] = trim($_POST['date']);
+            $data['description'] = trim($_POST['description']);
+    
+            
+                // Check if a new evidence file is uploaded
+                if (!empty($_FILES['evidence']['name'])) {
+                    $file_name = $_FILES['evidence']['name'];
+                    $file_temp = $_FILES['evidence']['tmp_name'];
+                    $file_destination = 'uploads/' . $file_name;
+    
+                    if (move_uploaded_file($file_temp, $file_destination)) {
+                        // If upload is successful, update the evidence file
+                        $data['evidence'] = $file_destination;
+                    } else {
+                        echo "File upload failed!";
+                    }
+                } else {
+                    // If no new evidence file is uploaded, preserve the existing evidence file
+                    $data['evidence'] = $peractivity->evidence;
+                }
+    
                 // Update the activity
                 if ($this->peractivityModel->updateperActivity($data)) {
                     header("Location: " . URLROOT . "/peractivity");
                     exit; // Added exit to stop further execution
                 } else {
                     header("Location: " . URLROOT . "/peractivity");
-                    exit; // Added exit to stop further execution
                 }
             }
+            $this->view('peractivity/index', $data);
         }
-    
-        $this->view('peractivity/index', $data);
-    }
     
     
 

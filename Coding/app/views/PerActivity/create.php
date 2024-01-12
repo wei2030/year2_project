@@ -10,7 +10,7 @@
     <div class="card-body">
 
 
-        <form action="<?php echo URLROOT; ?>/peractivity/create" method="POST">
+    <form action="<?php echo URLROOT; ?>/peractivity/create" method="POST"  enctype="multipart/form-data">
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Name of Personal Activity</label>
                 <input type="text" name="name" class="form-control form-control-solid" placeholder="Name of Activity" required />
@@ -42,7 +42,7 @@
                 <?php endif ?>
                 
                 <div class="position-relative">
-                    <input type="file" class="form-control" name="evidence">
+                    <input type="file" class="form-control" name="evidence" accept="application/pdf" required/>
                 </div>
 
                 <!-- <label for="exampleFormControlInput1" class="required form-label">Icon</label>

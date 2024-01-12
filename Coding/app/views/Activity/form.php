@@ -152,7 +152,7 @@
                 <hr>
                 <div class="mb-10">
                     <label for="projectFile" class="form-label">Upload your project here (if any): </label>
-                    <input type="file" name="projectFile" class="form-control form-control-solid" />
+                    <input type="file" name="projectFile" class="form-control form-control-solid" accept="application/pdf" />
                 </div>  
             </div>  
             <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>

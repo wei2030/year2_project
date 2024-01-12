@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="<?php echo URLROOT; ?>/peractivity/update/<?php echo $data['perActivity']->pac_id ?>" method="POST">
+    <form action="<?php echo URLROOT; ?>/peractivity/update/<?php echo $data['perActivity']->pac_id ?>" method="POST"  enctype="multipart/form-data">
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="required form-label">Name</label>
                 <input type="text" name="name" class="form-control form-control-solid"
@@ -38,6 +38,8 @@
     <p>Current Evidence: <?php echo $data['perActivity']->evidence; ?></p>
 <?php endif; ?>
 
+
+<input type="file" name="evidence" class="form-control form-control-solid" accept="application/pdf" />
                         
                 <!-- <label for="exampleFormControlInput1" class="required form-label">Icon</label>
                 <input type="text" name="icon_dir" class="form-control form-control-solid" placeholder="icon_dir..." required /> -->
