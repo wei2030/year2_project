@@ -4,20 +4,65 @@
     <div class="row">
 
         <!-- Pie chart for all user -->
-        <div class="col-md-4">
-            <img class="mx-auto card-rounded-bottom" alt="" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/pie.png"/>
+        <div class="col-md-5 p-10">
+            <canvas id="myChart" style="width: 100%, height: auto;"></canvas>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const ctx = document.getElementById('myChart').getContext("2d");
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Number of students', 'Number of lecturers', 'Number of partners'],
+                    datasets: [{
+                        data: [
+                            <?php foreach($data['numStu'] as $numStu): ?>
+                                <?php echo $numStu->numStu ?>,
+                            <?php endforeach; ?>
+
+                            <?php foreach($data_2['numLec'] as $numLec): ?>
+                                <?php echo $numLec->numLec ?>,
+                            <?php endforeach; ?>
+
+                            <?php foreach($data_3['numPart'] as $numPart): ?>
+                                <?php echo $numPart->numPart ?>,
+                            <?php endforeach; ?>
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)', // Red
+                            'rgba(255, 206, 86, 0.7)',  // Yellow
+                            'rgba(54, 162, 235, 0.7)' // Blue                           
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        position: 'right',
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true
+                    }
+                }
+            });
+        </script>
         <!-- End of pie chart -->
 
         <!-- List of number each user -->
-        <div class="col-md-8">
+        <div class="col-md-7">
             <!-- Row for number of student -->
             <div class="row">
                 <a href="<?php echo URLROOT ?>/userlists/stuList">
-                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                    <div class="min-w-125px py-3 px-4 me-6 mb-3 p-5">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/student.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/student.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -38,10 +83,10 @@
             <!-- Row for number of lecturer -->
             <div class="row">
                 <a href="<?php echo URLROOT ?>/userlists/lecList">
-                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                    <div class="min-w-125px py-3 px-4 me-6 mb-3 p-5">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -62,14 +107,14 @@
             <!-- Row for number of organizer -->
             <div class="row">
                 <a href="<?php echo URLROOT ?>/userlists/orgList">
-                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                    <div class="min-w-125px py-3 px-4 me-6 mb-3 p-5">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
-                                Number of partner/organizer registered: 
+                                Number of partners registered: 
                             </span>
 
                             <?php foreach($data_3['numPart'] as $numPart): ?>
@@ -100,7 +145,7 @@
                         <!--begin::Number-->
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/skill.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/skill.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -128,7 +173,7 @@
                         <!--begin::Number-->
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/badge.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/badge.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -154,7 +199,7 @@
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/created activity.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -179,7 +224,7 @@
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" style="width: 50px;" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activities.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -205,26 +250,26 @@
         <div class="col-md-7">
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Link to Manage Activity -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to List of User -->
+                    <a href="<?php echo URLROOT ?>/userlists" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listuser.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Users
                             </span>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-md-6">
-                    <!-- Link to List of Reward -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to Manege Activity -->
+                    <a href="<?php echo URLROOT ?>/activity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/reward.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Rewards
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
                             </span>
                         </div>
                     </a>
@@ -233,26 +278,26 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Link to Manage Activity -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to List of Badge -->
+                    <a href="<?php echo URLROOT ?>/badges" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listbadge.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Badges
                             </span>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-md-6">
-                    <!-- Link to List of Reward -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to Manege Personal Activity -->
+                    <a href="<?php echo URLROOT ?>/peractivity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/reward.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Rewards
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Personal Activity
                             </span>
                         </div>
                     </a>
@@ -261,87 +306,99 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Link to Manage Activity -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to List of Skill -->
+                    <a href="skills" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listskill.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Skills
                             </span>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-md-6">
-                    <!-- Link to List of Reward -->
-                    <a href="#" class="card hover-elevate-up shadow-sm parent-hover">
+                    <!-- Link to Manege Feedback -->
+                    <a href="<?php echo URLROOT ?>/feedback" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/reward.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Rewards
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Feedback
                             </span>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="table-responsive">
-                    <table id="kt_datatable_posts" class="table table-row-bordered gy-5">
+            <div class="row-md-10">
+                <div class="card border border-gray-300 border-solid rounded p-10" style="margin-top: 20px; margin-bottom: 40px;">
+                    <div class="col-md-12 mb-4">
+                        <h3 class="text-center" style="color: #183D64; font-size: 2.5rem; font-family: 'Arial', sans-serif; font-weight: bold;">Leaderboard</h3>
+                    </div>
 
-                        <thead>
-                            <tr class="fw-semibold fs-6 text-muted">
-                                <th>Name</th>
-                                <th>Number of join</th>
-                            </tr>
-                        </thead>
+                    <div class="col-md-12 mb-4">
+                        <div class="table-responsive">
+                            <table id="kt_datatable_posts" class="table table-striped table-row-bordered gy-5 table-hover">
 
-                        <tbody>
-                            <?php foreach($data_8['leaderboard'] as $leaderboard): ?>
-                            <tr>
-                                <?php
-                                    $num_activity = $leaderboard->numActJoin;
+                                <thead>
+                                    <tr class="fw-bold fs-6 text-white" style="background-color: #183D64;">
+                                    <th style="padding-left: 10px; width: 20%;">Badge</th>
+                                    <th>Name</th>
+                                    <th>Number of Joins</th>
+                                    </tr>
+                                </thead>
 
-                                    if ($num_activity >= 0 && $num_activity <= 9) {
-                                        $badge_name = 'Iron';
-                                    } elseif ($num_activity >= 10 && $num_activity <= 19) {
-                                        $badge_name = 'Bronze';
-                                    } elseif ($num_activity >= 20 && $num_activity <= 29) {
-                                        $badge_name = 'Silver';
-                                    } elseif ($num_activity >= 30 && $num_activity <= 39) {
-                                        $badge_name = 'Gold';
-                                    } elseif ($num_activity >= 40 && $num_activity <= 49) {
-                                        $badge_name = 'Platinum';
-                                    } elseif ($num_activity >= 50 && $num_activity <= 59) {
-                                        $badge_name = 'Diamond';
-                                    } else {
-                                        $badge_name = 'Adventurer';
-                                    }
+                                <tbody>
+                                    <?php foreach($data_8['leaderboard'] as $leaderboard): ?>
+                                    <tr>
+                                        <?php
+                                            $num_activity = $leaderboard->numActJoin;
 
-                                    $this->db = new Database;
+                                            if ($num_activity >= 0 && $num_activity <= 9) {
+                                                $badge_name = 'Iron';
+                                            } elseif ($num_activity >= 10 && $num_activity <= 19) {
+                                                $badge_name = 'Bronze';
+                                            } elseif ($num_activity >= 20 && $num_activity <= 29) {
+                                                $badge_name = 'Silver';
+                                            } elseif ($num_activity >= 30 && $num_activity <= 39) {
+                                                $badge_name = 'Gold';
+                                            } elseif ($num_activity >= 40 && $num_activity <= 49) {
+                                                $badge_name = 'Platinum';
+                                            } elseif ($num_activity >= 50 && $num_activity <= 59) {
+                                                $badge_name = 'Diamond';
+                                            } else {
+                                                $badge_name = 'Adventurer';
+                                            }
 
-                                    $this->db->query("SELECT icon_dir FROM badges WHERE badge_name = :badge_name");
-                                    $this->db->bind(':badge_name', $badge_name);
+                                            $this->db = new Database;
 
-                                    $result = $this->db->resultSet();
+                                            $this->db->query("SELECT icon_dir FROM badges WHERE badge_name = :badge_name");
+                                            $this->db->bind(':badge_name', $badge_name);
 
-                                    $row = $result[0];
+                                            $result = $this->db->resultSet();
 
-                                    $icon_dir = $row->icon_dir;
+                                            $row = $result[0];
 
-                                ?>
+                                            $icon_dir = $row->icon_dir;
 
-                                <td><img class="icon w-25px h-25px" src="<?php echo URLROOT ?>/public/<?php echo $icon_dir; ?>" alt="Badge icon">
-                                    &nbsp;&nbsp;<?php echo $leaderboard->st_fullname; ?></td>
-                                <td><?php echo $num_activity; ?></td>                      
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                                        ?>
+
+                                        <td style="padding-left: 10px; width: 20%;">
+                                            <img class="icon w-40px h-40px" src="<?php echo URLROOT ?>/public/<?php echo $icon_dir; ?>" alt="Badge icon">
+                                            <span class="badge badge-primary" style="background-color: #FCBD32;"><?php echo $badge_name; ?></span>
+                                        </td>
+                                        <td>
+                                            &nbsp;&nbsp;<?php echo $leaderboard->st_fullname; ?></td>
+                                        <td><?php echo $num_activity; ?></td>                      
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
         </div>
