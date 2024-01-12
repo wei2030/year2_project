@@ -8,7 +8,7 @@
             <div class="row">
                 <!-- Num of activity registered -->
                 <div class="col-md-4">
-                    <a href="<?php echo URLROOT ?>/activity">           
+                    <a href="<?php echo URLROOT ?>/activity/joined">           
                         <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3 d-flex flex-column align-items-center">
                             <div class="fs-3 text-success me-2">
                                 <img class="mw-100 mh-300px card-rounded-bottom w-100px h-100px" alt="activities" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activities.png"/>
