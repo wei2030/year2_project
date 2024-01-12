@@ -216,6 +216,25 @@
             return $result;
 
         }
+
+        public function findStuAssoc(){
+
+            $this->db->query(
+
+                'SELECT COUNT(sla.st_id) totalStu
+                FROM lc_profile AS lp
+                INNER JOIN st_lc_assoc AS sla ON lp.lc_id = sla.lc_id
+                WHERE lp.lc_email = :email'
+
+            );
+
+            $this->db->bind(':email', $_SESSION['email']);
+    
+            $result = $this->db->resultSet();
+
+            return $result;
+
+        }
         // End of partner / lecturer
     }
 
