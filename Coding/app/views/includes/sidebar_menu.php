@@ -315,11 +315,11 @@
 													<!--end:Menu link-->
 													</div>
 												<?php endif; ?>
-												<?php endif; ?>
+						
 												<!--end:Menu item-->
 												</div>
 												</div>
-								
+								<?php endif; ?>
 									</div>
 									<!--end::Menu-->
 								</div>
