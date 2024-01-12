@@ -93,7 +93,7 @@
 												<div class="menu-item">
 														<!--begin:Menu link-->
 														<a class="menu-link" href="<?php echo URLROOT; ?>/badges">														
-															<span class="menu-title">Badge</span>
+															<span class="menu-title fw-bold">Badge</span>
 														</a>
 														<!--end:Menu link-->
 													</div>

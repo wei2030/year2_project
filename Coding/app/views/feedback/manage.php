@@ -1,23 +1,23 @@
 <div class="card shadow-sm">
-    <div class="card-header">
-        <h3 class="card-title">Manage Feedback</h3>
+<div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
+    <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Manage Feedback</h1>
         <div class="card-toolbar"></div>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-            <table id="kt_datatable_posts" class="table table-row-bordered gy-5">
+            <table id="kt_datatable_posts" class="table table-hover table-bordered gy-5">
                 <thead>
-                    <tr class="fw-semibold fs-6 text-muted">
-                        <th>No.</th>
-                        <th>Category</th>
-                        <th>Activity's Name</th>
-                        <th>Registration Date</th>
-                        <th>Activity Date</th>
-                        <th>Venue</th>
-                        <th>Description</th>
-                        <th>Participants</th>
-                        <th>Action</th>
+                    <tr class="fw-bold text-white" style="background: linear-gradient(to right, #183D64, #7C1C2B);">
+                        <th class="w-40px" style="color: #FFFFFF; font-size: 14px;">No.</th>
+                        <th class="w-100px" style="color: #FFFFFF; font-size: 14px;">Category</th>
+                        <th class="w-150px"style="color: #FFFFFF; font-size: 14px;">Activity's Name</th>
+                        <th class="w-150px" style="color: #FFFFFF; font-size: 14px;">Registration Date</th>
+                        <th class="w-100px" style="color: #FFFFFF; font-size: 14px;">Activity Date</th>
+                        <th class="w-80px" style="color: #FFFFFF; font-size: 14px;">Venue</th>
+                        <th class="w-70px" style="color: #FFFFFF; font-size: 14px;">Description</th>
+                        <th class="w-100px"style="color: #FFFFFF; font-size: 14px;">Participant</th>
+                        <th class="w-50px"style="color: #FFFFFF; font-size: 14px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,14 +25,18 @@
                     <?php if (!empty($data['feedback'])): ?>
                     <?php foreach($data['feedback'] as $activities): ?>
                         <tr>
-                            <td><?php echo $index++; ?></td>
-                            <td><?php echo $activities->category; ?></td>
-                            <td><?php echo $activities->name; ?></td>
-                            <td><?php echo date('d/m/y ', strtotime($activities->date_reg_start)); ?> - <?php echo date('d/m/y ', strtotime($activities->date_reg_end)); ?></td>
-                            <td><?php echo date('d/m/y ', strtotime($activities->activitystart)); ?> - <?php echo date('d/m/y ', strtotime($activities->activityend)); ?></td>
-                            <td><?php echo $activities->venue; ?></td>
-                            <td><?php echo $activities->desc; ?></td>
-                            <td><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
+                            <td style="font-size: 12px;"><?php echo $index++; ?></td>
+                            <td style="font-size: 12px;"><?php echo $activities->category; ?></td>
+                            <td style="font-size: 12px;"><?php echo $activities->name; ?></td>
+                            <td style="font-size: 12px;"><?php echo date('d/m/y ', strtotime($activities->date_reg_start)); ?> - <?php echo date('d/m/y ', strtotime($activities->date_reg_end)); ?></td>
+                            <td style="font-size: 12px;"><?php echo date('d/m/y ', strtotime($activities->activitystart)); ?> - <?php echo date('d/m/y ', strtotime($activities->activityend)); ?></td>
+                            <td style="font-size: 12px;"><?php echo $activities->venue; ?></td>
+                            <td style="font-size: 12px; color: #183D64;">
+                            <button type="button" class="btn btn-secondary me-5" data-bs-toggle="popover" data-bs-placement="left" title="Description" data-bs-content="<?php echo $activities->desc;?>">
+                            <img src="https://static.thenounproject.com/png/1815789-200.png" alt="icon" class="icon w-20px h-20px">
+                            </button>
+                            </td>
+                            <td style="font-size: 12px;"><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
                                                    
                             <td>
                                 <?php if ($_SESSION['user_role'] == "Student"): ?>
@@ -230,7 +234,7 @@
             });
         </script>
     </div>
-    <div class="card-footer">
-        Footer
-    </div>
+    <div class="card-footer" style="background-image: linear-gradient(white,#FCBD32); color: #FCBD32; text-align: center; padding: 20px;">
+    <h4 class="mb-0 text-uppercase fw-bold text-gray-600 fs-6 ls-1">From lead generation, community building to program development, let us help you reach out to youths!</h4>
+</div>
 </div>
