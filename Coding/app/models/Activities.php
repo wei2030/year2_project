@@ -471,5 +471,79 @@ public function getLecturerID($user_id) {
 }
 
 
+public function getActivityIdForStudent($st_id)
+    {
+        $this->db->query('SELECT ac_id FROM activity_participants WHERE st_id = :st_id');
+        $this->db->bind(':st_id', $st_id);
+
+        $row = $this->db->single();
+
+        // Check if a result is found
+        if ($row) {
+            return $row->ac_id;
+        } else {
+            // Handle the case where no result is found
+            return null; // or an appropriate default value
+        }
+    }
+
+    public function hasFeedback($ac_id, $user_id)
+{
+    $this->db->query('SELECT * FROM users WHERE id = :user_id');
+    $this->db->bind(':user_id', $user_id);
+    $row = $this->db->single();
+
+    if (!$row) {
+        // User not found, cannot be a student
+        return false;
+    }
+
+    $email = $row->email;
+
+    // Fetch student profile based on email
+    $this->db->query('SELECT * FROM st_profile WHERE st_email = :email');
+    $this->db->bind(':email', $email);
+    $row2 = $this->db->single();
+
+    // Check if the student profile exists
+    if (!$row2) {
+        // Student profile not found
+        return false;
+    }
+
+    $st_id = $row2->st_id;
+
+    // Fetch the participant_id for the given ac_id and st_id
+    $this->db->query('SELECT * FROM feedback WHERE ac_id = :ac_id AND st_id = :st_id');
+    $this->db->bind(':ac_id', $ac_id);
+    $this->db->bind(':st_id', $st_id);
+    $row3 = $this->db->single();
+
+    if ($row3) {
+        // Check if the query was successful before accessing the result
+        return true;
+    } else {
+        // Query failed
+        return false;
+    }
+}
+
+public function getActivityIdByOrganizer($uploader_id) {
+    $this->db->query('SELECT ac_id FROM activity WHERE uploader_id = :uploader_id');
+
+    $this->db->bind(':uploader_id',$uploader_id);
+
+    $row = $this->db->single();
+
+    if ($row) {
+        return $row->ac_id;
+    } else {
+        return null;
+    }
+}
+
+
+
+
 }
 ?>
