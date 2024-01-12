@@ -367,8 +367,8 @@ public function isActivityEnd($ac_id, $activityend) {
 
  public function addFeedback($data)
  {
-     $this->db->query('INSERT INTO feedback (participant_id, st_id, ac_id,name, st_fullname, univ_code, q1, q2, q3, content_q1, content_q2, content_q3, presenter_q1, presenter_q2, presenter_q3, projectFile) 
-                       VALUES (:participant_id, :st_id, :ac_id, :name, :st_fullname, :univ_code, :q1, :q2, :q3, :content_q1, :content_q2, :content_q3, :presenter_q1, :presenter_q2, :presenter_q3, :projectFile)');
+     $this->db->query('INSERT INTO feedback (participant_id, st_id, ac_id,name, st_fullname, univ_code, q1, q2, q3, content_q1, content_q2, content_q3, presenter_q1, presenter_q2, presenter_q3, projectFile, status)
+                       VALUES (:participant_id, :st_id, :ac_id, :name, :st_fullname, :univ_code, :q1, :q2, :q3, :content_q1, :content_q2, :content_q3, :presenter_q1, :presenter_q2, :presenter_q3, :projectFile, "Waiting")');
  
      $this->db->bind(':participant_id', $data['participant_id']);
      $this->db->bind(':st_id', $data['st_id']);

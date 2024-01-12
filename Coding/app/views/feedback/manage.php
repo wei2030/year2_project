@@ -22,6 +22,7 @@
                 </thead>
                 <tbody>
                     <?php $index = 1 ?>
+                    <?php if (!empty($data['feedback'])): ?>
                     <?php foreach($data['feedback'] as $activities): ?>
                         <tr>
                             <td><?php echo $index++; ?></td>
@@ -217,6 +218,7 @@
                             </tr>
                     
                     <?php endforeach; ?>
+                    <?php endif; ?>
 
                 </tbody>
             </table>
