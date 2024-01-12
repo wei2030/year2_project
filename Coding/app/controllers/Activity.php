@@ -101,10 +101,7 @@ public function create()
         if (!isLoggedIn()) {
             header("Location: " . URLROOT . "/activity");
             exit();
-        } elseif ($activities->user_id != $_SESSION['user_id']) {
-            header("Location: " . URLROOT . "/activity");
-            exit();
-        }
+        } 
     
         $data = [
             'activities' => $activities,
