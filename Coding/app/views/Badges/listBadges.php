@@ -1,3 +1,5 @@
+<?php $_SESSION['error'] = "" ?>
+
 <div class="card shadow-sm">
 
     <div class="card-header">
