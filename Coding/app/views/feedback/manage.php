@@ -42,7 +42,7 @@
                             <?php elseif ($_SESSION['user_role'] == "Partner" || $_SESSION['user_role'] == "Admin"): ?>
                                 <!-- <a href="<?php// echo URLROOT . "/feedback/approve/" . $activities->feedback_id ?>"
                     class="btn btn-light-warning">Approve</a> -->
-                                    <button type="button" class="btn btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">
+                                    <button type="button" class="btn btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt_approve<?php echo $activities->feedback_id?>">
                                         Approve</button>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_reject<?php echo $activities->feedback_id?>">
                                         Reject
@@ -119,7 +119,7 @@
                 <?php endif ?>
 
                 <?php if ($_SESSION['user_role'] == "Partner" || $_SESSION['user_role'] == "Admin"): ?>
-                    <div class="modal fade" tabindex="-1" id="kt<?php echo $activities->feedback_id?>">
+                    <div class="modal fade" tabindex="-1" id="kt_approve<?php echo $activities->feedback_id?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -176,7 +176,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
+                                <form action="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     <button type="submit" class="btn btn-primary font-weight-bold">Approve</button>
                                 </form>

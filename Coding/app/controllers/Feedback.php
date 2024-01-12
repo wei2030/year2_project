@@ -116,11 +116,11 @@ public function approved()
     
     
             if ($this->feedbackModel->setApprove($feedback_id)) {
-                echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                echo '<script>alert("You have successfully approved the feedback.");</script>';
                 echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
                 exit;
             }  else {
-                echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                echo '<script>alert("You have successfully approved the feedback.");</script>';
                 echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
             }
         
