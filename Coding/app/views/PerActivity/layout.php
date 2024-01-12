@@ -50,13 +50,21 @@
 
                         }
 
-                        } elseif ($_SESSION['user_role'] == 'Lecturer' || $_SESSION['user_role'] == 'Admin') {
+                        } elseif ($_SESSION['user_role'] == 'Lecturer') {
                             if ($url == $c_url){
                                 require 'manage.php';
                             } else {
 
                             }
-                        }
+                        } elseif ($_SESSION['user_role'] == "Admin") {
+                            if ($url == $c_url){
+                                require 'manage.php';
+                            } elseif ($url == $p_url){
+                                require 'approved.php';
+                            } else {
+
+                            }
+                        } 
                     ?>
 
         <!--end::Row-->

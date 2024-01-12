@@ -80,6 +80,8 @@ public function approved()
             exit; // Added exit to stop further execution
         }
     
+
+        if ($_SESSION['user_role'] == "Student") {
         // Get the student ID
         $st_id = $this->activityModel->getStudentID($_SESSION['user_id']);
     
@@ -89,6 +91,13 @@ public function approved()
         $data = [
             'feedback' => $approvedFeedback
         ];
+    } else if ($_SESSION['user_role'] == "Admin") {
+        $approvedFeedback = $this->feedbackModel->showAllApproved();
+    
+        $data = [
+            'feedback' => $approvedFeedback
+        ];
+    } 
     
         $this->view('feedback/index', $data);
     }

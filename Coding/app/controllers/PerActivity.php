@@ -191,7 +191,7 @@ public function create()
             exit; // Added exit to stop further execution
         }
     
-        // Get the student ID
+       if ($_SESSION['user_role'] == "Student") {
         $st_id = $this->activityModel->getStudentID($_SESSION['user_id']);
     
         // Get only approved personal activities
@@ -200,9 +200,17 @@ public function create()
         $data = [
             'perActivity' => $approvedPerActivities
         ];
+    } elseif ($_SESSION['user_role'] == "Admin") {
+        $approvedPerActivities = $this->peractivityModel->showAllApproved();
     
-        $this->view('peractivity/index', $data);
+        $data = [
+            'perActivity' => $approvedPerActivities
+        ];
+    
+    } 
+    $this->view('peractivity/index', $data);
     }
+
 
 
     // public function assign($id) {

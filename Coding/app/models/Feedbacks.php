@@ -254,6 +254,15 @@ public function findApprovedFeedback($st_id)
     return $result;
 }
 
+public function showAllApproved() {
+    $this->db->query('SELECT f.*, a.* FROM feedback f
+                      JOIN activity a ON f.ac_id = a.ac_id
+                      WHERE f.status = "Approved"');
+    
+    $result = $this->db->resultSet();
+    
+    return $result;
+}
 
 
 

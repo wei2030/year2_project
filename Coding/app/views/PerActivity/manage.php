@@ -29,17 +29,17 @@
                 <?php foreach($data['perActivity'] as $peractivities): ?>
     <tr>
         <td><?php echo $peractivities->name; ?></td>
-        <td><?php echo date('F j h:m', strtotime($peractivities->date)); ?></td>
+        <td><?php echo date('F j', strtotime($peractivities->date)); ?></td>
         <td><?php echo $peractivities->venue; ?></td>
         <td><?php echo $peractivities->description; ?></td>
         <td>    <?php
-    if (!empty($peractivities->evidence)) {
-        echo '<a href="' . $peractivities->evidence . '" target="_blank">Download Evidence</a>';
-    } else {
-        echo 'No evidence';
-    }
+        if ($peractivities->evidence != null) {
+            echo '<a href="' . URLROOT . '/public/' . $peractivities->evidence . '" target="_blank">View</a>';
+        } else {
+            echo 'No evidence';
+        }
     ?>
-</td></td>
+</td>
         <?php if ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
             <td> 
                 <?php
@@ -100,6 +100,36 @@
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     
                                     <button type="submit" class="btn btn-primary font-weight-bold">Reject</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif ?>
+
+                <?php if ($_SESSION['user_role'] == "Student"): ?>
+                <div class="modal fade" tabindex="-1" id="kt<?php echo $peractivities->pac_id?>">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Delete</h3>
+
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+
+                            <div class="modal-body">
+                                Are you sure want to delete this personal activity?
+                            </div>
+
+                            <div class="modal-footer">
+                                <form action="<?php echo URLROOT . "/peractivity/delete/" . $peractivities->pac_id; ?>" method="POST">
+                                    <input type="hidden" id="expenses" name="expenses" value="expenses">
+                                    
+                                    <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
                                 </form>
                             </div>
                         </div>

@@ -41,13 +41,20 @@ if ($url == $c_url) {
 } else {
     // Handle other URLs if needed
 }
-} else if ($_SESSION['user_role'] == "Partner" || $_SESSION['user_role'] == "Admin") {
+} else if ($_SESSION['user_role'] == "Partner") {
 if ($url == $c_url) {
     require 'manage.php';
 } else {
     // Handle other URLs if needed
 }
-} 
+} else if ($_SESSION['user_role'] == "Admin") {
+if ($url == $c_url) {
+    require 'manage.php';
+} else if ($url == $a_url) {
+    require 'approved.php';
+    // Handle other URLs if needed
+}
+}
 ?>
 
 

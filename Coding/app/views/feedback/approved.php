@@ -34,9 +34,8 @@
                             <td><?php echo $this->activityModel->getParticipantNumber($activities->ac_id); ?> / <?php echo $activities->max_participants; ?></td>
                                                    
                             <td>
-                                <?php if ($_SESSION['user_role'] == "Student"): ?>
                                     <button class="btn btn-success" disabled>Approved</button>
-                                    <?php endif ?>
+                                    
 
                             <?php  if ($_SESSION['user_role'] == "Student"): ?>
                                 <div class="modal fade" tabindex="-1" id="kt<?php echo $activities->feedback_id?>">

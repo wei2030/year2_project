@@ -12,9 +12,9 @@ class perActivities
 
 
     public function findAllperActivity() {
-        $this->db->query('SELECT * FROM peractivity ORDER BY date ASC');
+        $this->db->query('SELECT * FROM peractivity WHERE status = "Waiting" ORDER BY date ASC');
         $result = $this->db->resultSet();
-
+    
         return $result;
     }
 

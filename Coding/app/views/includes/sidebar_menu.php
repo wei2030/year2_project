@@ -245,7 +245,9 @@
 													</a>
 													<!--end:Menu link-->
 												</div>
+												<?php endif; ?>
 												<!--end:Menu item-->
+												<?php if ($_SESSION['user_role'] == "Admin" || $_SESSION['user_role'] == "Student"): ?>
 												<div class="menu-item">
 													<!--begin:Menu link-->
 													<a class="menu-link" href="<?php echo URLROOT; ?>/peractivity/approved">
@@ -303,7 +305,7 @@
 													</a>
 													<!--end:Menu link-->
 												</div>
-												<?php if ($_SESSION ['user_role'] == "Student"): ?>
+												<?php if ($_SESSION ['user_role'] != "Partner"): ?>
 													<div class="menu-item">
 													<!--begin:Menu link-->
 													<a class="menu-link" href="<?php echo URLROOT; ?>/feedback/approved">
