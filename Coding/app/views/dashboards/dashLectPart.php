@@ -207,12 +207,12 @@
 
             <div class="row">
                 <!-- Link to Manege Personal Activity -->
-                <a href="<?php echo URLROOT ?>/peractivity" class="card hover-elevate-up shadow-sm parent-hover">
+                <a href="<?php echo URLROOT ?>/feedback" class="card hover-elevate-up shadow-sm parent-hover">
                     <div class="card-body d-flex align-items">
-                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="personal activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
+                        <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
 
                         <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Personal Activity
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Feedback
                         </span>
                     </div>
                 </a>
