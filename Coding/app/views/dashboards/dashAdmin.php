@@ -86,7 +86,7 @@
                     <div class="min-w-125px py-3 px-4 me-6 mb-3 p-5">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="lecturer" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/lecturer.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -110,7 +110,7 @@
                     <div class="min-w-125px py-3 px-4 me-6 mb-3 p-5">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="partner" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/organizer.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -139,13 +139,13 @@
         <div class="col-md-5">
             <!-- Row for number of skill -->
             <a href="<?php echo URLROOT ?>/skills">
-                <div class="row">
+                <div class="row" style="width: 97%; margin-left: 20px;">
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
 
                         <!--begin::Number-->
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/skill.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="skill" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/skill.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -167,13 +167,13 @@
 
             <!-- Row for number of badges -->
             <a href="<?php echo URLROOT ?>/badges">
-                <div class="row">
+                <div class="row" style="width: 97%; margin-left: 20px;">
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
 
                         <!--begin::Number-->
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/badge.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="badge" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/badge.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -195,11 +195,11 @@
 
             <!-- Num of activity created -->
             <a href="<?php echo URLROOT ?>/activity">
-                <div class="row">                        
+                <div class="row" style="width: 97%; margin-left: 20px;">                        
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/created activity.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="created activity" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/created activity.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -219,12 +219,11 @@
         
 
             <!-- Number of students registered to all activity created -->
-            <a href="<?php echo URLROOT ?>/activity">
-                <div class="row">
+                <div class="row" style="width: 97%; margin-left: 20px;">
                     <div class="border border-gray-300 border-solid rounded min-w-125px py-3 px-4 me-6 mb-3">
                         <div class="d-flex align-items-center">
                             <span class="fs-3 text-success me-2">
-                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activities.png"/>
+                                <img class="mw-100 mh-300px card-rounded-bottom w-80px" alt="student registered" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activities.png"/>
                             </span>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="margin-left: 50px;">
@@ -238,8 +237,7 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                </div>           
-            </a>
+                </div>
             <!-- End of row num of activity register -->
 
         </div>
@@ -253,7 +251,7 @@
                     <!-- Link to List of User -->
                     <a href="<?php echo URLROOT ?>/userlists" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listuser.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="user icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listuser.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Users
@@ -266,7 +264,7 @@
                     <!-- Link to Manege Activity -->
                     <a href="<?php echo URLROOT ?>/activity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/manage activity.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Activity
@@ -281,7 +279,7 @@
                     <!-- Link to List of Badge -->
                     <a href="<?php echo URLROOT ?>/badges" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listbadge.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="badge icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listbadge.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Badges
@@ -294,7 +292,7 @@
                     <!-- Link to Manege Personal Activity -->
                     <a href="<?php echo URLROOT ?>/peractivity" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="PA icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/personal activity.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Personal Activity
@@ -309,7 +307,7 @@
                     <!-- Link to List of Skill -->
                     <a href="skills" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="activity icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listskill.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="skill icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/listskill.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of Skills
@@ -322,7 +320,7 @@
                     <!-- Link to Manege Feedback -->
                     <a href="<?php echo URLROOT ?>/feedback" class="card hover-elevate-up shadow-sm parent-hover">
                         <div class="card-body d-flex align-items">
-                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="reward icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
+                            <img class="mw-100 mh-300px card-rounded-bottom" style="width: 50px;" alt="feedback icon" src="<?php echo URLROOT ?>/public/assets/media/svg/dashboard/feedback.png"/>
 
                             <span class="text-gray-700 parent-hover-primary fs-1 fw-bold" style="padding-top: 8px">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Feedback
