@@ -103,10 +103,15 @@
                     'numAct' => $numAct
                 ];
 
-                $totalStu = $this->dashboardModel->findStuJoined();
+                if($_SESSION['user_role'] == "Lecturer"){
+                    $totalStu = $this->dashboardModel->findStuAssoc();
+                } else {
+                    $totalStu = $this->dashboardModel->findStuJoined();
+                }
                 $data_5 = [
                     'totalStu' => $totalStu
                 ];
+                
 
                 $data_6 = [];
                 $data_7 = [];
