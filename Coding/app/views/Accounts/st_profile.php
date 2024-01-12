@@ -110,7 +110,7 @@ foreach ($data['studentProfile'] as $studentProfile) :
             </div>
 
             <div class="card-body" style="text-align:center">
-                <?php if(isset($data_3['studentBadge'])): ?>
+                <?php if(isset($data_3['studentBadge']) && ($data_3['studentBadge'] != NULL)): ?>
                     <?php foreach ($data_3['studentBadge'] as $studentBadge) :?>
                         <button type="button" class="btn btn-secondary my-2 me-5" data-bs-dismiss="true" data-bs-toggle="popover" data-bs-placement="top" title="<?php echo $studentBadge->badge_name; ?>">
                             <div class="symbol symbol-100px">
