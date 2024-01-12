@@ -305,6 +305,12 @@
                             <input class="input" type="text" id="race" name="race" placeholder="Enter your race"
                                 required="required" />
                         </div>
+
+                        <div class="user-box">
+                            <label for="phone">Phone Number:</label>
+                            <input class="input" type="text" id="phone" name="phone"
+                                placeholder="Enter your phone number" required="required" />
+        </div>
                     </div>
                 </div>
 

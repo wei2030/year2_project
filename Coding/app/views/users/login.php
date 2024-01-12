@@ -7,7 +7,7 @@
 
 <head>
     <base href="../../../" />
-    <title>Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes</title>
+    <title>YouthVenture</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="https://media.licdn.com/dms/image/C4E0BAQF2uYlKl-qeWQ/company-logo_200_200/0/1622008554055?e=1707350400&v=beta&t=ljEkj7YeEBqF_4AKIpuJPg5OSeibHO_Vgj6ubG1Z2fw" />
     <!--begin::Fonts(mandatory for all pages)-->
