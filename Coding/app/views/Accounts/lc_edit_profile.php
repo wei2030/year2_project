@@ -1,6 +1,6 @@
 <div class="card shadow-sm">
-    <div class="card-header">
-        <h4 class="card-title">Edit Profile</h4>
+    <div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
+<h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Edit Profile</h1>
         <div class="card-toolbar">
       
         </div>
@@ -109,7 +109,7 @@
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Phone</label>
             <div class="col-lg-8">
-                <input class="form-control form-control-lg form-control-solid" name="lc_phone" type="text" readonly value="<?php echo $lecturerProfile->lc_phone; ?>" />
+                <input class="form-control form-control-lg form-control-solid" name="lc_phone" type="text" required value="<?php echo $lecturerProfile->lc_phone; ?>" />
             </div>
         </div>
 

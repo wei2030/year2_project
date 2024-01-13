@@ -387,7 +387,7 @@
                                             <img class="icon w-40px h-40px" src="<?php echo URLROOT ?>/public/<?php echo $icon_dir; ?>" alt="Badge icon">
                                             <span class="badge badge-primary" style="background-color: #FCBD32;"><?php echo $badge_name; ?></span>
                                         </td>
-                                        <td>
+                                        <td class="text-uppercase">
                                             &nbsp;&nbsp;<?php echo $leaderboard->st_fullname; ?></td>
                                         <td><?php echo $num_activity; ?></td>                      
                                     </tr>
