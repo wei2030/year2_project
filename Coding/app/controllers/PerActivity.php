@@ -191,24 +191,29 @@ public function create()
             exit; // Added exit to stop further execution
         }
     
-       if ($_SESSION['user_role'] == "Student") {
-        $st_id = $this->activityModel->getStudentID($_SESSION['user_id']);
-    
-        // Get only approved personal activities
-        $approvedPerActivities = $this->peractivityModel->findApprovedPerActivities($st_id);
-    
-        $data = [
-            'perActivity' => $approvedPerActivities
-        ];
-    } elseif ($_SESSION['user_role'] == "Admin") {
-        $approvedPerActivities = $this->peractivityModel->showAllApproved();
-    
-        $data = [
-            'perActivity' => $approvedPerActivities
-        ];
-    
-    } 
-    $this->view('peractivity/index', $data);
+        if ($_SESSION['user_role'] == "Student") {
+
+            $st_id = $this->activityModel->getStudentID($_SESSION['user_id']);
+        
+            // Get only approved personal activities
+            $approvedPerActivities = $this->peractivityModel->findApprovedPerActivities($st_id);
+        
+            $data = [
+                'perActivity' => $approvedPerActivities
+            ];
+
+        } elseif ($_SESSION['user_role'] == "Admin") {
+
+            $approvedPerActivities = $this->peractivityModel->showAllApproved();
+        
+            $data = [
+                'perActivity' => $approvedPerActivities
+            ];
+        
+        } 
+
+        $this->view('peractivity/index', $data);
+
     }
 
 
@@ -350,31 +355,72 @@ public function approve($pac_id)
         exit; // Added exit to stop further execution
     }
 
-    $perActivities = $this->peractivityModel->findperActivityById($pac_id);
+    $perActivity = $this->peractivityModel->findperActivityById($pac_id);
 
     if (!$perActivities) {
         header("Location: " . URLROOT . "/peractivity");
         exit; // Added exit to stop further execution
     }
-
+    
     $data = [
-        'perActivity' => $perActivities,
-        'pac_id' => $pac_id,
+        'perActivity' => $perActivity
     ];
 
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-        if ($this->peractivityModel->setApprove($pac_id)) {
-            echo '<script>alert("You have successfully approved the personal activity.");</script>';
-            echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
-            exit;
-        }  else {
-            echo '<script>alert("You have successfully approved the personal activity.");</script>';
-            echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+        $data = [
+
+            'pac_id' => $pac_id,
+            'perActivity' => $perActivity,
+            'st_id' => trim($_POST['st_id']),
+            'skill_id' => trim($_POST['skill_id'])
+
+        ];
+
+        if (isset($pac_id) && ($data['st_id'] && $data['skill_id'])) {
+
+            if ($this->peractivityModel->assignSkills($data)) {
+
+                // $this->peractivityModel->setApprove($pac_id);
+
+                if ($this->peractivityModel->setApprove($pac_id)) {
+                    echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+                    exit;
+                }  else {
+                    echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+                }
+
+                // header("Location: " . URLROOT. "/peractivity" );
+
+            } else {
+
+                die("Something went wrong :(");
+
+            }
+
+        } else {
+
+            $this->view('peractivity/index', $data);
+
         }
-    
 
-    $this->view('peractivity/index', $data);
+    }
+
+    $stu_list = $this->peractivityModel->studentList($data['perActivity']->st_id);
+    $data_2 = [
+        'stu_list' => $stu_list
+    ];
+
+    $skill_list = $this->peractivityModel->findAllSkills();
+    $data_3 = [
+        'skill_list' => $skill_list
+    ];
+
+    $this->view('peractivity/index', $data, $data_2, $data_3);
 }
 
 }
