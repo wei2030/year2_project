@@ -40,18 +40,15 @@
                                                    
                             <td>
                                 <?php if ($_SESSION['user_role'] == "Student"): ?>
-                                        <a href="<?php echo URLROOT; ?>/feedback/update/<?php echo $activities->feedback_id; ?>" class="btn btn-light-warning">Update</a>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">
+                                        <a href="<?php echo URLROOT; ?>/feedback/update/<?php echo $activities->feedback_id; ?>" class="btn btn-warning font-weight-bold btn-pill">Update</a>
+                                    <button type="button" class="btn btn-danger font-weight-bold btn-pill" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->feedback_id?>">
                                         Delete
                                     </button>
                             <?php elseif ($_SESSION['user_role'] == "Partner" || $_SESSION['user_role'] == "Admin"): ?>
                                 <!-- <a href="<?php// echo URLROOT . "/feedback/approve/" . $activities->feedback_id ?>"
                     class="btn btn-light-warning">Approve</a> -->
-                                    <button type="button" class="btn btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt_approve<?php echo $activities->feedback_id?>">
-                                        Approve</button>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_reject<?php echo $activities->feedback_id?>">
-                                        Reject
-                                    </button>
+                                    <button type="button" class="btn btn-bg-warning" data-bs-toggle="modal" data-bs-target="#kt_approve<?php echo $activities->feedback_id?>">
+                                        Approve/Reject</button>
                             <?php endif; ?>
 
                             <?php  if ($_SESSION['user_role'] == "Student"): ?>
@@ -118,7 +115,7 @@
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/feedback/delete/".  $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
+                                    <button type="submit" class="btn btn-danger font-weight-bold btn-pill">Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -131,7 +128,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Approve</h3>
+                                <h3 class="modal-title">Approve/Reject</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -141,7 +138,7 @@
                             </div>
 
                             <div class="modal-body">
-                            <p><strong>Full Name:</strong></p>
+<p><strong>Full Name:</strong></p>
 <p><?php echo $activities->st_fullname; ?></p>
 
 <p><strong>University:</strong></p>
@@ -183,13 +180,17 @@
 
 <hr>
 
-<p>Are you sure you want to approve this feedback?</p>
+<p>Please determine to reject/approve the feedback.</p>
                             </div>
 
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Approve</button>
+                                    <button type="submit" class="btn btn-success"></i>Approve</button>
+                                </form>
+                                    <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
+                                    <input type="hidden" id="expenses" name="expenses" value="expenses">
+                                    <button type="submit" class="btn btn-danger">Reject</button>
                                 </form>
                             </div>
                         </div>

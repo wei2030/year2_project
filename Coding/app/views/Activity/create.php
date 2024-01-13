@@ -3,7 +3,7 @@
         <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Create Activity</h1>
         <div class="card-toolbar">
             <?php if (isLoggedIn()): ?>
-                <a href="<?php echo URLROOT; ?>/activity" class="btn btn-light-primary">Manage Activity</a>
+                <a href="<?php echo URLROOT; ?>/activity" class="btn btn-bg-dark">Manage Activity</a>
             <?php endif; ?>
         </div>
     </div>

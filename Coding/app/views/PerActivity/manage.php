@@ -3,7 +3,7 @@
         <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Manage Personal Activity</h1>
         <div class="card-toolbar">
             <?php if(isLoggedIn() && $_SESSION['user_role'] == "Student"): ?>
-                <a href="<?php echo URLROOT;?>/peractivity/create" class="btn btn-light-primary btn-sm">Create</a>
+                <a href="<?php echo URLROOT;?>/peractivity/create" class="btn btn-bg-dark">Create</a>
             <?php endif; ?>
         </div>
     </div>
@@ -70,24 +70,16 @@
 <?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
 
 <div class="btn-group" style="margin-right: 10px;">
-    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
-    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-success">Approve</a>
+    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
 </div>
 
 
 <?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
 
-<div class="btn-group" style="margin-right: 10px;">
-    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
-    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
-</div>
-
-
-<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
-
-<div class="btn-group">
-    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Approve</a>
-    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+    <div class="btn-group" style="margin-right: 10px;">
+    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-success">Approve</a>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
 </div>
 
                 <!-- Add additional code for assigning to lecturers if needed -->
@@ -126,7 +118,7 @@
                                 <form action="<?php echo URLROOT . "/peractivity/delete/" . $peractivities->pac_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Reject</button>
+                                    <button type="submit" class="btn btn-danger">Reject</button>
                                 </form>
                             </div>
                         </div>
@@ -156,7 +148,7 @@
                                 <form action="<?php echo URLROOT . "/peractivity/delete/" . $peractivities->pac_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     
-                                    <button type="submit" class="btn btn-primary font-weight-bold">Delete</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
                         </div>

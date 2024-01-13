@@ -3,7 +3,7 @@
         <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Manage Activity</h1>
         <div class="card-toolbar">
             <?php if (isLoggedIn() && $_SESSION['user_role'] !== "Lecturer" && $_SESSION['user_role'] !== "Student"): ?>
-                <a href="<?php echo URLROOT;?>/activity/create" class="btn btn-light-primary btn-sm">Create</a>
+                <a href="<?php echo URLROOT;?>/activity/create" class="btn btn-bg-dark">Create</a>
             <?php endif; ?>
         </div>
     </div>
@@ -62,14 +62,14 @@
             <td>
             <?php if ($_SESSION['user_role'] == "Admin"): ?>
             <!-- Existing code for Lecturer buttons -->
-            <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-light-warning">Update</a>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
+            <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-warning font-weight-bold btn-pill">Update</a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
                 Delete
             </button>
         <?php elseif ($_SESSION['user_role'] == "Partner"): ?>
             <!-- Existing code for Lecturer buttons -->
             <a href="<?php echo URLROOT . "/activity/update/" . $activities->ac_id ?>" class="btn btn-light-warning">Update</a>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
+            <button type="button" class="btn btn-danger font-weight-bold btn-pill" data-bs-toggle="modal" data-bs-target="#kt<?php echo $activities->ac_id?>">
                 Delete
             </button>
     <?php elseif ($_SESSION['user_role'] == "Student"): ?>
