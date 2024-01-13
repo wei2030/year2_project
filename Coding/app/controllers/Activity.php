@@ -184,7 +184,7 @@ public function join($ac_id)
     $activity = $this->activityModel->findActivityById($ac_id);
 
     // Redirect if the user is the owner of the activity
-    if ($activity->user_id == $_SESSION['user_id']) {
+    if ($activity->uploader_id == $_SESSION['user_id']) {
         header("Location: " . URLROOT . "/activity");
         exit();
     }
