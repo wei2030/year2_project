@@ -45,11 +45,11 @@ class Accounts extends Controller
         $this->dashboardModel = $this->model('Dashboard');
 
         $studentBadge = $this->dashboardModel->findBadge();
-        $data_3 = [
+        $data_2 = [
         'studentBadge' => $studentBadge
         ];
 
-        $this->view('accounts/index', $data, $data_2, $data_3);
+        $this->view('accounts/index', $data, $data_2);
     }
 
     public function index()
