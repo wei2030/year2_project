@@ -29,8 +29,8 @@
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="form-label">Description</label>
-                    <input type="text" name="description" required textarea name="body" class="form-control form-control-solid" aria-label="With textarea" required value ="<?php echo $data['perActivity']->description;?>"></textarea>
-                </div>
+                    <textarea class="form-control form-control-solid" name="description" rows="3" value="<?php echo $data['perActivity']->description;?>"></textarea>
+            </div>
 
             <div class="mb-10">
                 <label for="image" class="required form-label">Evidence (PDF Only)</label>

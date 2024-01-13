@@ -28,10 +28,7 @@
 
             <div class="mb-10">
                 <label for="exampleFormControlInput1" class="form-label">Description</label>
-                <div class="position-relative">
-                    <div class="required position-absolute top-0"></div>
-                    <input type="text" name="description" required textarea name="body" class="form-control" aria-label="With textarea" required></textarea>
-                </div>
+                    <textarea class="form-control form-control-solid" name="description" rows="3" placeholder="Description of Activity"></textarea>
             </div>
 
             <div class="mb-10">
