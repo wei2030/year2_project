@@ -44,6 +44,7 @@
             }
             ?>
         </td>
+
         <?php if ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
             <td> 
                 <?php
@@ -52,49 +53,36 @@
                 ?>
             </td>
         <?php elseif ($_SESSION['user_role'] == "Student"): ?>
-            <td> <?php
+            <td> 
+                <?php
                 $lecturerFullName = $this->peractivityModel->getLecturerFullName($peractivities->lc_id);
                 echo is_string($lecturerFullName) ? $lecturerFullName : '';
-                ?></td>
-            <?php endif ?>
-        <td>
-            <?php if ($_SESSION['user_role'] == "Student"): ?>
-                <!-- Student actions -->
-                <div class="btn-group" style="margin-right: 10px;">
-    <a href="<?php echo URLROOT . "/peractivity/update/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Update</a>
-    <a href="<?php echo URLROOT . "/peractivity/assign/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-primary">Assign To</a>
-    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Delete</button>
-
-    </div>
-
-<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
-
-<div class="btn-group" style="margin-right: 10px;">
-    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-success">Approve</a>
-    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
-</div>
-
-
-<?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
-
-    <div class="btn-group" style="margin-right: 10px;">
-    <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-success">Approve</a>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
-</div>
-
-                <!-- Add additional code for assigning to lecturers if needed -->
-            <?php endif; ?>
-            <!-- Delete modal -->
-           
+                ?>
+            </td>
+        <?php endif ?>
+            <td>
+                <?php if ($_SESSION['user_role'] == "Student"): ?>
+                    <!-- Student actions -->
+                    <div class="btn-group" style="margin-right: 10px;">
+                        <a href="<?php echo URLROOT . "/peractivity/update/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-warning">Update</a>
+                        <a href="<?php echo URLROOT . "/peractivity/assign/" . $peractivities->pac_id ?>" class="btn btn-sm btn-light-primary">Assign To</a>
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Delete</button>
+                    </div>
+                <?php elseif ($_SESSION['user_role'] == "Lecturer" || $_SESSION['user_role'] == "Admin"): ?>
+                    <div class="btn-group" style="margin-right: 10px;">
+                        <a href="<?php echo URLROOT . "/peractivity/approve/" . $peractivities->pac_id ?>" class="btn btn-sm btn-success">Approve</a>
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#kt<?php echo $peractivities->pac_id ?>">Reject</button>
+                    </div>
+                <?php endif; ?>
+                
+                <!-- Delete modal -->
                 <!-- ... modal content ... -->
                 <?php if ($_SESSION['user_role'] !== "Student"): ?>
                 <div class="modal fade" tabindex="-1" id="kt<?php echo $peractivities->pac_id?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h1 class="modal-title text-danger">WARNING!</h1>
-
-
+                                <h1 class="modal-title text-danger">WARNING!</h1>
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                     <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -103,17 +91,13 @@
                             </div>
 
                             <div class="modal-body">
-    <p class="font-weight-bold">
-        <h3>⚠️ This action is irreversible.</h3>
-        
-        <h3 style="color: #FF6347;">Are you absolutely sure you want to reject this activity?</h3>
-    </p>
-</div>
-
-
-
-
-
+                                <p class="font-weight-bold">
+                                    <h3>⚠️ This action is irreversible.</h3>
+                                    
+                                    <h3 style="color: #FF6347;">Are you absolutely sure you want to reject this activity?</h3>
+                                </p>
+                            </div>
+                            
                             <div class="modal-footer">
                                 <form action="<?php echo URLROOT . "/peractivity/delete/" . $peractivities->pac_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">

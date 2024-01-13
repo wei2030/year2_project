@@ -31,6 +31,7 @@
                     if (isset($data['perActivity']) && is_object($data['perActivity'])) {
                     $u_url = URLROOT . "/peractivity/update/".$data['perActivity']->pac_id; 
                     $a_url = URLROOT . "/peractivity/assign/".$data['perActivity']->pac_id;
+                    $ap_url = URLROOT . "/peractivity/approve/".$data['perActivity']->pac_id;
                   }
 
 
@@ -61,8 +62,10 @@
                                 require 'manage.php';
                             } elseif ($url == $p_url){
                                 require 'approved.php';
+                            } elseif ($url == $ap_url) {
+                                require 'approve.php';
                             } else {
-
+                                
                             }
                         } 
                     ?>
