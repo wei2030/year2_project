@@ -28,9 +28,10 @@
             </div>
 
             <div class="mb-10">
-                <label for="exampleFormControlInput1" class="form-label">Description</label>
-                    <textarea class="form-control form-control-solid" name="description" rows="3" value="<?php echo $data['perActivity']->description;?>"></textarea>
-            </div>
+    <label for="exampleFormControlInput1" class="form-label">Description</label>
+    <textarea class="form-control form-control-solid" name="description" rows="3"><?php echo $data['perActivity']->description; ?></textarea>
+</div>
+
 
             <div class="mb-10">
                 <label for="image" class="required form-label">Evidence (PDF Only)</label>
