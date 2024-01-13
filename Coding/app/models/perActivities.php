@@ -134,12 +134,32 @@ public function WaitAllperActivity($st_id)
 
 public function setApprove($pac_id)
 {
-    $this->db->query('UPDATE peractivity SET status = "Approved" WHERE pac_id = :pac_id');
+    if (!$this->recordExists($pac_id)) {
+        echo "Record with pac_id=$pac_id does not exist.";
+        return false;
+    }
 
+    $this->db->query('UPDATE peractivity SET status = "Approved" WHERE pac_id = :pac_id');
     $this->db->bind(':pac_id', $pac_id);
 
     // Execute the query and handle the result (if needed)
-    $this->db->execute();
+    if ($this->db->execute()) {
+
+        return true;
+
+    } else {
+
+        return false;
+
+    }
+}
+
+private function recordExists($pac_id)
+{
+    $this->db->query('SELECT * FROM peractivity WHERE pac_id = :pac_id');
+    $this->db->bind(':pac_id', $pac_id);
+
+    return $this->db->single() !== null;
 }
 
 public function getStudentFullName($st_id)
@@ -167,6 +187,40 @@ public function showAllApproved() {
     $result = $this->db->resultSet();
 
     return $result;
+}
+
+public function studentList($st_id) {
+    $this->db->query('SELECT * FROM st_profile WHERE st_id = :st_id');
+    $this->db->bind(':st_id', $st_id);
+
+    $result = $this->db->resultSet();
+
+    return $result;
+}
+
+public function findAllSkills() {
+    $this->db->query('SELECT * FROM skills');
+    $result = $this->db->resultSet();
+
+    return $result;
+}
+
+public function assignSkills($data){ // assign skills to student
+    $this->db->query('INSERT INTO stud_skills (st_id, skill_id) VALUES (:st_id, :skill_id)');
+    $this->db->bind(':st_id', $data['st_id']);
+    $this->db->bind(':skill_id', $data['skill_id']);
+
+    //execute function
+    if ($this->db->execute()) {
+
+        return true;
+
+    } else {
+
+        return false;
+
+    }
+
 }
 
 
