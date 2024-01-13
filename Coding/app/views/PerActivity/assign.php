@@ -1,9 +1,9 @@
 <div class="card shadow-sm">
     <div class="card-header" style="background: linear-gradient(to right, #183D64, #7C1C2B); color: #FCBD32;">
-        <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Assign Yor Activity To : </h1>
+        <h1 class="card-title" style="font-size: 24px; font-weight: bold; color: #fff;">Assign Your Personal Activity To : </h1>
         <div class="card-toolbar">
             <?php if (isLoggedIn()): ?>
-                <a href="<?php echo URLROOT; ?>/peractivity" class="btn btn-light-primary"><i class="fa fa-home"></i></a>
+                <a href="<?php echo URLROOT; ?>/peractivity" class="btn btn-dark"><i class="fa fa-home"></i></a>
             <?php endif; ?>
         </div>
     </div>
