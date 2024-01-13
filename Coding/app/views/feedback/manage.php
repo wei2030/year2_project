@@ -108,7 +108,11 @@
 
 <hr>
 
-<p>Are you sure you want to delete this feedback?</p>
+                            <p class="font-weight-bold">
+        <h3>⚠️ This action is irreversible.</h3>
+        
+        <h3 style="color: #FF6347;">Are you absolutely sure you want to delete this activity?</h3>
+    </p>
 
                             </div>
 
