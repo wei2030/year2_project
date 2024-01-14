@@ -73,17 +73,6 @@ class Feedbacks
 
     }
 
-
-    public function setApprove($feedback_id)
-{
-    $this->db->query('UPDATE feedback SET status = "Approved" WHERE feedback_id = :feedback_id');
-
-    $this->db->bind(':feedback_id', $feedback_id);
-
-    // Execute the query and handle the result (if needed)
-    $this->db->execute();
-}
-
    // Add a method to check if the registration date has ended
 
 public function getParticipantNumber($ac_id)
@@ -264,7 +253,66 @@ public function showAllApproved() {
     return $result;
 }
 
+public function studentList($st_id) {
+    $this->db->query('SELECT * FROM st_profile WHERE st_id = :st_id');
+    $this->db->bind(':st_id', $st_id);
 
+    $result = $this->db->resultSet();
+
+    return $result;
+}
+
+public function findAllSkills() {
+    $this->db->query('SELECT * FROM skills');
+    $result = $this->db->resultSet();
+
+    return $result;
+}
+
+public function assignSkills($data){ // assign skills to student
+    $this->db->query('UPDATE feedback SET status = "Approved" WHERE feedback_id = :feedback_id');
+    $this->db->bind(':feedback_id', $data['feedback_id']);
+    // $this->db->query('INSERT INTO stud_skills (st_id, skill_id) VALUES (:st_id, :skill_id)');
+    // $this->db->bind(':st_id', $data['st_id']);
+    // $this->db->bind(':skill_id', $data['skill_id']);
+
+    //execute function
+    if ($this->db->execute()) {
+
+        // $this->db->query('UPDATE peractivity SET status = "Approved" WHERE pac_id = :pac_id');
+        // $this->db->bind(':pac_id', $data['pac_id']);
+
+        $this->db->query('INSERT INTO stud_skills (st_id, skill_id) VALUES (:st_id, :skill_id)');
+        $this->db->bind(':st_id', $data['st_id']);
+        $this->db->bind(':skill_id', $data['skill_id']);
+
+        if ($this->db->execute()) {
+
+            return true;
+    
+        } else {
+    
+            return false;
+    
+        }
+
+    } else {
+
+        return false;
+
+    }
+
+}
+
+// public function setApprove($feedback_id)
+// {
+//     $this->db->query('UPDATE feedback SET status = "Approved" WHERE feedback_id = :feedback_id');
+
+//     $this->db->bind(':feedback_id', $feedback_id);
+
+//     // Execute the query and handle the result (if needed)
+//     $this->db->execute();
+// }
 
 
 
