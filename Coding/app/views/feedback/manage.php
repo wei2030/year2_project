@@ -188,11 +188,13 @@
                             </div>
 
                             <div class="modal-footer">
-                                <form action="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" method="POST">
+                                <!-- <form action="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     <button type="submit" class="btn btn-success"></i>Approve</button>
-                                </form>
-                                    <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
+                                </form> -->
+                                <a href="<?php echo URLROOT . "/feedback/approve/" . $activities->feedback_id; ?>" class="btn btn-sm btn-light-primary">Approve</a>
+
+                                <form action="<?php echo URLROOT . "/feedback/delete/" . $activities->feedback_id; ?>" method="POST">
                                     <input type="hidden" id="expenses" name="expenses" value="expenses">
                                     <button type="submit" class="btn btn-danger">Reject</button>
                                 </form>

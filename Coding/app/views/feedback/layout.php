@@ -27,6 +27,7 @@ $u_url = '';
 
 if (isset($data['feedback']) && is_object($data['feedback'])) {
     $u_url = URLROOT . "/feedback/update/".$data['feedback']->feedback_id;
+    $ap_url = URLROOT . "/feedback/approve/".$data['feedback']->feedback_id;
 }
 
 // Assuming $_SESSION['user_role'] contains the role of the logged-in user
@@ -53,6 +54,10 @@ if ($url == $c_url) {
 } else if ($url == $a_url) {
     require 'approved.php';
     // Handle other URLs if needed
+} elseif ($url == $ap_url) {
+    require 'approve.php';
+} else {
+    
 }
 }
 ?>
