@@ -6,7 +6,7 @@
 
     <div class="card-body">
 
-        <form action="<?php echo URLROOT; ?>/peractivity/approve/<?php echo $data['perActivity']->st_id ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo URLROOT; ?>/peractivity/approve/<?php echo $data['perActivity']->pac_id ?>" method="POST" enctype="multipart/form-data">
 
             <div class="mb-10">
                 <label for="student">Student:</label>
