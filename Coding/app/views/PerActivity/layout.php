@@ -54,8 +54,10 @@
                         } elseif ($_SESSION['user_role'] == 'Lecturer') {
                             if ($url == $c_url){
                                 require 'manage.php';
+                            } elseif ($url == $ap_url) {
+                                require 'approve.php';
                             } else {
-
+                                
                             }
                         } elseif ($_SESSION['user_role'] == "Admin") {
                             if ($url == $c_url){
