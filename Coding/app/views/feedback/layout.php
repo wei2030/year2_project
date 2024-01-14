@@ -45,8 +45,10 @@ if ($url == $c_url) {
 } else if ($_SESSION['user_role'] == "Partner") {
 if ($url == $c_url) {
     require 'manage.php';
+} elseif ($url == $ap_url) {
+    require 'approve.php';
 } else {
-    // Handle other URLs if needed
+    
 }
 } else if ($_SESSION['user_role'] == "Admin") {
 if ($url == $c_url) {
