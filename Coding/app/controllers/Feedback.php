@@ -110,31 +110,77 @@ public function approved()
             exit; // Added exit to stop further execution
         }
     
-        $feedbacks = $this->feedbackModel->findFeedbackById($feedback_id);
+        $feedback = $this->feedbackModel->findFeedbackById($feedback_id);
     
-        if (!$feedbacks) {
+        if (!$feedback) {
             header("Location: " . URLROOT . "/feedback");
             exit; // Added exit to stop further execution
         }
     
         $data = [
-            'feedbacks' => $feedbacks,
-            'feedback_id' => $feedback_id,
+            'feedback' => $feedback,
+            'feedback_id' => $feedback_id
         ];
     
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     
+            $data = [
     
-            if ($this->feedbackModel->setApprove($feedback_id)) {
-                echo '<script>alert("You have successfully approved the feedback.");</script>';
-                echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
-                exit;
-            }  else {
-                echo '<script>alert("You have successfully approved the feedback.");</script>';
-                echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
+                'feedback_id' => $feedback_id,
+                'feedback' => $feedback,
+                'st_id' => trim($_POST['st_id']),
+                'skill_id' => trim($_POST['skill_id'])
+    
+            ];
+    
+            if (isset($feedback_id) && ($data['st_id'] && $data['skill_id'])) {
+    
+                if ($this->feedbackModel->assignSkills($data)) {
+    
+                    echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
+                    exit;
+    
+                } else {
+    
+                    echo '<script>alert("Unsuccessful.");</script>';
+                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
+    
+                    die("Something went wrong :(");
+    
+                }
+    
+            } else {
+    
+                $this->view('feedback/index', $data);
+    
             }
+    
+        }
+    
+        $stu_list = $this->feedbackModel->studentList($data['feedback']->st_id);
+        $data_2 = [
+            'stu_list' => $stu_list
+        ];
+    
+        $skill_list = $this->feedbackModel->findAllSkills();
+        $data_3 = [
+            'skill_list' => $skill_list
+        ];
+    
+            // if ($this->feedbackModel->setApprove($feedback_id)) {
+            //     echo '<script>alert("You have successfully approved the feedback.");</script>';
+            //     echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
+            //     exit;
+            // }  else {
+            //     echo '<script>alert("You have successfully approved the feedback.");</script>';
+            //     echo '<script>window.location.href = "http://localhost/mvcprojectnew/feedback";</script>';
+            // }
         
     
-        $this->view('feedback/index', $data);
+        $this->view('feedback/index', $data, $data_2, $data_3);
     }
 
     public function details($feedback_id)
