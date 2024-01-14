@@ -356,13 +356,8 @@ public function approve($pac_id)
     }
 
     $perActivity = $this->peractivityModel->findperActivityById($pac_id);
-
-    if (!$perActivities) {
-        header("Location: " . URLROOT . "/peractivity");
-        exit; // Added exit to stop further execution
-    }
-    
     $data = [
+        'pac_id' => $pac_id,
         'perActivity' => $perActivity
     ];
 
@@ -385,18 +380,25 @@ public function approve($pac_id)
 
                 // $this->peractivityModel->setApprove($pac_id);
 
-                if ($this->peractivityModel->setApprove($pac_id)) {
-                    echo '<script>alert("You have successfully approved the personal activity.");</script>';
-                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
-                    exit;
-                }  else {
-                    echo '<script>alert("You have successfully approved the personal activity.");</script>';
-                    echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
-                }
+                echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+                exit;
+
+                // if ($this->peractivityModel->setApprove($pac_id)) {
+                //     echo '<script>alert("You have successfully approved the personal activity.");</script>';
+                //     echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+                //     exit;
+                // }  else {
+                //     echo '<script>alert("Unsuccessful.");</script>';
+                //     echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
+                // }
 
                 // header("Location: " . URLROOT. "/peractivity" );
 
             } else {
+
+                echo '<script>alert("Unsuccessful.");</script>';
+                echo '<script>window.location.href = "http://localhost/mvcprojectnew/peractivity";</script>';
 
                 die("Something went wrong :(");
 
